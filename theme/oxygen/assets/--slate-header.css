@@ -1,0 +1,8 @@
+.--slate-header {
+    background: rgb(255,255,255);
+    background-color: linear-gradient(43deg, rgba(255,255,255,1) 0%, rgba(233,236,255,1) 41%, rgba(213,244,255,1) 68%, rgba(214,241,255,1) 100%);
+}
+
+.dark .--slate-header {
+    background-color: var(--default-background-color-elegant-dark)!important;
+}

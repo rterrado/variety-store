@@ -1,0 +1,70 @@
+.--switcher span {
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+.--switcher span:before {
+    content: "";
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+.--switcher input:focus + span {
+    box-shadow: 0 0 1px var(--default-background-color-primary);
+}
+
+.--switcher input:checked + span:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+}
+
+.--switcher input:checked + span {
+    background-color: var(--default-background-color-primary);
+}
+
+.--switcher-size-large input:checked + span:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+}
+
+.--switcher-size-large {
+    width: 60px;
+    height: 34px;
+}
+
+.--switcher-size-large .--is-shape-round, .--switcher-size-large .--is-shape-round:before {
+    border-radius: 34px;
+}
+
+.--switcher-size-large span:before {
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+}
+
+
+.--switcher-size-medium input:checked + span:before {
+    -webkit-transform: translateX(21px);
+    -ms-transform: translateX(21px);
+    transform: translateX(21px);
+}
+
+.--switcher-size-medium {
+    width: 49px;
+    height: 28px;
+}
+
+.--switcher-size-medium .--is-shape-round, .--switcher-size-medium .--is-shape-round:before {
+    border-radius: 30px;
+}
+
+.--switcher-size-medium span:before {
+    height: 19px;
+    width: 19px;
+    left: 5px;
+    bottom: 5px;
+}
+

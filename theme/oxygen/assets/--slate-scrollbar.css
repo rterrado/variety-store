@@ -1,0 +1,12 @@
+.--slate-scrollbar::-webkit-scrollbar {
+    width: 6px;
+}
+
+.--slate-scrollbar::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background-color: var(--default-background-color-primary);
+}
+
+.--slate-scrollbar::-webkit-scrollbar-track {
+    border-radius: 5px;
+}

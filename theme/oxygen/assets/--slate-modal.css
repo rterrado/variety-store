@@ -1,0 +1,29 @@
+.--slate-modal-backdrop {
+    top: 0;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    z-index: 98;
+    background: rgb(217 217 217 / 28%);
+    backdrop-filter: blur(2.7px);
+    -webkit-backdrop-filter: blur(2.7px);
+    padding: 10px;
+    border-style: none;
+    position: fixed;
+}
+
+body.dark .--slate-modal-backdrop {
+    background: rgb(32 32 32 / 28%);
+}
+
+
+.--slate-modal-wrapper {
+    width: 400px;
+    background-color: #ffffffeb;
+    border-radius: 20px;
+    box-shadow: 0 4px 40px rgba(0, 0, 0, 0.1);
+}
+
+body.dark .--slate-modal-wrapper {
+    background-color: #212627;
+}

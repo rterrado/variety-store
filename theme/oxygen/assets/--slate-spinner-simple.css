@@ -1,0 +1,26 @@
+.--slate-theme-spinner-simple {
+    border: 3.7px #d5d5d5 solid;
+    border-top: 3.7px #777777 solid;
+    border-radius: 50%;
+    -webkit-animation: spCircRot 0.3s infinite linear;
+    animation: spCircRot 0.3s infinite linear;
+    width: 17px;
+    height: 17px;
+}
+
+@-webkit-keyframes spCircRot {
+  from {
+    -webkit-transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(359deg);
+  }
+}
+@keyframes spCircRot {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(359deg);
+  }
+}

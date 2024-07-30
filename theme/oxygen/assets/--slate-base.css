@@ -1,0 +1,27 @@
+* {margin:0;padding:0;box-sizing:border-box;}
+#main {display:none; transition: 0.5s;}
+ul {list-style-type:none;}
+body { background-color: #fafffc; }
+body.dark {
+    background-color: var(--default-background-color-elegant-dark);
+}
+body, input, textarea, button, h1, h2, h3, h4, h5, h6 {font-family: 'Inter'; color: var(--default-color-extra-dark);}
+body.dark, body.dark dialog, .dark input, .dark textarea, .dark button, .dark h1, .dark h2, .dark h3, .dark h4, .dark h5, .dark h6 {color: var(--dark-color-extra-dark);}
+
+a:link, a:visited {
+    color: var(--default-color-extra-dark);
+    text-decoration: none;
+}
+a:hover {
+    color: var(--default-color-primary);
+    text-decoration: underline;
+}
+
+.dark a:link, .dark a:visited {
+    color: var(--dark-color-extra-dark);
+    text-decoration: none;
+}
+.dark a:hover {
+    color: var(--dark-color-primary);
+    text-decoration: underline;
+}
