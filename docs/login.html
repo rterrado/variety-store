@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <meta content='width=device-width, initial-scale=1' name='viewport'/>
+        <title>Variety Store - Login</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/kenjiefx/plunc/dist/plunc.0.7.22.min.js"></script>
+        <script type="text/javascript">
+            const blockAutoSubmit=e=>e.preventDefault();
+        </script>
+        <script type="text/javascript" src="/assets/login.js?v=1722345376"></script>
+<link rel="stylesheet" href="/assets/login.css?v=1722345376">    </head>
+    <body class="WWf">
+        <script type="text/javascript">
+            const theme = localStorage.getItem('slate-theme') ?? 'light'
+            document.querySelector('body').classList.add(theme)
+            window.slate = { theme: { name: theme } }
+        </script>
+        <app plunc-app="app" class="WWf"></app>
+        <template plunc-name="app">
+            <main plunc-component="fs2" class="WWf"></main>
+        </template>
+                <template plunc-name="fs2">
+    <div plunc-if="state=='loading'" class="WWf lgj jmR SRj gYe">
+        <!-- Apply loading screen here -->
+        <div class="--slate-page-spinner"></div>
+    </div>
+    <div plunc-if="state=='active'">
+    
+        Hello this is login    </div>
+    <div plunc-if="state=='error'">
+        <!-- Apply error page here -->
+    </div>
+</template>        <div id="slate_color_palette" style="display:none">
+<span data-color-id="background-color-transparent" class="lTT"></span>
+<span data-color-id="background-color-primary" class="kTS"></span>
+<span data-color-id="background-color-error" class="jna"></span>
+<span data-color-id="background-color-gray-scale-super-light" class="SYn"></span>
+<span data-color-id="background-color-gray-scale-extra-light" class="Ymm"></span>
+<span data-color-id="background-color-gray-scale-light" class="OXa"></span>
+<span data-color-id="background-color-gray-scale" class="Saf"></span>
+<span data-color-id="background-color-gray-scale-dark" class="PfP"></span>
+<span data-color-id="background-color-gray-scale-extra-dark" class="dae"></span>
+<span data-color-id="background-color-gray-scale-super-dark" class="Yfh"></span>
+<span data-color-id="background-color-white" class="YOj"></span>
+<span data-color-id="background-color-everwhite" class="VlT"></span>
+<span data-color-id="background-color-everdark-elegant" class="UTi"></span>
+<span data-color-id="background-color-dark" class="OSh"></span>
+<span data-color-id="background-color-extra-dark" class="kQQ"></span>
+<span data-color-id="background-color-super-dark" class="hPa"></span>
+<span data-color-id="background-color-elegant-dark" class="kOj"></span>
+<span data-color-id="background-color-danger-heavy" class="bgQ"></span>
+<span data-color-id="color-transparent" class="Whb"></span>
+<span data-color-id="color-primary" class="VUQ"></span>
+<span data-color-id="color-error" class="jSR"></span>
+<span data-color-id="color-success" class="ggR"></span>
+<span data-color-id="color-info" class="hdR"></span>
+<span data-color-id="color-gray-scale-super-light" class="PhX"></span>
+<span data-color-id="color-gray-scale-extra-light" class="ajO"></span>
+<span data-color-id="color-gray-scale-light" class="PhR"></span>
+<span data-color-id="color-gray-scale" class="jfW"></span>
+<span data-color-id="color-gray-scale-dark" class="XlT"></span>
+<span data-color-id="color-gray-scale-extra-dark" class="cWU"></span>
+<span data-color-id="color-gray-scale-super-dark" class="UbU"></span>
+<span data-color-id="color-white" class="TXS"></span>
+<span data-color-id="color-everwhite" class="ZiT"></span>
+<span data-color-id="color-everdark-elegant" class="fUk"></span>
+<span data-color-id="color-dark" class="Wae"></span>
+<span data-color-id="color-extra-dark" class="Qfl"></span>
+<span data-color-id="color-super-dark" class="Vag"></span>
+<span data-color-id="color-elegant-dark" class="dUY"></span>
+<span data-color-id="color-facebook" class="niT"></span>
+<span data-color-id="border-color-transparent" class="ROk"></span>
+<span data-color-id="border-color-primary" class="hPU"></span>
+<span data-color-id="border-color-error" class="Vji"></span>
+<span data-color-id="border-color-success" class="hje"></span>
+<span data-color-id="border-color-info" class="cVW"></span>
+<span data-color-id="border-color-gray-scale-super-light" class="diR"></span>
+<span data-color-id="border-color-gray-scale-extra-light" class="XVn"></span>
+<span data-color-id="border-color-gray-scale-light" class="bUa"></span>
+<span data-color-id="border-color-gray-scale" class="eke"></span>
+<span data-color-id="border-color-gray-scale-dark" class="hnO"></span>
+<span data-color-id="border-color-gray-scale-extra-dark" class="YcT"></span>
+<span data-color-id="border-color-gray-scale-super-dark" class="jah"></span>
+<span data-color-id="border-color-white" class="iRX"></span>
+<span data-color-id="border-color-everwhite" class="hfZ"></span>
+<span data-color-id="border-color-dark" class="dYX"></span>
+<span data-color-id="border-color-extra-dark" class="gPQ"></span>
+<span data-color-id="border-color-super-dark" class="keP"></span>
+<span data-color-id="border-color-elegant-dark" class="SRb"></span>
+<span data-color-id="svg-fill-none" class="bXi"></span>
+<span data-color-id="svg-fill-transparent" class="PdQ"></span>
+<span data-color-id="svg-fill-primary" class="fnS"></span>
+<span data-color-id="svg-fill-error" class="jUl"></span>
+<span data-color-id="svg-fill-success" class="TYh"></span>
+<span data-color-id="svg-fill-info" class="jcY"></span>
+<span data-color-id="svg-fill-gray-scale-super-light" class="feU"></span>
+<span data-color-id="svg-fill-gray-scale-extra-light" class="ljk"></span>
+<span data-color-id="svg-fill-gray-scale-light" class="dQe"></span>
+<span data-color-id="svg-fill-gray-scale" class="QOX"></span>
+<span data-color-id="svg-fill-gray-scale-dark" class="ZYP"></span>
+<span data-color-id="svg-fill-gray-scale-extra-dark" class="WPk"></span>
+<span data-color-id="svg-fill-gray-scale-super-dark" class="Vfh"></span>
+<span data-color-id="svg-fill-white" class="PRb"></span>
+<span data-color-id="svg-fill-everwhite" class="Rdl"></span>
+<span data-color-id="svg-fill-dark" class="SYd"></span>
+<span data-color-id="svg-fill-extra-dark" class="ZYP1"></span>
+<span data-color-id="svg-fill-super-dark" class="WhQ"></span>
+<span data-color-id="svg-fill-elegant-dark" class="XOR"></span>
+</div>    </body>
+</html>
