@@ -1,6 +1,6 @@
 {
     "theme": "oxygen",
-    "exportDir": "\/public",
+    "exportDir": "\/docs",
     "build": {
         "useRandomAssetsFileNames": true
     },
