@@ -1,0 +1,19 @@
+{
+  "name": "variety-store",
+  "version": "1.0.0",
+  "description": "View and purchase products from your own store",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@types/jquery": "^3.5.30",
+    "express": "^4.19.2"
+  }
+}

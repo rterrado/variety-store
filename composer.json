@@ -1,0 +1,24 @@
+{
+    "name": "rterrado/variety-store",
+    "description": "View and purchase products from your own store",
+    "type": "project",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Rterrado\\VarietyStore\\": "src/",
+            "Kenjiefx\\SlateTheme\\": "vendor/kenjiefx/slate-theme/src"
+        }
+    },
+    "authors": [
+        {
+            "name": "kenjiefx",
+            "email": "terradoflex@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "kenjiefx/scratch-php": "dev-main",
+        "kenjiefx/strawberry-scratch": "dev-main",
+        "kenjiefx/venta-css": "dev-main"
+    }
+}
