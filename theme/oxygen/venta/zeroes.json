@@ -1,0 +1,16 @@
+{
+    "zero": {
+        "rule": "{value}:0",
+        "type": "list",
+        "values": ["width","height","top","left","right","bottom"],
+        "variants":"auto",
+        "separator":"-"
+    },
+    "zeropx": {
+        "rule": "{value}:0px",
+        "type": "list",
+        "values": ["width","height","top","left","right","bottom"],
+        "variants":"auto",
+        "separator":"-"
+    }
+}

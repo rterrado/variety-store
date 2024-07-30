@@ -1,0 +1,9 @@
+{
+    "overflow": {
+        "rule": "overflow:{value}",
+        "type": "list",
+        "values": ["hidden"],
+        "variants":"auto",
+        "separator":"-"
+    }
+}

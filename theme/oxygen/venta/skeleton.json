@@ -1,0 +1,9 @@
+{
+    "skeleton-height": {
+		"rule": "height:{value}px",
+		"type": "minmax",
+		"values": ["1","24"],
+		"variants": "24",
+		"separator": "-"
+	}
+}

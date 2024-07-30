@@ -1,0 +1,9 @@
+{
+    "cursor": {
+        "rule": "cursor:{value}",
+        "type": "list",
+        "values": ["pointer"],
+        "variants":"auto",
+        "separator":"-"
+    }
+}

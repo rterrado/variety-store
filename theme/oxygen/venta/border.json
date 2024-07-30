@@ -1,0 +1,37 @@
+{
+    "border-style-solid": {
+        "rule": "border-{value}-style:solid",
+        "type": "list",
+        "values": ["top","left","right","bottom"],
+        "variants":"auto",
+        "separator":"-"
+    },
+    "--border-width": {
+		"rule": "border-width:{value}px",
+		"type": "list",
+		"values": ["1","2","3","4","5","6","7","8"],
+		"variants": "auto",
+		"separator": "-"
+	},
+    "border-radius-extra-small": {
+		"rule": "border-radius:{value}px",
+		"type": "minmax",
+		"values": ["1","24"],
+		"variants": "24",
+		"separator": "-"
+	},
+    "border-radius-small": {
+		"rule": "border-radius:{value}px",
+		"type": "minmax",
+		"values": ["25","100"],
+		"variants": "24",
+		"separator": "-"
+	},
+    "border-radius": {
+		"rule": "border-radius:{value}px",
+		"type": "minmax",
+		"values": ["100","300"],
+		"variants": "24",
+		"separator": "-"
+	}
+}

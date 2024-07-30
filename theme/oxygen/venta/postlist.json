@@ -1,0 +1,9 @@
+{
+    "post-list-media-container": {
+        "rule": "height:{value}px;width:100%;",
+        "type": "list",
+        "values": ["200","300","340"],
+        "variants":"auto",
+        "separator":"-"
+    }
+}

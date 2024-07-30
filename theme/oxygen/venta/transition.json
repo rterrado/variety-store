@@ -1,0 +1,9 @@
+{
+    "transition": {
+        "rule": "transition:{value}s; -webkit-transition:{value}s",
+		"type": "minmax",
+		"values": ["0","3"],
+		"variants": "24",
+		"separator": "-"
+    }
+}

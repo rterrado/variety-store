@@ -1,0 +1,11 @@
+{
+    "standard-card-board": {
+        "rule": "box-shadow:{value}px",
+        "type": "dictionary",
+		"values": {
+            "slate":"0px 0px 3px 0 rgba(0, 0, 0, 0.2);"
+        },
+		"variants": "auto",
+		"separator": "-"
+    }
+}

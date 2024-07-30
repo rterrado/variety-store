@@ -1,0 +1,12 @@
+{
+    "media-breakpoints":{
+		"when-app-main-page-has-shrinked": {
+			"min-width":"1px",
+			"max-width":"1024px"
+		},
+        "when-app-main-page-has-expanded": {
+			"min-width":"1025px",
+			"max-width": null
+		}
+	}
+}
