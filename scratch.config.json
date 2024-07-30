@@ -16,7 +16,6 @@
             "compress": true
         },
         "Kenjiefx\\VentaCSS\\VentaCSS":{},
-        "Kenjiefx\\SlateTheme\\SlateTheme":{},
-        "Mindatalk\\Orpheus\\Extension":{}
+        "Kenjiefx\\SlateTheme\\SlateTheme":{}
     }
 }
