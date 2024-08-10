@@ -9,6 +9,7 @@
             'fieldset:enable' => true,
             'label' => 'App Key',
             'type' => 'text',
+            'input:text:size' => 'text-2',
             'placeholder' => 'Your store app key',
             'plunc:model' => 'value',
             'plunc:change' => 'validate',

@@ -26,7 +26,7 @@ export interface AppKeyInputField {
      * Allows parent component to explicitly render the 
      * `AppKeyInputField` component.
      */
-    __render:()=>Promise<void>
+    __render:(appkey: string|null)=>Promise<void>
     __whenInputProvided:(callback:(value:string, valid: boolean)=>void)=>void
 }
 
@@ -57,8 +57,11 @@ app.component<AppKeyInputField>('AppKeyInputField',(
         })
     }
     return {
-        __render:()=>{
+        __render:(appkey)=>{
             return new Promise(async (resolve,reject)=>{
+                if (appkey !== null) {
+                    $scope.value = appkey
+                }
                 await StateManager.__switch('active')
                 resolve(null)
             })
