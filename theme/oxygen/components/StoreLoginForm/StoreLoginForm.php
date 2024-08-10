@@ -26,6 +26,11 @@ Kenjiefx\StrawberryScratch\Components::register('SecretKeyInputField');
                 'plunc:disable' => "BlockManager.SendButtonBlock.state !== 'ready'"
             ]);?>
         </section>
+        <section plunc-block="/BlockManager/LoginFormMessage/">
+            <div plunc-if="BlockManager.LoginFormMessage.state == 'error'" class="margin-top-13 text-1 color-error">
+                Sorry, your credentials appear to be invalid.
+            </div>
+        </section>
     </form>
     <div plunc-if="state == 'error'"></div>
 </template>
