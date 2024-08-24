@@ -2,6 +2,7 @@ import { StateManager } from "../../helpers/StateManager"
 import { ApplicationAPI, PatchAPI, ScopeObject, app } from "../../interfaces/app"
 import { HttpRequestHelper } from "../../services/HttpRequestHelper"
 import { URLHelper } from "../../services/URLHelper"
+import { ViewOptionService } from "../../services/ViewOptionService"
 import { PageActivationManager } from "../../services/events/PageActivationManager"
 import { PageErrorManager } from "../../services/events/PageErrorManager"
 import { YotpoAPIClient } from "../../services/yotpo/YotpoAPIClient"
@@ -16,7 +17,8 @@ type HeaderState = 'loading' | 'active' | 'error'
 
 /** Component Object */
 type ComponentScope = {
-    state: HeaderState,
+    state: HeaderState
+    views: HeaderViewOptions
 }
 
 /**
@@ -30,6 +32,12 @@ export interface Header {
     __render:()=>Promise<void>
 }
 
+export type HeaderViewOptions = {
+    StoreNameView: boolean
+    PaginationControl: boolean
+    SearchBar: boolean
+}
+
 
 /** Component declarations */
 app.component<Header>('Header',(
@@ -41,21 +49,29 @@ app.component<Header>('Header',(
     PaginationControl: PaginationControl,
     ProductSearchBar: ProductSearchBar,
     YotpoAPIClient: YotpoAPIClient,
-    URLHelper: URLHelper
+    URLHelper: URLHelper,
+    ViewOptionService: ViewOptionService
 )=>{
     /** 
      * You can self-activate this component by subscribing to the `PageActivationEvent`. 
      * This event is fired after the @AppRouter component signals the page activation.
      */
     PageActivationManager.__subscribe(async ()=>{
+        $scope.views = ViewOptionService.get<HeaderViewOptions>()
         await StateManager.__switch('active')
-        await PaginationControl.__render()
-        await ProductSearchBar.__render()
-        YotpoAPIClient.__getAccountDetails(URLHelper.getParamValue('app_key'))
-        .then(response=>{
-            document.getElementById('header_store_name').innerHTML = response.account_settings.store_name
-        })
-        .catch(error=>console.error(error))
+        if ($scope.views.PaginationControl) {
+            await PaginationControl.__render()
+        }
+        if ($scope.views.SearchBar) {
+            await ProductSearchBar.__render()
+        }
+        if ($scope.views.StoreNameView) {
+            YotpoAPIClient.__getAccountDetails(URLHelper.getParamValue('app_key'))
+            .then(response=>{
+                document.getElementById('header_store_name').innerHTML = response.account_settings.store_name
+            })
+            .catch(error=>console.error(error))
+        }
     })
     return {
         __render:()=>{

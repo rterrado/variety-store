@@ -3,8 +3,10 @@ import { StateManager } from "../../helpers/StateManager"
 import { ApplicationAPI, PatchAPI, PluncAppInstance, ScopeObject, app } from "../../interfaces/app"
 import { Rehearsal } from "../../interfaces/rehearsal/interface"
 import { HttpRequestHelper } from "../../services/HttpRequestHelper"
+import { ViewOptionService } from "../../services/ViewOptionService"
 import { PageActivationManager } from "../../services/events/PageActivationManager"
 import { ErrorDispatchReport, PageErrorManager } from "../../services/events/PageErrorManager"
+import { HeaderViewOptions } from "../Header/Header"
 
 /** States of the component */
 type RouterState = 'loading' | 'active' | 'error'
@@ -29,7 +31,8 @@ app.component<AppRouter>('AppRouter',(
     PageErrorManager: PageErrorManager,
     PageActivationManager: PageActivationManager,
     HttpRequestHelper: HttpRequestHelper,
-    AppConfig: AppConfig
+    AppConfig: AppConfig,
+    ViewOptionService: ViewOptionService
 )=>{
     const APP_CONFIG = new AppConfig
     $scope.state = 'loading'
@@ -73,6 +76,11 @@ app.component<AppRouter>('AppRouter',(
                 return
             }
             if (location.href.includes('collections.html')) {
+                ViewOptionService.set<HeaderViewOptions>({
+                    StoreNameView: true,
+                    PaginationControl: true,
+                    SearchBar: true
+                })
                 const appKey = getParamValue('app_key')
                 if (appKey === null) {
                     $scope.error = {
