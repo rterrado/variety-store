@@ -72,19 +72,6 @@ app.component<AppRouter>('AppRouter',(
                 await StateManager.__switch('error')
                 return
             }
-            if (location.href.includes('product.html')) {
-                const appKey = getParamValue('app_key')
-                const productId = getParamValue('product_id')
-                if (appKey === null || productId === null) {
-                    $scope.error = {
-                        code: 400,
-                        message: ErrorMessage.missingParams,
-                        dispatcher: 'AppRouter'
-                    }
-                    await StateManager.__switch('error')
-                    return
-                }
-            }
             if (location.href.includes('collections.html')) {
                 const appKey = getParamValue('app_key')
                 if (appKey === null) {
