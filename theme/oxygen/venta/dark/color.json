@@ -19,7 +19,8 @@
             "extra-dark":"#efefef",
             "super-dark":"#f6f6f6",
             "elegant-dark": "#f8fcff",
-            "danger-heavy": "#eb2955"
+            "danger-heavy": "#eb2955",
+            "material-blue": "#2196F3"
         },
 		"variants": "auto",
 		"separator": "-"
@@ -47,7 +48,8 @@
             "extra-dark":"#efefef",
             "super-dark":"#f6f6f6",
             "elegant-dark": "#f8fcff",
-            "facebook": "#2196F3"
+            "facebook": "#2196F3",
+            "material-blue": "#2196F3"
         },
 		"variants": "auto",
 		"separator": "-"
@@ -73,7 +75,8 @@
             "dark":"#d9d9d9",
             "extra-dark":"#efefef",
             "super-dark":"#f6f6f6",
-            "elegant-dark": "#f8fcff"
+            "elegant-dark": "#f8fcff",
+            "material-blue": "#2196F3"
         },
 		"variants": "auto",
 		"separator": "-"
@@ -100,7 +103,8 @@
             "dark":"#d9d9d9",
             "extra-dark":"#efefef",
             "super-dark":"#f6f6f6",
-            "elegant-dark": "#f8fcff"
+            "elegant-dark": "#f8fcff",
+            "material-blue": "#2196F3"
         },
 		"variants": "auto",
 		"separator": "-"

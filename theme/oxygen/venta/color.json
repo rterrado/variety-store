@@ -20,7 +20,8 @@
             "extra-dark":"#454545",
             "super-dark":"#181818",
             "elegant-dark": "#212627",
-            "danger-heavy": "#eb2955"
+            "danger-heavy": "#eb2955",
+            "material-blue": "#2196F3"
         },
 		"variants": "auto",
 		"separator": "-"
@@ -48,7 +49,8 @@
             "extra-dark":"#000000",
             "super-dark":"#181818",
             "elegant-dark": "#212627",
-            "facebook": "#2196F3"
+            "facebook": "#2196F3",
+            "material-blue": "#2196F3"
         },
 		"variants": "auto",
 		"separator": "-"
@@ -74,7 +76,8 @@
             "dark":"#525252",
             "extra-dark":"#454545",
             "super-dark":"#181818",
-            "elegant-dark": "#212627"
+            "elegant-dark": "#212627",
+            "material-blue": "#2196F3"
         },
 		"variants": "auto",
 		"separator": "-"
@@ -101,7 +104,8 @@
             "dark":"#525252",
             "extra-dark":"#454545",
             "super-dark":"#181818",
-            "elegant-dark": "#212627"
+            "elegant-dark": "#212627",
+            "material-blue": "#2196F3"
         },
 		"variants": "auto",
 		"separator": "-"
