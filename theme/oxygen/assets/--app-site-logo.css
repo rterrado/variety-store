@@ -1,3 +1,12 @@
-.site-logo {
-    background: linear-gradient(90deg, #7debf2, #2f3232);
+
+.--store-logo-wrapper--dark {
+    display: none;
+}
+
+.dark .--store-logo-wrapper--dark {
+    display: block;
+}
+
+.dark .--store-logo-wrapper--light {
+    display: none;
 }
