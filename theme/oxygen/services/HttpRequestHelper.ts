@@ -37,7 +37,8 @@ app.service<HttpRequestHelper>('HttpRequestHelper',()=>{
             const doNotPassRequesterToken = config.__doNotPassRequesterToken ?? false
 
             if (!doNotPassRequesterToken) {
-                const storedSession = localStorage.getItem('requester_session')
+                const appkey = getParamValue('app_key')
+                const storedSession = localStorage.getItem(`${appkey}.token`)
                 if (storedSession===null) {
                     /**
                      * By default, all that goes through the HttpRequestHelper will pass requester token 
@@ -51,10 +52,7 @@ app.service<HttpRequestHelper>('HttpRequestHelper',()=>{
                     reject(new Error('HttpRequestHelper::ERR100'))
                     return
                 }
-                const requesterSession: RequesterSession = JSON.parse(storedSession)
-                if ('tkn' in requesterSession) {
-                    headers['X-Requester-Token'] = requesterSession.tkn
-                }
+                headers['X-Requester-Token'] = storedSession
             }
 
             $.ajax({
@@ -100,6 +98,12 @@ app.service<HttpRequestHelper>('HttpRequestHelper',()=>{
             }
         }
         return path
+    }
+
+    const getParamValue = (key: string) => {
+        const params = new URLSearchParams(window.location.search)
+        const value = params.get(key)
+        return value !== null ? value : null
     }
 
 
