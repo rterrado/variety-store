@@ -16,6 +16,11 @@ type CartState = 'loading' | 'active' | 'error'
 type ComponentScope = {
     state: CartState,
     CartItem: CartItem
+    currencies: Array<{
+        currency: string,
+        abbreviation: string,
+        symbol: string
+    }>
     roundOff:(total:number)=>number
     QuantityManager: {
         add: (index:number)=>void,
@@ -49,33 +54,15 @@ app.component<CartForm>('CartForm',(
     BlockManager: BlockManager,
     CurrencySymbolsLibrary: CurrencySymbolsLibrary
 )=>{
-    $scope.CartItem = CartManager.get()
-    $scope.CartItem = {
-        items: [{
-            product: {
-                name: 'Black Leather Bag',
-                url: '',
-                imagesrc: 'https://cebu-clothing-shop.myshopify.com/cdn/shop/products/black-bag-over-the-shoulder_925x_a3fd21b4-f451-4cc7-bfea-c1d7244e6a7d.jpg?v=1617770055&width=600',
-                id: '6611287081135',
-                price: 30.31,
-                currency: 'PHP'
-            },
-            quantity: 1
-        }],
-        createdAt: Date.now(),
-        updatedAt: Date.now()
-    }
+    $scope.CartItem = CartManager.__getExistingCart()
     const activate = async () => {
-        CurrencySymbolsLibrary.get(async (data)=>{
-            for (let i = 0; i < $scope.CartItem.items.length; i++) {
-                const item = $scope.CartItem.items[i]
-                const results = data.filter(dataitem => dataitem.abbreviation === item.product.currency)
-                $scope.CartItem.items[i].product.currencySymbol = results[0]?.symbol ?? ''
-            }
-            console.log('activated')
-            await StateManager.__switch('active')
-        })
+        await StateManager.__switch('active')
     }
+
+    CartManager.__whenCartUpdated((cart)=>{
+        $scope.CartItem = cart
+        $patch()
+    })
     /** 
      * You can self-activate this component by subscribing to the `PageActivationEvent`. 
      * This event is fired after the @AppRouter component signals the page activation.
@@ -96,16 +83,12 @@ app.component<CartForm>('CartForm',(
 
     $scope.QuantityManager = {
         add: (index)=>{
-            $scope.CartItem.items[index].quantity++
-            $patch()
+            const product = $scope.CartItem.items[index].product
+            CartManager.__addQuantity(product)
         },
         remove: (index)=>{
-            if ($scope.CartItem.items[index].quantity > 1) {
-                $scope.CartItem.items[index].quantity--
-            } else {
-                $scope.CartItem.items = $scope.CartItem.items.filter((_, i) => i !== index)
-            }
-            $patch()
+            const product = $scope.CartItem.items[index].product
+            CartManager.__removeQuantity(product)
         }
     }
     return {

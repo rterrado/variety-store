@@ -6,7 +6,7 @@
 <template plunc-name="CartForm">
     <div plunc-if="state == 'loading'"></div>
     <form onsubmit="blockAutoSubmit(event)" plunc-if="state == 'active'" class="width-24 height-24">
-        <div class="width-24 display-flex flex-direction-column height-24">
+        <div class="width-24 display-flex flex-direction-column height-24 padding-y-17">
             <div class="display-flex align-items-center justify-content-space-between">
                 <div class="flex-grow-1 display-flex align-items-center">
                     <?php snippet('Icons/SVG',[
@@ -25,19 +25,19 @@
             <div plunc-if="CartItem.items.length > 0" class="flex-grow-1">
                 <ul plunc-repeat="CartItem.items as item" class="width-24">
                     <li class="width-24 display-flex">
-                        <div plunc-if="item.product.imagesrc == null" style="background-color: #f4f7ff;" class="display-flex justify-content-center align-items-center concrete-width-small-10 concrete-height-small-10 border-radius-extra-small-10">
+                        <div plunc-if="item.product.imgsrc == null" style="background-color: #f4f7ff;" class="display-flex justify-content-center align-items-center concrete-width-small-10 concrete-height-small-10 border-radius-extra-small-10">
                             <?php snippet('Icons/SVG',[
                                 'path' => '/Paths/image.svg',
                                 'class' => 'svg-fill-none color-gray-scale-light concrete-width-small-4',
                                 'stroke:width' => '0.5'
                             ]); ?>
                         </div>
-                        <div plunc-if="item.product.imagesrc !== null" style="background:url({{item.product.imagesrc}});background-size:cover;background-repeat:no-repeat;" class="concrete-width-small-10 concrete-height-small-10 border-radius-extra-small-10">
+                        <div plunc-if="item.product.imgsrc !== null" style="background:url({{item.product.imgsrc}});background-size:cover;background-repeat:no-repeat;" class="concrete-width-small-10 concrete-height-small-10 border-radius-extra-small-10">
                             
                         </div>
                         <div class="margin-left-11 padding-y-5">
                             <div class="text-6 font-weight-bold">{{item.product.name}}</div>
-                            <div class="text-4 margin-top-4"><span class="color-elegant-dark font-weight-700">{{item.product.currencySymbol}}{{ $parent.LineItemManager.calculateTotal(item.quantity,item.product.price) }}</span> / <span class="color-gray-scale">{{item.product.currencySymbol}}{{item.product.price}} per item</span></div>
+                            <div class="text-4 margin-top-4"><span class="color-elegant-dark font-weight-700">{{item.product.currency.symbol}}{{ $parent.LineItemManager.calculateTotal(item.quantity,item.product.price) }}</span> / <span class="color-gray-scale">{{item.product.currency.symbol}}{{item.product.price}} per item</span></div>
                             <div class="margin-top-5 display-flex align-items-center">
                                 <div plunc-click="QuantityManager.remove({{$index}})" class="cursor-pointer">
                                     <?php snippet('Icons/SVG',[
