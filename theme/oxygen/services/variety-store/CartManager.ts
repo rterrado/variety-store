@@ -1,74 +1,118 @@
 import { BinaryState } from "../../factories/BinaryState";
+import { CallbackQueue } from "../../factories/CallbackQueue";
 import { app } from "../../interfaces/app";
+import { URLHelper } from "../URLHelper";
 
 export interface CartManager {
-    get:()=>CartItem|null
-    add:(product: Product)=>void,
-    remove:(id: string) => void
+    __getExistingCart:()=>CartItem|null
+    __addProductToCart:(product: Product)=>void
+    __removeProductFromCart:(product: Product) => void
+    __addQuantity:(product: Product)=>void
+    __removeQuantity:(product: Product)=>void
+    __whenCartUpdated:(callback:(CartItem: CartItem)=>void)=>void
 }
 
 app.service<CartManager>('CartManager', (
-    BinaryState: BinaryState
+    BinaryState: BinaryState,
+    URLHelper: URLHelper,
+    CallbackQueue: CallbackQueue
 )=>{
-    const cartkey = 'vscart'
-    const IsProductExisting = new BinaryState()
-    const getlocalcart = (): CartItem => {
+
+    /** All listeners to cart update events */
+    const CartUpdateListeners = new CallbackQueue()
+    const InvokeListeners = (cart: CartItem) => {
+        const listeners = CartUpdateListeners.withdraw()
+        for (let i = 0; i < listeners.length; i++) {
+            listeners[i](cart)
+        }
+    }
+
+    /** Localstorage key */
+    const cartkey = `${URLHelper.getParamValue('app_key')}.cart`
+
+    /** Retrieves stored cart data from local storage */
+    const GetLocalCart = (): CartItem => {
         const data = localStorage.getItem(cartkey)
         if (data === null) {
             return {
                 items: [],
-                createdAt: Date.now(),
-                updatedAt: Date.now()
+                created: Date.now(),
+                updated: Date.now()
             }
         }
         return JSON.parse(data)
     }
-    return {
-        get:()=>{
-            return getlocalcart()
-        },
-        add:(product)=>{
-            const cart = getlocalcart()
-            IsProductExisting.set(false)
-            for (let i = 0; i < cart.items.length; i++) {
-                const item = cart.items[i]
-                if (item.product.id === product.id) {
-                    cart.items[i].quantity++
-                    IsProductExisting.set(true)
-                }
+
+    /** Stores cart data into local storage */
+    const StoreLocalCart = (cart: CartItem) => {
+        cart.updated = Date.now()
+        localStorage.setItem(cartkey, JSON.stringify(cart))
+        InvokeListeners(cart)
+    }
+
+    const RemoveProductFromCart = (cart: CartItem, product: Product) => {
+        const newitems = cart.items.map(item => {
+            if (item.product.extid === product.extid && item.quantity > 0) {
+                item.quantity--
             }
-            if (IsProductExisting.false()){
+            return item
+        }).filter(item => item.quantity > 0)
+        cart.items = newitems
+    }
+
+    return {
+        __getExistingCart:()=>{
+            return GetLocalCart()
+        },
+        __addProductToCart:(product)=>{
+            const cart = GetLocalCart()
+            let index = cart.items.findIndex(item => item.product.extid === product.extid)
+            if (index < 0) {
                 cart.items.push({
                     product: product,
-                    quantity: 1
+                    quantity: 0
                 })
+                index = cart.items.length - 1
             }
-            cart.updatedAt = Date.now()
-            localStorage.setItem(cartkey, JSON.stringify(cart))
+            cart.items[index].quantity++
+            StoreLocalCart(cart)
         },
-        remove:(id)=>{
-            const cart = getlocalcart()
-            const newitems = cart.items.map(item => {
-                if (item.product.id === id && item.quantity > 0) {
-                    item.quantity--
-                }
-                return item
-            }).filter(item => item.quantity > 0)
-            cart.items = newitems
-            cart.updatedAt = Date.now()
-            localStorage.setItem(cartkey, JSON.stringify(cart))
+        __removeProductFromCart:(product)=>{
+            const cart = GetLocalCart()
+            RemoveProductFromCart(cart, product)
+            StoreLocalCart(cart)
+        },
+        __addQuantity:(product)=>{
+            const cart = GetLocalCart()
+            const index = cart.items.findIndex(item => item.product.extid === product.extid)
+            if (index < 0) return 
+            cart.items[index].quantity++
+            StoreLocalCart(cart)
+        },
+        __removeQuantity:(product)=>{
+            const cart = GetLocalCart()
+            const index = cart.items.findIndex(item => item.product.extid === product.extid)
+            if (index < 0) return
+            RemoveProductFromCart(cart, product)
+            StoreLocalCart(cart)
+        },
+        __whenCartUpdated:(listener)=>{
+            CartUpdateListeners.add(listener)
         }
     }
 })
 
 type Product = {
-    id: string,
+    extid: string,
     name: string,
     url: string,
-    imagesrc: string,
+    group: string | null
+    imgsrc: string,
     price: number,
-    currency: string,
-    currencySymbol?: string
+    currency: {
+        value: string
+        symbol: string
+    }
 }
 
 export type CartItem = {
@@ -76,6 +120,6 @@ export type CartItem = {
         product: Product,
         quantity: number
     }>,
-    createdAt: number,
-    updatedAt: number
+    created: number,
+    updated: number
 }
