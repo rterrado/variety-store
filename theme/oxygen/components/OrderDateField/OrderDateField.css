@@ -1,0 +1,11 @@
+/* Chrome, Safari, Edge, and Opera */
+.--order-date-daysago input[type="number"]::-webkit-outer-spin-button,
+.--order-date-daysago input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+.--order-date-daysago  input[type="number"] {
+  -moz-appearance: textfield;
+}
