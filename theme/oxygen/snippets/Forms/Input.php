@@ -17,6 +17,7 @@ array_push(
     $Input->classlist,
     $Input->Text->size,
     $Input->Text->color,
+    'background-color-transparent'
 );
 
 array_push(
@@ -54,9 +55,10 @@ if ($Input->Fieldset->wrap) {
     }
 
     echo sprintf(
-        '<fieldset class="%s" plunc-block="%s">',
+        '<fieldset class="%s" plunc-block="%s" %s>',
         trim(implode(' ', $Input->Fieldset->classlist)),
-        $Input->name
+        $Input->name,
+        $Input->Fieldset->attrdisabled
     );
 
         if ($Input->lefticon !== null || $Input->righticon !== null || $Input->Label->position === 'inside') {
@@ -85,7 +87,7 @@ if ($Input->Fieldset->wrap) {
             }
             
             echo sprintf(
-                '<input id="%s" type="%s" placeholder="%s" class="%s" %s %s %s %s />',
+                '<input id="%s" type="%s" placeholder="%s" class="%s" %s %s %s %s %s />',
                 $Input->Label->for,
                 $Input->type,
                 $Input->placeholder,
@@ -94,6 +96,7 @@ if ($Input->Fieldset->wrap) {
                 $Input->Plunc->click,
                 $Input->Plunc->change,
                 $Input->Plunc->touch,
+                $Input->Plunc->disable
             );
 
             if ($Input->righticon !== null) {
