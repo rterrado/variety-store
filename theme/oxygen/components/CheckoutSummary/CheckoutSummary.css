@@ -1,0 +1,6 @@
+.--summary-pane {
+    border-top: solid;
+    border-width: 5px;
+    border-style: dashed;
+    border-color: #f0f0f0;
+}
