@@ -96,6 +96,27 @@ app.component<AppRouter>('AppRouter',(
                     return
                 }
             }
+            if (location.href.includes('checkout.html')) {
+                ViewOptionService.set<HeaderViewOptions>({
+                    StoreNameView: true,
+                    PaginationControl: false,
+                    SearchBar: false
+                })
+                const appKey = getParamValue('app_key')
+                if (appKey === null) {
+                    $scope.error = {
+                        code: 400,
+                        message: ErrorMessage.missingParams,
+                        dispatcher: 'AppRouter'
+                    }
+                    await StateManager.__switch('error')
+                    return
+                }
+                if (!(await validateRequesterToken(appKey))) {
+                    location.href = '/login.html?app_key='+appKey
+                    return
+                }
+            }
             await ActivatePage()
         },3000)
     })
