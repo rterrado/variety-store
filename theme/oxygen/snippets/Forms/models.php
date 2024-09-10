@@ -3,8 +3,12 @@
 class Fieldset {
     public bool $wrap = false;
     public array $classlist = [];
+    public string $attrdisabled = '';
     public function __construct(array $snippet){
         $this->wrap = $snippet['fieldset:enable'] ?? false;
+        if (isset($snippet['fieldset:attribute:disabled'])) {
+            $this->attrdisabled = 'disabled="true"';
+        }
     }
 }
 
@@ -68,7 +72,7 @@ class InputMessage {
     public function __construct(array $snippet) {
         $this->enabled = $snippet['input:message:enabled'] ?? true;
         $this->Text = new Text(
-            size: $snippet['input:message:text:size'] ?? 'text-2',
+            size: $snippet['input:message:text:size'] ?? 'text-small-23',
             color: $snippet['input:message:text:color'] ?? ''
         );
         $this->Margin = new Margin(
