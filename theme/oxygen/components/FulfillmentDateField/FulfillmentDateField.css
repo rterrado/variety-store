@@ -1,0 +1,7 @@
+.--fdf-disabled-text {
+    color: var(--default-color-gray-scale-extra-light);
+}
+
+.dark .--fdf-disabled-text {
+    color: var(--dark-color-gray-scale-extra-light);
+}
