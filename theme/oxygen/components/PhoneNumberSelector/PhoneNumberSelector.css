@@ -1,0 +1,15 @@
+.--phone-no-selector-widget select {
+    text-align: right;
+}
+
+/* Chrome, Safari, Edge, and Opera */
+.--phone-no-selector-widget input[type="number"]::-webkit-outer-spin-button,
+.--phone-no-selector-widget  input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+.--phone-no-selector-widget  input[type="number"] {
+  -moz-appearance: textfield;
+}
