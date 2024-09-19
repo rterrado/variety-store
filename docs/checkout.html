@@ -1,0 +1,834 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <meta content='width=device-width, initial-scale=1' name='viewport'/>
+        <title>Variety Store - Checkout</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/kenjiefx/plunc/dist/plunc.0.7.22.min.js"></script>
+        <script type="text/javascript">
+            const blockAutoSubmit=e=>e.preventDefault();
+        </script>
+        <script type="text/javascript" src="/variety-store/assets/checkout.js?v=1726752957"></script>
+<link rel="stylesheet" href="/variety-store/assets/checkout.css?v=1726752957">    </head>
+    <body class="OiQ">
+        <script type="text/javascript">
+            const theme = localStorage.getItem('slate-theme') ?? 'light'
+            document.querySelector('body').classList.add(theme)
+            window.slate = { theme: { name: theme } }
+        </script>
+        <app plunc-app="app" class="OiQ"></app>
+        <template plunc-name="app">
+            <main plunc-component="tz6" class="OiQ"></main>
+        </template>
+                <template plunc-name="tz6">
+    <div plunc-if="state=='loading'" class="OiQ WYb lOh Xbm cXj">
+        <!-- Apply loading screen here -->
+        <div class="--slate-page-spinner"></div>
+    </div>
+    <div plunc-if="state=='active'">
+        <div class="OiQ YdQ">
+    <header plunc-component="om2" class="ghX OiQ gbk top-0 ceQ VQl ZTW QPP"></header>
+    <div class="OiQ WYb Xbm lOh YdQ header-padding-adj">
+        <div class="WYb YRk Yge YdQ">
+            <section class="WdX Ubl" plunc-component="hw2"></section> 
+            <div class="YeS Ubl">
+                <section plunc-component="rz9" class="OiQ"></section>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    app {display:block;height:100%;}
+    main {height:100%;}
+    header {height:77px;}
+    .header-padding-adj {padding-top:77px;}
+    main > div {height:100%;}
+</style>    </div>
+    <div plunc-if="state=='error'" class="OiQ cXj WYb lOh Xbm">
+        <!-- Apply error page here -->
+        <div class="WYQ Yge eXe">
+            <div class="WYb lOh">
+                <div class="fVQ Yeh">
+                    {{error.code}} /
+                </div>
+                <div class="fVQ Zif SOP Yeh">
+                    <span plunc-if="error.code==400">Bad Request</span>
+                    <span plunc-if="error.code==401">Access Denied</span>
+                    <span plunc-if="error.code==404">Not Found</span>
+                    <span plunc-if="error.code==500">Internal Server Error</span>
+                </div>
+            </div>
+            <div class="XTg cga aZl ZdQ">
+                {{error.message}} If you think this is incorrect, please contact me below.
+            </div>
+            <div class="kaU WYb lOh">
+                
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="0.5" stroke="currentColor" class="gmP leh SZn">
+    <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" /></svg>                <div class="cga Rke cTi">
+                    rterrado@yotpo.com
+                </div>
+            </div>
+        </div>
+    </div>
+</template>
+<template plunc-name="om2">
+    <div plunc-if="state=='loading'"></div>
+    <div plunc-if="state=='active'" class="OiQ WYb lOh YdQ">
+        <div class="ZSn YdQ WYb lOh">
+            <div class="--store-logo-wrapper--light YdQ lgd bgU VQl ZTW">
+                <img class="YdQ" src="https://cdn.shopify.com/s/files/1/0560/7466/6159/files/variety-store-logo-light-theme.png?v=1724434321" alt="">
+            </div>
+            <div class="--store-logo-wrapper--dark YdQ lgd bgU VQl ZTW">
+                <img class="YdQ" src="https://cdn.shopify.com/s/files/1/0560/7466/6159/files/variety-store-logo-dark-theme.png?v=1724434322" alt="">
+            </div>
+            <div plunc-if="views.StoreNameView == true" class="iUk">
+                <div class="ReX cWV">Store Name</div>
+                <div id="header_store_name" class="fRQ VYc neW"><div class="--ellipsis-loader --ellipsis-dots"><div></div></div></div>
+            </div>
+        </div>
+        <div class="ZSn WYb lOh">
+            <div plunc-if="views.SearchBar == true" class="beb YdQ QmR">
+                <section class="OiQ YdQ" plunc-component="jp3"></section>
+            </div>
+            <div plunc-if="views.PaginationControl == true" class="baY YdQ">
+                <section class="OiQ YdQ" plunc-component="te6"></section>
+            </div>
+        </div>
+    </div>
+    <div plunc-if="state=='error'"></div>
+</template>
+<template plunc-name="rz9">
+    <div plunc-if="state=='loading'"></div>
+    <div plunc-if="state=='active'" class="OiQ YdQ lic">
+        <div class="fcg VYc neW">About You</div>
+        <div class="inh cga ReX">Please fill out your personal information.</div>
+        <div class="OiQ kaU">
+            <section class="OiQ" plunc-component="oc2"></section>
+            <section class="OiQ fcg" plunc-component="ln4"></section>
+            <section class="OiQ fcg" plunc-component="rj3"></section>
+        </div>
+
+        <div role="separator" style="border-width:1px;" class="QPk fje dPZ OiQ ZTW"></div>        <div class="fcg VYc neW">Order Date</div>
+        <div class="inh cga ReX">Set the date this order would have been placed.</div>
+        <section class="OiQ fcg" plunc-component="hu8"></section>
+
+        <div role="separator" style="border-width:1px;" class="QPk fje dPZ OiQ ZTW"></div>        <div class="fcg VYc neW">Fulfillment Date</div>
+        <div class="inh cga ReX Qci">
+            Set the date this order would have been fulfilled. 
+            This date would serve as the fulfillment date for each of the line items in your order.
+        </div>
+        <section class="OiQ fcg" plunc-component="it9"></section>
+
+        <div role="separator" style="border-width:1px;" class="QPk fje dPZ OiQ ZTW"></div>        <div class="fcg VYc neW">Billing Address (Optional)</div>
+        <div class="inh cga ReX">Fill out your order's billing address.</div>
+        <section class="OiQ fcg" plunc-component="fk7"></section>
+
+        <div role="separator" style="border-width:1px;" class="QPk fje dPZ OiQ ZTW"></div>        <button type="submit" plunc-click="submit()"  class="igi lRf Xbm OiQ XkU RXW VQU aRP VQl WUe fPc UWa hQV WlO ZTU OTW WYb lOh">Place Order</button>        <div class="fcg YnW XkZ OiQ">
+            <div>By placing this order, you hereby agree to our Terms and Conditions.</div>
+        </div>
+
+        <section class="hQR bbZ"></section>
+    </div>
+    <div plunc-if="state=='error'"></div>
+    <div plunc-if="state=='empty'" class="OiQ WYb lOh Xbm gUY">
+        <div>
+            
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="SZn leh WSd">
+    <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 10.5V6a3.75 3.75 0 1 0-7.5 0v4.5m11.356-1.993 1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 0 1-1.12-1.243l1.264-12A1.125 1.125 0 0 1 5.513 7.5h12.974c.576 0 1.059.435 1.119 1.007ZM8.625 10.5a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm7.5 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Z" /></svg>            <div class="fcg VYc neW">Your cart is empty.</div>
+            <div class="XkU OTW XkZ">
+                You do not have anything in your cart at the moment. To start shopping,
+                please click the button below.
+            </div>
+            <button type="button" plunc-click="backToCollection()"  class="igi lRf Xbm OiQ fje RXW VQU aRP VQl WUe fPc UWa hQV WlO ZTU OTW WYb lOh">Start Shopping</button>        </div>
+    </div>
+</template>
+<template plunc-name="hw2">
+    <div plunc-if="state=='loading'"></div>
+    <div plunc-if="state=='active'" class="OiQ lic" style="position:sticky;top:54px;">
+        <div class="WYb Pca OiQ hfc lic">
+            <ul plunc-repeat="cart.items as item" class="OiQ">
+                <li class="TUb OiQ WYb Pca mic">
+                    <div class="WYb lOh">
+                        <div class="SRi">
+                            <div class="XkZ ReX cWV">{{item.product.name}}</div>
+                            <div style="text-align:right;" class="ReX cWV inh">
+                                <span class="neW">{{item.product.currency.symbol}}{{item.product.price}}</span> X {{item.quantity}}
+                            </div>
+                        </div>
+                        <div plunc-if="item.product.imgsrc == null" style="background-color: #f4f7ff;" class="WYb Xbm lOh cmU SjS OcT">
+                            
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="0.5" stroke="currentColor" class="SZn fnW concrete-width--extra-small-7">
+    <path stroke-linecap="round" stroke-linejoin="round" d="m2.25 15.75 5.159-5.159a2.25 2.25 0 0 1 3.182 0l5.159 5.159m-1.5-1.5 1.409-1.409a2.25 2.25 0 0 1 3.182 0l2.909 2.909m-18 3.75h16.5a1.5 1.5 0 0 0 1.5-1.5V6a1.5 1.5 0 0 0-1.5-1.5H3.75A1.5 1.5 0 0 0 2.25 6v12a1.5 1.5 0 0 0 1.5 1.5Zm10.5-11.25h.008v.008h-.008V8.25Zm.375 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Z" /></svg>                        </div>
+                        <div plunc-if="item.product.imgsrc !== null" style="background:url({{item.product.imgsrc}});background-size:cover;background-repeat:no-repeat;" class="cmU SjS OcT">
+                        </div>
+                    </div>
+                </li>
+            </ul>
+            <div class="TUb OiQ WYb Pca mic">
+                <div class="XkZ ReX cWV">Subtotal Price</div>
+                <div class="VYc fRQ neW">$ {{subtotal}}</div>
+            </div>
+            <div role="separator" style="border-width:1px;" class="QPk TUb WeT OiQ ZTW"></div>            <div class="OiQ WYb Pca mic">
+                <div class="XkZ ReX cWV">Taxes and Fees</div>
+                <div class="VYc fRQ">$ {{tax}}</div>
+            </div>
+            <div class="TUb OiQ WYb Pca mic">
+                <div class="XkZ ReX cWV">Total Payment</div>
+                <div class="Ygb fRQ neW">$ {{total}}</div>
+            </div>
+        </div>
+    </div>
+    <div plunc-if="state=='error'"></div>
+    <div plunc-if="state=='empty'" class="OiQ lic YdQ gUY">
+        <div class="WYb Pca Xbm YdQ OiQ hfc kZk lic">
+            <div class="OiQ WYb Pca mic">
+                <div class="XkZ ReX cWV">Total Payment</div>
+                <div class="Ygb fRQ neW">$ 0.00</div>
+            </div>
+        </div>
+    </div>
+</template>
+<template plunc-name="te6">
+    <div plunc-if="state=='loading'"></div>
+    <div plunc-if="state=='active'" class="OiQ WYb lOh YdQ">
+        <div plunc-click="previous()" class="WYb lOh Xbm RXW YdQ Vki lSi dTW Yfj efn VQl ZTW">
+            
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="SZn aeW fnW QSY">
+    <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18" /></svg>        </div>
+        <div plunc-click="next()" class="WYb lOh Xbm RXW YdQ Vki lSi dTW Yfj efn VQl ZTW">
+            
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="SZn aeW fnW QSY">
+    <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+</svg>        </div>
+    </div>
+    <div plunc-if="state=='error'"></div>
+</template>
+<template plunc-name="jp3">
+    <div plunc-if="state=='loading'"></div>
+    <form plunc-block="ProductSearchForm" onsubmit="blockAutoSubmit(event)" plunc-if="state=='active'" class="OiQ YdQ">
+        <fieldset class="dhW OiQ WYb lOh YdQ" style="border-style:none;box-shadow: none;" xblock="/Forms/Input/66578cf819b5185">
+            <input class="dhW OiQ OTW VQU YdQ eQg" type="text" plunc-change="search()" plunc-model="keyword" placeholder="search product by external id" style="text-align:right;"/>   
+            <svg plunc-if="button=='search'" style="width:45px;" class="SZn leh dRj eQg SOP" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
+            </svg>
+            <svg plunc-if="button=='empty'" style="width:45px;" plunc-click="clear()" class="RXW SZn leh dRj eQg SOP" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+            </svg>
+        </fieldset>
+        <button type="submit" class="Sgi"></button>
+    </form>
+    <div plunc-if="state=='error'"></div>
+</template>
+<template plunc-name="oc2">
+    <div plunc-if="state=='loading'"></div>
+    <div plunc-if="state=='active'" class="OiQ">
+        <div class="OiQ WYb lOh">
+            <div class="ZSn gbQ">
+                <label for="first_name66ec28bd26df378" class="Yeh mRe ReX gmn jgZ">First Name</label><fieldset class="fPc hQV Tcj QmR VQl efn WUe" plunc-block="/Forms/Input/66ec28bd26df378" ><input id="first_name66ec28bd26df378" type="text" placeholder="John" class="OTW aOX dhW VQU OiQ" plunc-model="firstName"  plunc-change="validate('/Forms/Input/66ec28bd26df378')"   /></fieldset>            </div>
+            <div class="ZSn gbQ">
+                <label for="last_name66ec28bd26f99922" class="Yeh mRe ReX gmn jgZ">Last Name</label><fieldset class="fPc hQV Tcj QmR VQl efn WUe" plunc-block="/Forms/Input/66ec28bd26f99922" ><input id="last_name66ec28bd26f99922" type="text" placeholder="Doe" class="OTW aOX dhW VQU OiQ" plunc-model="lastName"  plunc-change="validate('/Forms/Input/66ec28bd26f99922')"   /></fieldset>            </div>
+        </div>
+        <div class="inh YnW TXP" plunc-block="/FNIF/Message"></div>
+    </div>
+    <div plunc-if="state=='error'"></div>
+</template>
+<template plunc-name="ln4">
+    <div plunc-if="state=='loading'"></div>
+    <div plunc-if="state=='active'" id="EIFieldCom" class="OiQ">
+        <label for="email_address66ec28bd272f2622" class="Yeh mRe ReX gmn jgZ">Email Address</label><fieldset class="fPc hQV Tcj QmR VQl efn WUe" plunc-block="/Forms/Input/66ec28bd272f2622" ><div class="WYb lOh OiQ">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="SZn leh gmP">
+    <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" /></svg><input id="email_address66ec28bd272f2622" type="text" placeholder="johndoe@example.com" class="OTW aOX dhW VQU beb SOP" plunc-model="emailAddress"  plunc-change="validate('/Forms/Input/66ec28bd272f2622')"   /></div></fieldset><div class="YnW  inh" plunc-block="/Forms/Input/66ec28bd272f2622/Message"></div>    </div>
+    <div plunc-if="state=='error'"></div>
+</template>
+<template plunc-name="rj3">
+    <div plunc-if="state=='loading'"></div>
+    <div plunc-if="state=='active'" class="OiQ">
+        <label for="" class="mRe gmn ReX Yeh cfP">Phone Number (Optional)</label>
+        <div class="WYb lOh --phone-no-selector-widget OiQ">
+            <fieldset class="OiQ WYb lOh VQl gdi efn WUe efn lhk gPT Tcj QmR">
+                <div class="baY ijY">{{country.data.dial_code}}</div>
+                <input type="number" plunc-model="value" class="beb color-elegant-black VQU SOP ijY dhW">
+                
+<select plunc-change="select.country()" plunc-model="country.name"  class="baY bPQ VQU cga dhW aOX">
+    <option class="" value="Afghanistan">Afghanistan</option>
+    <option class="" value="Albania">Albania</option>
+    <option class="" value="Algeria">Algeria</option>
+    <option class="" value="Andorra">Andorra</option>
+    <option class="" value="Angola">Angola</option>
+    <option class="" value="Anguilla">Anguilla</option>
+    <option class="" value="Antarctica">Antarctica</option>
+    <option class="" value="Argentina">Argentina</option>
+    <option class="" value="Armenia">Armenia</option>
+    <option class="" value="Aruba">Aruba</option>
+    <option class="" value="Australia">Australia</option>
+    <option class="" value="Austria">Austria</option>
+    <option class="" value="Azerbaijan">Azerbaijan</option>
+    <option class="" value="Bahamas">Bahamas</option>
+    <option class="" value="Bahrain">Bahrain</option>
+    <option class="" value="Bangladesh">Bangladesh</option>
+    <option class="" value="Barbados">Barbados</option>
+    <option class="" value="Belarus">Belarus</option>
+    <option class="" value="Belgium">Belgium</option>
+    <option class="" value="Belize">Belize</option>
+    <option class="" value="Benin">Benin</option>
+    <option class="" value="Bermuda">Bermuda</option>
+    <option class="" value="Bhutan">Bhutan</option>
+    <option class="" value="Botswana">Botswana</option>
+    <option class="" value="Brazil">Brazil</option>
+    <option class="" value="British Indian Ocean Territory">B.I. Ocean Terr.</option>
+    <option class="" value="Bulgaria">Bulgaria</option>
+    <option class="" value="Burkina Faso">Burkina Faso</option>
+    <option class="" value="Burundi">Burundi</option>
+    <option class="" value="Cambodia">Cambodia</option>
+    <option class="" value="Cameroon">Cameroon</option>
+    <option class="" value="Canada">Canada</option>
+    <option class="" value="Cape Verde">Cape Verde</option>
+    <option class="" value="Cayman Islands">Cayman Islands</option>
+    <option class="" value="Central African Republic">Central African Republic</option>
+    <option class="" value="Chad">Chad</option>
+    <option class="" value="Chile">Chile</option>
+    <option class="" value="China">China</option>
+    <option class="" value="Christmas Island">Christmas Island</option>
+    <option class="" value="Cocos (Keeling) Islands">Cocos (Keeling) Islands</option>
+    <option class="" value="Colombia">Colombia</option>
+    <option class="" value="Comoros">Comoros</option>
+    <option class="" value="Cook Islands">Cook Islands</option>
+    <option class="" value="Costa Rica">Costa Rica</option>
+    <option class="" value="Croatia">Croatia</option>
+    <option class="" value="Cuba">Cuba</option>
+    <option class="" value="Cyprus">Cyprus</option>
+    <option class="" value="Denmark">Denmark</option>
+    <option class="" value="Djibouti">Djibouti</option>
+    <option class="" value="Dominica">Dominica</option>
+    <option class="" value="Dominican Republic">Dominican Republic</option>
+    <option class="" value="Ecuador">Ecuador</option>
+    <option class="" value="Egypt">Egypt</option>
+    <option class="" value="El Salvador">El Salvador</option>
+    <option class="" value="Equatorial Guinea">Equatorial Guinea</option>
+    <option class="" value="Eritrea">Eritrea</option>
+    <option class="" value="Estonia">Estonia</option>
+    <option class="" value="Ethiopia">Ethiopia</option>
+    <option class="" value="Faroe Islands">Faroe Islands</option>
+    <option class="" value="Fiji">Fiji</option>
+    <option class="" value="Finland">Finland</option>
+    <option class="" value="France">France</option>
+    <option class="" value="French Guiana">French Guiana</option>
+    <option class="" value="French Polynesia">French Polynesia</option>
+    <option class="" value="Gabon">Gabon</option>
+    <option class="" value="Gambia">Gambia</option>
+    <option class="" value="Georgia">Georgia</option>
+    <option class="" value="Germany">Germany</option>
+    <option class="" value="Ghana">Ghana</option>
+    <option class="" value="Gibraltar">Gibraltar</option>
+    <option class="" value="Greece">Greece</option>
+    <option class="" value="Greenland">Greenland</option>
+    <option class="" value="Grenada">Grenada</option>
+    <option class="" value="Guadeloupe">Guadeloupe</option>
+    <option class="" value="Guam">Guam</option>
+    <option class="" value="Guatemala">Guatemala</option>
+    <option class="" value="Guernsey">Guernsey</option>
+    <option class="" value="Guinea">Guinea</option>
+    <option class="" value="Guinea-Bissau">Guinea-Bissau</option>
+    <option class="" value="Guyana">Guyana</option>
+    <option class="" value="Haiti">Haiti</option>
+    <option class="" value="Honduras">Honduras</option>
+    <option class="" value="Hungary">Hungary</option>
+    <option class="" value="Iceland">Iceland</option>
+    <option class="" value="India">India</option>
+    <option class="" value="Indonesia">Indonesia</option>
+    <option class="" value="Iraq">Iraq</option>
+    <option class="" value="Ireland">Ireland</option>
+    <option class="" value="Isle of Man">Isle of Man</option>
+    <option class="" value="Israel">Israel</option>
+    <option class="" value="Italy">Italy</option>
+    <option class="" value="Jamaica">Jamaica</option>
+    <option class="" value="Japan">Japan</option>
+    <option class="" value="Jersey">Jersey</option>
+    <option class="" value="Jordan">Jordan</option>
+    <option class="" value="Kazakhstan">Kazakhstan</option>
+    <option class="" value="Kenya">Kenya</option>
+    <option class="" value="Kiribati">Kiribati</option>
+    <option class="" value="Kuwait">Kuwait</option>
+    <option class="" value="Kyrgyzstan">Kyrgyzstan</option>
+    <option class="" value="Laos">Laos</option>
+    <option class="" value="Latvia">Latvia</option>
+    <option class="" value="Lebanon">Lebanon</option>
+    <option class="" value="Lesotho">Lesotho</option>
+    <option class="" value="Liberia">Liberia</option>
+    <option class="" value="Liechtenstein">Liechtenstein</option>
+    <option class="" value="Lithuania">Lithuania</option>
+    <option class="" value="Luxembourg">Luxembourg</option>
+    <option class="" value="Madagascar">Madagascar</option>
+    <option class="" value="Malawi">Malawi</option>
+    <option class="" value="Malaysia">Malaysia</option>
+    <option class="" value="Maldives">Maldives</option>
+    <option class="" value="Mali">Mali</option>
+    <option class="" value="Malta">Malta</option>
+    <option class="" value="Marshall Islands">Marshall Islands</option>
+    <option class="" value="Martinique">Martinique</option>
+    <option class="" value="Mauritania">Mauritania</option>
+    <option class="" value="Mauritius">Mauritius</option>
+    <option class="" value="Mayotte">Mayotte</option>
+    <option class="" value="Mexico">Mexico</option>
+    <option class="" value="Moldova">Moldova</option>
+    <option class="" value="Monaco">Monaco</option>
+    <option class="" value="Mongolia">Mongolia</option>
+    <option class="" value="Montenegro">Montenegro</option>
+    <option class="" value="Montserrat">Montserrat</option>
+    <option class="" value="Morocco">Morocco</option>
+    <option class="" value="Mozambique">Mozambique</option>
+    <option class="" value="Namibia">Namibia</option>
+    <option class="" value="Nauru">Nauru</option>
+    <option class="" value="Nepal">Nepal</option>
+    <option class="" value="Netherlands">Netherlands</option>
+    <option class="" value="New Caledonia">New Caledonia</option>
+    <option class="" value="New Zealand">New Zealand</option>
+    <option class="" value="Nicaragua">Nicaragua</option>
+    <option class="" value="Niger">Niger</option>
+    <option class="" value="Nigeria">Nigeria</option>
+    <option class="" value="Niue">Niue</option>
+    <option class="" value="Norfolk Island">Norfolk Island</option>
+    <option class="" value="Northern Mariana Islands">Northern Mariana Islands</option>
+    <option class="" value="Norway">Norway</option>
+    <option class="" value="Oman">Oman</option>
+    <option class="" value="Pakistan">Pakistan</option>
+    <option class="" value="Palau">Palau</option>
+    <option class="" value="Panama">Panama</option>
+    <option class="" value="Papua New Guinea">Papua New Guinea</option>
+    <option class="" value="Paraguay">Paraguay</option>
+    <option class="" value="Peru">Peru</option>
+    <option class="" value="Philippines">Philippines</option>
+    <option class="" value="Poland">Poland</option>
+    <option class="" value="Portugal">Portugal</option>
+    <option class="" value="Puerto Rico">Puerto Rico</option>
+    <option class="" value="Qatar">Qatar</option>
+    <option class="" value="Romania">Romania</option>
+    <option class="" value="Russia">Russia</option>
+    <option class="" value="Rwanda">Rwanda</option>
+    <option class="" value="Samoa">Samoa</option>
+    <option class="" value="San Marino">San Marino</option>
+    <option class="" value="Saudi Arabia">Saudi Arabia</option>
+    <option class="" value="Senegal">Senegal</option>
+    <option class="" value="Serbia">Serbia</option>
+    <option class="" value="Seychelles">Seychelles</option>
+    <option class="" value="Sierra Leone">Sierra Leone</option>
+    <option class="" value="Singapore">Singapore</option>
+    <option class="" value="Slovakia">Slovakia</option>
+    <option class="" value="Slovenia">Slovenia</option>
+    <option class="" value="Solomon Islands">Solomon Islands</option>
+    <option class="" value="Somalia">Somalia</option>
+    <option class="" value="South Africa">South Africa</option>
+    <option class="" value="South Sudan">South Sudan</option>
+    <option class="" value="Spain">Spain</option>
+    <option class="" value="Sri Lanka">Sri Lanka</option>
+    <option class="" value="Sudan">Sudan</option>
+    <option class="" value="Suriname">Suriname</option>
+    <option class="" value="Sweden">Sweden</option>
+    <option class="" value="Switzerland">Switzerland</option>
+    <option class="" value="Taiwan">Taiwan</option>
+    <option class="" value="Tajikistan">Tajikistan</option>
+    <option class="" value="Thailand">Thailand</option>
+    <option class="" value="Timor-Leste">Timor-Leste</option>
+    <option class="" value="Togo">Togo</option>
+    <option class="" value="Tokelau">Tokelau</option>
+    <option class="" value="Tonga">Tonga</option>
+    <option class="" value="Tunisia">Tunisia</option>
+    <option class="" value="Turkey">Turkey</option>
+    <option class="" value="Turkmenistan">Turkmenistan</option>
+    <option class="" value="Tuvalu">Tuvalu</option>
+    <option class="" value="Uganda">Uganda</option>
+    <option class="" value="Ukraine">Ukraine</option>
+    <option class="" value="United Arab Emirates">United Arab Emirates</option>
+    <option class="" value="United Kingdom">United Kingdom</option>
+    <option class="" value="United States">United States</option>
+    <option class="" value="Uruguay">Uruguay</option>
+    <option class="" value="Uzbekistan">Uzbekistan</option>
+    <option class="" value="Vanuatu">Vanuatu</option>
+    <option class="" value="Vietnam">Vietnam</option>
+    <option class="" value="Yemen">Yemen</option>
+    <option class="" value="Zambia">Zambia</option>
+    <option class="" value="Zimbabwe">Zimbabwe</option>
+</select>
+                <img src="{{country.data.image}}" class="QSY"> 
+            </fieldset>
+        </div>
+    </div>
+    <div plunc-if="state=='error'"></div>
+</template>
+<template plunc-name="hu8">
+    <div plunc-if="state=='loading'"></div>
+    <div plunc-if="state=='active'" class="OiQ">
+        <fieldset class="fPc hQV Tcj QmR VQl efn WUe" plunc-block="/Forms/Input/66ec28bd27cc9530" disabled="true"><input id="" type="text" placeholder="" class="OTW aOX dhW VQU OiQ" plunc-model="isoDate"     /></fieldset><div class="YnW  inh" plunc-block="/Forms/Input/66ec28bd27cc9530/Message"></div>        <div class="XkU OiQ WYb lOh">
+            <div plunc-click="subtract()" class="RXW fWj">
+                
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="SZn Yeh gmP">
+    <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14" /></svg>            </div>
+            <div plunc-block="/BlockManager/OrderDateDisplay" class="XQl WYb lOh">
+                <div class="--order-date-daysago cga">
+                    <input plunc-change="updateDaysAgo()" plunc-model="daysAgo" value="{{daysAgo}}" type="number" style="width:31px;text-align:center;" class="cga aRP dhW lgd"> 
+                    <span>{{dayText}} ago</span>
+                </div>
+            </div>
+            <div plunc-click="add()" class="RXW fWj">
+                
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="SZn Yeh gmP">
+    <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" /></svg>            </div>
+        </div>
+    </div>
+    <div plunc-if="state=='error'"></div>
+</template>
+<template plunc-name="it9">
+    <div plunc-if="state=='loading'"></div>
+    <div plunc-if="state=='active'">
+        <div class="WYb lOh">
+            <div>
+                
+<label class="--switcher Uck gmn --switcher-id-66ec28bd28472 --switcher-size-medium">
+    <input plunc-model="set1DayafterOrderDate" plunc-change="toggleAutoDate()" class="PQQ OYU WgS" type="checkbox" id="input--switcher-id-66ec28bd28472" />
+    <span class="iii --is-shape-round slider round OkO jlh RXW dSU aUl hin POV TWf"></span>
+</label>            </div>
+            <div plunc-style="textDisabled()" class="cTi cga">
+                Set 1 day after order date
+            </div>
+        </div>
+        <div class="XkU OiQ">
+            <fieldset class="fPc hQV Tcj QmR VQl efn WUe" plunc-block="/Forms/Input/66ec28bd285d3950" disabled="true"><input id="" type="text" placeholder="" class="OTW aOX dhW VQU OiQ" plunc-model="isoDate"     /></fieldset><div class="YnW  inh" plunc-block="/Forms/Input/66ec28bd285d3950/Message"></div>        </div>
+        <div plunc-if="set1DayafterOrderDate == false" class="XkU OiQ WYb lOh">
+            <div plunc-if="displaySubtractOption == true" plunc-click="subtract()" class="RXW fWj">
+                
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="SZn Yeh gmP">
+    <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14" /></svg>            </div>
+            <div plunc-block="/BlockManager/OrderDateDisplay" class="XQl WYb lOh">
+                <div class="cga">
+                    {{daysAfterOrderDate}} <span>{{dayText}}</span> after order date
+                </div>
+            </div>
+            <div plunc-click="add()" class="RXW fWj">
+                
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="SZn Yeh gmP">
+    <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" /></svg>            </div>
+        </div>
+    </div>
+    <div plunc-if="state=='error'"></div>
+</template>
+<template plunc-name="fk7">
+    <div plunc-if="state=='loading'"></div>
+    <div plunc-if="state=='active'">
+        <div class="WYb lOh">
+            <div>
+                
+<label class="--switcher Uck gmn --switcher-id-66ec28bd28b63 --switcher-size-medium">
+    <input plunc-model="isAddBillingAddress" plunc-change="toggleForm()" class="PQQ OYU WgS" type="checkbox" id="input--switcher-id-66ec28bd28b63" />
+    <span class="iii --is-shape-round slider round OkO jlh RXW dSU aUl hin POV TWf"></span>
+</label>            </div>
+            <div plunc-if="isAddBillingAddress == false" class="cTi cga">
+                Add a billing address
+            </div>
+        </div>
+        <div plunc-if="isAddBillingAddress == true" class="XkU OiQ">
+            <label for="address_line_166ec28bd28cb5887" class="Yeh mRe ReX gmn jgZ">Address Line 1</label><fieldset class="fPc hQV Tcj QmR VQl efn WUe" plunc-block="/Forms/Input/66ec28bd28cb5887" ><input id="address_line_166ec28bd28cb5887" type="text" placeholder="" class="mRe aOX dhW VQU OiQ" plunc-model="addressLine1"     /></fieldset><div class="YnW  inh" plunc-block="/Forms/Input/66ec28bd28cb5887/Message"></div>            <div class="XkU OiQ WYb">
+                <div class="ZSn gbQ">
+                    <label for="city_/_town66ec28bd28e06438" class="Yeh mRe ReX gmn jgZ">City / Town</label><fieldset class="fPc hQV Tcj QmR VQl efn WUe" plunc-block="/Forms/Input/66ec28bd28e06438" ><input id="city_/_town66ec28bd28e06438" type="text" placeholder="" class="OTW aOX dhW VQU OiQ" plunc-model="townCity"     /></fieldset><div class="YnW  inh" plunc-block="/Forms/Input/66ec28bd28e06438/Message"></div>                </div>
+                <div class="ZSn gbQ">
+                    <label for="state_/_province66ec28bd28f47887" class="Yeh mRe ReX gmn jgZ">State / Province</label><fieldset class="fPc hQV Tcj QmR VQl efn WUe" plunc-block="/Forms/Input/66ec28bd28f47887" ><input id="state_/_province66ec28bd28f47887" type="text" placeholder="" class="OTW aOX dhW VQU OiQ" plunc-model="stateProvince"     /></fieldset><div class="YnW  inh" plunc-block="/Forms/Input/66ec28bd28f47887/Message"></div>                </div>
+            </div>
+            <div class="XkU OiQ WYb lOh">
+                <div class="WlY gbQ">
+                    <label for="zip_code66ec28bd29088957" class="Yeh mRe ReX gmn jgZ">Zip Code</label><fieldset class="fPc hQV Tcj QmR VQl efn WUe" plunc-block="/Forms/Input/66ec28bd29088957" ><input id="zip_code66ec28bd29088957" type="text" placeholder="" class="OTW aOX dhW VQU OiQ" plunc-model="zipcode"     /></fieldset><div class="YnW  inh" plunc-block="/Forms/Input/66ec28bd29088957/Message"></div>                </div>
+                <div class="iZg" style="margin-top:-6px;">
+                    <label for="" class="mRe gmn ReX Yeh cfP">Country</label>
+                    <fieldset class="OiQ WYb lOh VQl gdi efn WUe efn lhk gPT Tcj QmR">
+                        
+<select plunc-change="select.country()" plunc-model="country"  class="bZi OiQ cga VQU dhW aOX">
+    <option class="" value="Afghanistan">Afghanistan</option>
+    <option class="" value="Albania">Albania</option>
+    <option class="" value="Algeria">Algeria</option>
+    <option class="" value="Andorra">Andorra</option>
+    <option class="" value="Angola">Angola</option>
+    <option class="" value="Anguilla">Anguilla</option>
+    <option class="" value="Antarctica">Antarctica</option>
+    <option class="" value="Argentina">Argentina</option>
+    <option class="" value="Armenia">Armenia</option>
+    <option class="" value="Aruba">Aruba</option>
+    <option class="" value="Australia">Australia</option>
+    <option class="" value="Austria">Austria</option>
+    <option class="" value="Azerbaijan">Azerbaijan</option>
+    <option class="" value="Bahamas">Bahamas</option>
+    <option class="" value="Bahrain">Bahrain</option>
+    <option class="" value="Bangladesh">Bangladesh</option>
+    <option class="" value="Barbados">Barbados</option>
+    <option class="" value="Belarus">Belarus</option>
+    <option class="" value="Belgium">Belgium</option>
+    <option class="" value="Belize">Belize</option>
+    <option class="" value="Benin">Benin</option>
+    <option class="" value="Bermuda">Bermuda</option>
+    <option class="" value="Bhutan">Bhutan</option>
+    <option class="" value="Botswana">Botswana</option>
+    <option class="" value="Brazil">Brazil</option>
+    <option class="" value="British Indian Ocean Territory">B.I. Ocean Terr.</option>
+    <option class="" value="Bulgaria">Bulgaria</option>
+    <option class="" value="Burkina Faso">Burkina Faso</option>
+    <option class="" value="Burundi">Burundi</option>
+    <option class="" value="Cambodia">Cambodia</option>
+    <option class="" value="Cameroon">Cameroon</option>
+    <option class="" value="Canada">Canada</option>
+    <option class="" value="Cape Verde">Cape Verde</option>
+    <option class="" value="Cayman Islands">Cayman Islands</option>
+    <option class="" value="Central African Republic">Central African Republic</option>
+    <option class="" value="Chad">Chad</option>
+    <option class="" value="Chile">Chile</option>
+    <option class="" value="China">China</option>
+    <option class="" value="Christmas Island">Christmas Island</option>
+    <option class="" value="Cocos (Keeling) Islands">Cocos (Keeling) Islands</option>
+    <option class="" value="Colombia">Colombia</option>
+    <option class="" value="Comoros">Comoros</option>
+    <option class="" value="Cook Islands">Cook Islands</option>
+    <option class="" value="Costa Rica">Costa Rica</option>
+    <option class="" value="Croatia">Croatia</option>
+    <option class="" value="Cuba">Cuba</option>
+    <option class="" value="Cyprus">Cyprus</option>
+    <option class="" value="Denmark">Denmark</option>
+    <option class="" value="Djibouti">Djibouti</option>
+    <option class="" value="Dominica">Dominica</option>
+    <option class="" value="Dominican Republic">Dominican Republic</option>
+    <option class="" value="Ecuador">Ecuador</option>
+    <option class="" value="Egypt">Egypt</option>
+    <option class="" value="El Salvador">El Salvador</option>
+    <option class="" value="Equatorial Guinea">Equatorial Guinea</option>
+    <option class="" value="Eritrea">Eritrea</option>
+    <option class="" value="Estonia">Estonia</option>
+    <option class="" value="Ethiopia">Ethiopia</option>
+    <option class="" value="Faroe Islands">Faroe Islands</option>
+    <option class="" value="Fiji">Fiji</option>
+    <option class="" value="Finland">Finland</option>
+    <option class="" value="France">France</option>
+    <option class="" value="French Guiana">French Guiana</option>
+    <option class="" value="French Polynesia">French Polynesia</option>
+    <option class="" value="Gabon">Gabon</option>
+    <option class="" value="Gambia">Gambia</option>
+    <option class="" value="Georgia">Georgia</option>
+    <option class="" value="Germany">Germany</option>
+    <option class="" value="Ghana">Ghana</option>
+    <option class="" value="Gibraltar">Gibraltar</option>
+    <option class="" value="Greece">Greece</option>
+    <option class="" value="Greenland">Greenland</option>
+    <option class="" value="Grenada">Grenada</option>
+    <option class="" value="Guadeloupe">Guadeloupe</option>
+    <option class="" value="Guam">Guam</option>
+    <option class="" value="Guatemala">Guatemala</option>
+    <option class="" value="Guernsey">Guernsey</option>
+    <option class="" value="Guinea">Guinea</option>
+    <option class="" value="Guinea-Bissau">Guinea-Bissau</option>
+    <option class="" value="Guyana">Guyana</option>
+    <option class="" value="Haiti">Haiti</option>
+    <option class="" value="Honduras">Honduras</option>
+    <option class="" value="Hungary">Hungary</option>
+    <option class="" value="Iceland">Iceland</option>
+    <option class="" value="India">India</option>
+    <option class="" value="Indonesia">Indonesia</option>
+    <option class="" value="Iraq">Iraq</option>
+    <option class="" value="Ireland">Ireland</option>
+    <option class="" value="Isle of Man">Isle of Man</option>
+    <option class="" value="Israel">Israel</option>
+    <option class="" value="Italy">Italy</option>
+    <option class="" value="Jamaica">Jamaica</option>
+    <option class="" value="Japan">Japan</option>
+    <option class="" value="Jersey">Jersey</option>
+    <option class="" value="Jordan">Jordan</option>
+    <option class="" value="Kazakhstan">Kazakhstan</option>
+    <option class="" value="Kenya">Kenya</option>
+    <option class="" value="Kiribati">Kiribati</option>
+    <option class="" value="Kuwait">Kuwait</option>
+    <option class="" value="Kyrgyzstan">Kyrgyzstan</option>
+    <option class="" value="Laos">Laos</option>
+    <option class="" value="Latvia">Latvia</option>
+    <option class="" value="Lebanon">Lebanon</option>
+    <option class="" value="Lesotho">Lesotho</option>
+    <option class="" value="Liberia">Liberia</option>
+    <option class="" value="Liechtenstein">Liechtenstein</option>
+    <option class="" value="Lithuania">Lithuania</option>
+    <option class="" value="Luxembourg">Luxembourg</option>
+    <option class="" value="Madagascar">Madagascar</option>
+    <option class="" value="Malawi">Malawi</option>
+    <option class="" value="Malaysia">Malaysia</option>
+    <option class="" value="Maldives">Maldives</option>
+    <option class="" value="Mali">Mali</option>
+    <option class="" value="Malta">Malta</option>
+    <option class="" value="Marshall Islands">Marshall Islands</option>
+    <option class="" value="Martinique">Martinique</option>
+    <option class="" value="Mauritania">Mauritania</option>
+    <option class="" value="Mauritius">Mauritius</option>
+    <option class="" value="Mayotte">Mayotte</option>
+    <option class="" value="Mexico">Mexico</option>
+    <option class="" value="Moldova">Moldova</option>
+    <option class="" value="Monaco">Monaco</option>
+    <option class="" value="Mongolia">Mongolia</option>
+    <option class="" value="Montenegro">Montenegro</option>
+    <option class="" value="Montserrat">Montserrat</option>
+    <option class="" value="Morocco">Morocco</option>
+    <option class="" value="Mozambique">Mozambique</option>
+    <option class="" value="Namibia">Namibia</option>
+    <option class="" value="Nauru">Nauru</option>
+    <option class="" value="Nepal">Nepal</option>
+    <option class="" value="Netherlands">Netherlands</option>
+    <option class="" value="New Caledonia">New Caledonia</option>
+    <option class="" value="New Zealand">New Zealand</option>
+    <option class="" value="Nicaragua">Nicaragua</option>
+    <option class="" value="Niger">Niger</option>
+    <option class="" value="Nigeria">Nigeria</option>
+    <option class="" value="Niue">Niue</option>
+    <option class="" value="Norfolk Island">Norfolk Island</option>
+    <option class="" value="Northern Mariana Islands">Northern Mariana Islands</option>
+    <option class="" value="Norway">Norway</option>
+    <option class="" value="Oman">Oman</option>
+    <option class="" value="Pakistan">Pakistan</option>
+    <option class="" value="Palau">Palau</option>
+    <option class="" value="Panama">Panama</option>
+    <option class="" value="Papua New Guinea">Papua New Guinea</option>
+    <option class="" value="Paraguay">Paraguay</option>
+    <option class="" value="Peru">Peru</option>
+    <option class="" value="Philippines">Philippines</option>
+    <option class="" value="Poland">Poland</option>
+    <option class="" value="Portugal">Portugal</option>
+    <option class="" value="Puerto Rico">Puerto Rico</option>
+    <option class="" value="Qatar">Qatar</option>
+    <option class="" value="Romania">Romania</option>
+    <option class="" value="Russia">Russia</option>
+    <option class="" value="Rwanda">Rwanda</option>
+    <option class="" value="Samoa">Samoa</option>
+    <option class="" value="San Marino">San Marino</option>
+    <option class="" value="Saudi Arabia">Saudi Arabia</option>
+    <option class="" value="Senegal">Senegal</option>
+    <option class="" value="Serbia">Serbia</option>
+    <option class="" value="Seychelles">Seychelles</option>
+    <option class="" value="Sierra Leone">Sierra Leone</option>
+    <option class="" value="Singapore">Singapore</option>
+    <option class="" value="Slovakia">Slovakia</option>
+    <option class="" value="Slovenia">Slovenia</option>
+    <option class="" value="Solomon Islands">Solomon Islands</option>
+    <option class="" value="Somalia">Somalia</option>
+    <option class="" value="South Africa">South Africa</option>
+    <option class="" value="South Sudan">South Sudan</option>
+    <option class="" value="Spain">Spain</option>
+    <option class="" value="Sri Lanka">Sri Lanka</option>
+    <option class="" value="Sudan">Sudan</option>
+    <option class="" value="Suriname">Suriname</option>
+    <option class="" value="Sweden">Sweden</option>
+    <option class="" value="Switzerland">Switzerland</option>
+    <option class="" value="Taiwan">Taiwan</option>
+    <option class="" value="Tajikistan">Tajikistan</option>
+    <option class="" value="Thailand">Thailand</option>
+    <option class="" value="Timor-Leste">Timor-Leste</option>
+    <option class="" value="Togo">Togo</option>
+    <option class="" value="Tokelau">Tokelau</option>
+    <option class="" value="Tonga">Tonga</option>
+    <option class="" value="Tunisia">Tunisia</option>
+    <option class="" value="Turkey">Turkey</option>
+    <option class="" value="Turkmenistan">Turkmenistan</option>
+    <option class="" value="Tuvalu">Tuvalu</option>
+    <option class="" value="Uganda">Uganda</option>
+    <option class="" value="Ukraine">Ukraine</option>
+    <option class="" value="United Arab Emirates">United Arab Emirates</option>
+    <option class="" value="United Kingdom">United Kingdom</option>
+    <option class="" value="United States">United States</option>
+    <option class="" value="Uruguay">Uruguay</option>
+    <option class="" value="Uzbekistan">Uzbekistan</option>
+    <option class="" value="Vanuatu">Vanuatu</option>
+    <option class="" value="Vietnam">Vietnam</option>
+    <option class="" value="Yemen">Yemen</option>
+    <option class="" value="Zambia">Zambia</option>
+    <option class="" value="Zimbabwe">Zimbabwe</option>
+</select>
+                    </fieldset>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div plunc-if="state=='error'"></div>
+</template>        <div id="slate_color_palette" style="display:none">
+<span data-color-id="background-color-transparent" class="dhW"></span>
+<span data-color-id="background-color-primary" class="igi"></span>
+<span data-color-id="background-color-error" class="PQm"></span>
+<span data-color-id="background-color-gray-scale-super-light" class="QQi"></span>
+<span data-color-id="background-color-gray-scale-extra-light" class="TWf"></span>
+<span data-color-id="background-color-gray-scale-light" class="lQn"></span>
+<span data-color-id="background-color-gray-scale" class="VOW"></span>
+<span data-color-id="background-color-gray-scale-dark" class="WQW"></span>
+<span data-color-id="background-color-gray-scale-extra-dark" class="chf"></span>
+<span data-color-id="background-color-gray-scale-super-dark" class="RRd"></span>
+<span data-color-id="background-color-white" class="ghX"></span>
+<span data-color-id="background-color-everwhite" class="kkb"></span>
+<span data-color-id="background-color-everdark-elegant" class="RQQ"></span>
+<span data-color-id="background-color-dark" class="aUT"></span>
+<span data-color-id="background-color-extra-dark" class="lem"></span>
+<span data-color-id="background-color-super-dark" class="lZc"></span>
+<span data-color-id="background-color-elegant-dark" class="ZRa"></span>
+<span data-color-id="background-color-danger-heavy" class="mPf"></span>
+<span data-color-id="background-color-material-blue" class="fhY"></span>
+<span data-color-id="color-transparent" class="Pgk"></span>
+<span data-color-id="color-primary" class="leh"></span>
+<span data-color-id="color-error" class="TXP"></span>
+<span data-color-id="color-success" class="fkW"></span>
+<span data-color-id="color-info" class="aYb"></span>
+<span data-color-id="color-gray-scale-super-light" class="TVY"></span>
+<span data-color-id="color-gray-scale-extra-light" class="bkd"></span>
+<span data-color-id="color-gray-scale-light" class="fnW"></span>
+<span data-color-id="color-gray-scale" class="YXc"></span>
+<span data-color-id="color-gray-scale-dark" class="hTV"></span>
+<span data-color-id="color-gray-scale-extra-dark" class="XkZ"></span>
+<span data-color-id="color-gray-scale-super-dark" class="Yeh"></span>
+<span data-color-id="color-white" class="ghX1"></span>
+<span data-color-id="color-everwhite" class="ZTU"></span>
+<span data-color-id="color-everdark-elegant" class="gUP"></span>
+<span data-color-id="color-dark" class="VXW"></span>
+<span data-color-id="color-extra-dark" class="hSO"></span>
+<span data-color-id="color-super-dark" class="VkY"></span>
+<span data-color-id="color-elegant-dark" class="aOX"></span>
+<span data-color-id="color-facebook" class="lnh"></span>
+<span data-color-id="color-material-blue" class="YYP"></span>
+<span data-color-id="border-color-transparent" class="aRP"></span>
+<span data-color-id="border-color-primary" class="nnR"></span>
+<span data-color-id="border-color-error" class="WeY"></span>
+<span data-color-id="border-color-success" class="RaP"></span>
+<span data-color-id="border-color-info" class="fXQ"></span>
+<span data-color-id="border-color-gray-scale-super-light" class="ckb"></span>
+<span data-color-id="border-color-gray-scale-extra-light" class="ZTW"></span>
+<span data-color-id="border-color-gray-scale-light" class="fbb"></span>
+<span data-color-id="border-color-gray-scale" class="RdQ"></span>
+<span data-color-id="border-color-gray-scale-dark" class="gdi"></span>
+<span data-color-id="border-color-gray-scale-extra-dark" class="bUR"></span>
+<span data-color-id="border-color-gray-scale-super-dark" class="PfS"></span>
+<span data-color-id="border-color-white" class="WXR"></span>
+<span data-color-id="border-color-everwhite" class="OSY"></span>
+<span data-color-id="border-color-dark" class="gXY"></span>
+<span data-color-id="border-color-extra-dark" class="nVX"></span>
+<span data-color-id="border-color-super-dark" class="clX"></span>
+<span data-color-id="border-color-elegant-dark" class="YlQ"></span>
+<span data-color-id="border-color-material-blue" class="WmU"></span>
+<span data-color-id="svg-fill-none" class="SZn"></span>
+<span data-color-id="svg-fill-transparent" class="jSS"></span>
+<span data-color-id="svg-fill-primary" class="mdR"></span>
+<span data-color-id="svg-fill-error" class="cWT"></span>
+<span data-color-id="svg-fill-success" class="VhT"></span>
+<span data-color-id="svg-fill-info" class="heR"></span>
+<span data-color-id="svg-fill-gray-scale-super-light" class="Yjg"></span>
+<span data-color-id="svg-fill-gray-scale-extra-light" class="kfe"></span>
+<span data-color-id="svg-fill-gray-scale-light" class="mOj"></span>
+<span data-color-id="svg-fill-gray-scale" class="egi"></span>
+<span data-color-id="svg-fill-gray-scale-dark" class="Qia"></span>
+<span data-color-id="svg-fill-gray-scale-extra-dark" class="kTd"></span>
+<span data-color-id="svg-fill-gray-scale-super-dark" class="aUY"></span>
+<span data-color-id="svg-fill-white" class="jfa"></span>
+<span data-color-id="svg-fill-everwhite" class="SWe"></span>
+<span data-color-id="svg-fill-dark" class="ank"></span>
+<span data-color-id="svg-fill-extra-dark" class="jbU"></span>
+<span data-color-id="svg-fill-super-dark" class="Xih"></span>
+<span data-color-id="svg-fill-elegant-dark" class="XZP"></span>
+<span data-color-id="svg-fill-material-blue" class="bSb"></span>
+</div>    </body>
+</html>
