@@ -15,186 +15,186 @@
         <script type="text/javascript">
             const blockAutoSubmit=e=>e.preventDefault();
         </script>
-        <script type="text/javascript" src="/variety-store/assets/preview.js?v=1727297659"></script>
-<link rel="stylesheet" href="/variety-store/assets/preview.css?v=1727297659">    </head>
-    <body class="iOQ">
+        <script type="text/javascript" src="/variety-store/assets/preview.js?v=1727298610"></script>
+<link rel="stylesheet" href="/variety-store/assets/preview.css?v=1727298610">    </head>
+    <body class="lbX">
         <script type="text/javascript">
             const theme = localStorage.getItem('slate-theme') ?? 'light'
             document.querySelector('body').classList.add(theme)
             window.slate = { theme: { name: theme } }
         </script>
-        <app plunc-app="app" class="iOQ"></app>
+        <app plunc-app="app" class="lbX"></app>
         <template plunc-name="app">
-            <main plunc-component="fs5" class="iOQ"></main>
+            <main plunc-component="ag1" class="lbX"></main>
         </template>
-                <template plunc-name="fs5">
-    <div plunc-if="state=='loading'" class="iOQ UbO eRV UjR YnX">
+                <template plunc-name="ag1">
+    <div plunc-if="state=='loading'" class="lbX lZc hTY TbT eQO">
         <!-- Apply loading screen here -->
         <div class="--slate-page-spinner"></div>
     </div>
     <div plunc-if="state=='active'">
         
-<div class="ckX fSg">
-    <section plunc-component="jb6" class="iOQ SQT"></section>
+<div class="Pnd ZQV">
+    <section plunc-component="qo5" class="lbX kUS"></section>
 </div>    </div>
-    <div plunc-if="state=='error'" class="iOQ YnX UbO eRV UjR">
+    <div plunc-if="state=='error'" class="lbX eQO lZc hTY TbT">
         <!-- Apply error page here -->
-        <div class="jcd khP SlY">
-            <div class="UbO eRV">
-                <div class="jXO TmX">
+        <div class="eln YSf WfO">
+            <div class="lZc hTY">
+                <div class="Unb Zli1">
                     {{error.code}} /
                 </div>
-                <div class="jXO kRk ZlS TmX">
+                <div class="Unb PeS cOP Zli1">
                     <span plunc-if="error.code==400">Bad Request</span>
                     <span plunc-if="error.code==401">Access Denied</span>
                     <span plunc-if="error.code==404">Not Found</span>
                     <span plunc-if="error.code==500">Internal Server Error</span>
                 </div>
             </div>
-            <div class="Pdb cnj jaZ nQi">
+            <div class="ieU Pgd hdU gXQ">
                 {{error.message}} If you think this is incorrect, please contact me below.
             </div>
-            <div class="WgO UbO eRV">
+            <div class="lUl lZc hTY">
                 
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="0.5" stroke="currentColor" class="lSh bSP bbb">
-    <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" /></svg>                <div class="cnj UOd bXb">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="0.5" stroke="currentColor" class="flj YYd RWl">
+    <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" /></svg>                <div class="Pgd dkS hWR">
                     rterrado@yotpo.com
                 </div>
             </div>
         </div>
     </div>
 </template>
-<template plunc-name="jb6">
+<template plunc-name="qo5">
     <div plunc-if="state == 'loading'"></div>
-    <form onsubmit="blockAutoSubmit(event)" plunc-if="state == 'active'" class="iOQ PUd">
-        <div class="iOQ UbO Yca PUd mcm">
-            <div class="UbO eRV llV">
-                <div class="jOZ UbO eRV">
+    <form onsubmit="blockAutoSubmit(event)" plunc-if="state == 'active'" class="lbX Vmn">
+        <div class="lbX lZc TUb Vmn XRl">
+            <div class="lZc hTY aen">
+                <div class="SSQ lZc hTY">
                     
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="bbb bSP XmQ">
-    <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 10.5V6a3.75 3.75 0 1 0-7.5 0v4.5m11.356-1.993 1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 0 1-1.12-1.243l1.264-12A1.125 1.125 0 0 1 5.513 7.5h12.974c.576 0 1.059.435 1.119 1.007ZM8.625 10.5a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm7.5 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Z" /></svg>                    <div class="XSX baO fZh">Cart ({{CartItem.items.length}})</div>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="RWl YYd Sfi">
+    <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 10.5V6a3.75 3.75 0 1 0-7.5 0v4.5m11.356-1.993 1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 0 1-1.12-1.243l1.264-12A1.125 1.125 0 0 1 5.513 7.5h12.974c.576 0 1.059.435 1.119 1.007ZM8.625 10.5a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm7.5 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Z" /></svg>                    <div class="jZT gWc nXm">Cart ({{CartItem.items.length}})</div>
                 </div>
-                <div class="dPR">
-                    <div plunc-click="clear()" class="QXT Zic nQi XSU jSi">CLEAR</div>
+                <div class="bfb">
+                    <div plunc-click="clear()" class="jdc Wic gXQ ORe kaR">CLEAR</div>
                 </div>
             </div>
-            <div role="separator" style="border-width:1px;" class="PRj Unl deb iOQ Ycm"></div>            <div plunc-if="CartItem.items.length == 0" class="jOZ UbO eRV UjR">You have no items in your cart.</div>
-            <div plunc-if="CartItem.items.length > 0" class="jOZ">
-                <ul plunc-repeat="CartItem.items as item" class="iOQ">
-                    <li class="iOQ UbO">
-                        <div plunc-if="item.product.imgsrc == null" style="background-color: #f4f7ff;" class="UbO UjR eRV eUY klR VmP">
+            <div role="separator" style="border-width:1px;" class="TZd XjO jPd lbX Occ"></div>            <div plunc-if="CartItem.items.length == 0" class="SSQ lZc hTY TbT">You have no items in your cart.</div>
+            <div plunc-if="CartItem.items.length > 0" class="SSQ">
+                <ul plunc-repeat="CartItem.items as item" class="lbX">
+                    <li class="lbX lZc">
+                        <div plunc-if="item.product.imgsrc == null" style="background-color: #f4f7ff;" class="lZc TbT hTY cOX Zan Zli">
                             
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="0.5" stroke="currentColor" class="bbb XSU UQZ">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="0.5" stroke="currentColor" class="RWl ORe XOZ">
     <path stroke-linecap="round" stroke-linejoin="round" d="m2.25 15.75 5.159-5.159a2.25 2.25 0 0 1 3.182 0l5.159 5.159m-1.5-1.5 1.409-1.409a2.25 2.25 0 0 1 3.182 0l2.909 2.909m-18 3.75h16.5a1.5 1.5 0 0 0 1.5-1.5V6a1.5 1.5 0 0 0-1.5-1.5H3.75A1.5 1.5 0 0 0 2.25 6v12a1.5 1.5 0 0 0 1.5 1.5Zm10.5-11.25h.008v.008h-.008V8.25Zm.375 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Z" /></svg>                        </div>
-                        <div plunc-if="item.product.imgsrc !== null" style="background:url({{item.product.imgsrc}});background-size:cover;background-repeat:no-repeat;" class="eUY klR VmP">
+                        <div plunc-if="item.product.imgsrc !== null" style="background:url({{item.product.imgsrc}});background-size:cover;background-repeat:no-repeat;" class="cOX Zan Zli">
                             
                         </div>
-                        <div class="ihY dmX">
-                            <div class="cUR fZh">{{item.product.name}}</div>
-                            <div class="cnj gTX"><span class="gOh fiT">{{item.product.currency.symbol}}{{ $parent.LineItemManager.calculateTotal(item.quantity,item.product.price) }}</span> / <span class="OeT">{{item.product.currency.symbol}}{{item.product.price}} per item</span></div>
-                            <div class="aTf UbO eRV">
-                                <div plunc-click="QuantityManager.remove({{$index}})" class="Zic">
+                        <div class="egi URP">
+                            <div class="QlZ nXm">{{item.product.name}}</div>
+                            <div class="Pgd eWb"><span class="jcV RWU">{{item.product.currency.symbol}}{{ $parent.LineItemManager.calculateTotal(item.quantity,item.product.price) }}</span> / <span class="dSV">{{item.product.currency.symbol}}{{item.product.price}} per item</span></div>
+                            <div class="YhW lZc hTY">
+                                <div plunc-click="QuantityManager.remove({{$index}})" class="Wic">
                                     
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="bbb TmX lSh">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="RWl Zli1 flj">
     <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14" /></svg>                                </div>
-                                <div class="gOh Vea">{{item.quantity}}</div>
-                                <div plunc-click="QuantityManager.add({{$index}})" class="Zic">
+                                <div class="jcV dYm">{{item.quantity}}</div>
+                                <div plunc-click="QuantityManager.add({{$index}})" class="Wic">
                                     
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="bbb TmX lSh">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="RWl Zli1 flj">
     <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" /></svg>                                </div>
                             </div>
                         </div>
                     </li>
                 </ul>
             </div>
-            <section class="UPd" plunc-block="/BlockManager/SendButtonBlock/">
-                <button type="submit" plunc-click="checkout()"  class="UcZ QRj UjR iOQ RWc Zic iSX jOi akV lnV WYn hnj Tmj lci Wgf Rfl UbO eRV">Checkout</button>            </section>
+            <section class="RTi" plunc-block="/BlockManager/SendButtonBlock/">
+                <button type="submit" plunc-click="checkout()"  class="VbS nbi TbT lbX WVe Wic eTm naX hdW iga lTO dVS bWf cWb gkg kPi lZc hTY">Checkout</button>            </section>
         </div>
     </form>
     <div plunc-if="state == 'error'"></div>
 </template>        <div id="slate_color_palette" style="display:none">
-<span data-color-id="background-color-transparent" class="kWY"></span>
-<span data-color-id="background-color-inherit" class="YkW"></span>
-<span data-color-id="background-color-primary" class="UcZ"></span>
-<span data-color-id="background-color-error" class="RYY"></span>
-<span data-color-id="background-color-gray-scale-super-light" class="ahb"></span>
-<span data-color-id="background-color-gray-scale-extra-light" class="UXn"></span>
-<span data-color-id="background-color-gray-scale-light" class="bRR"></span>
-<span data-color-id="background-color-gray-scale" class="fcd"></span>
-<span data-color-id="background-color-gray-scale-dark" class="iPQ"></span>
-<span data-color-id="background-color-gray-scale-extra-dark" class="TUR"></span>
-<span data-color-id="background-color-gray-scale-super-dark" class="jah"></span>
-<span data-color-id="background-color-white" class="jgV"></span>
-<span data-color-id="background-color-everwhite" class="XkQ"></span>
-<span data-color-id="background-color-everdark-elegant" class="OTV"></span>
-<span data-color-id="background-color-dark" class="VWd"></span>
-<span data-color-id="background-color-extra-dark" class="Vki"></span>
-<span data-color-id="background-color-super-dark" class="eag"></span>
-<span data-color-id="background-color-elegant-dark" class="cgP"></span>
-<span data-color-id="background-color-danger-heavy" class="lPh"></span>
-<span data-color-id="background-color-material-blue" class="anj"></span>
-<span data-color-id="color-transparent" class="cYm"></span>
-<span data-color-id="color-inherit" class="PSh"></span>
-<span data-color-id="color-primary" class="bSP"></span>
-<span data-color-id="color-error" class="jWW"></span>
-<span data-color-id="color-success" class="RjQ"></span>
-<span data-color-id="color-info" class="lhl"></span>
-<span data-color-id="color-gray-scale-super-light" class="PQU"></span>
-<span data-color-id="color-gray-scale-extra-light" class="ZUg"></span>
-<span data-color-id="color-gray-scale-light" class="XSU"></span>
-<span data-color-id="color-gray-scale" class="OeT"></span>
-<span data-color-id="color-gray-scale-dark" class="Ped"></span>
-<span data-color-id="color-gray-scale-extra-dark" class="TZY"></span>
-<span data-color-id="color-gray-scale-super-dark" class="TmX"></span>
-<span data-color-id="color-white" class="jfl"></span>
-<span data-color-id="color-everwhite" class="Wgf"></span>
-<span data-color-id="color-everdark-elegant" class="RSW"></span>
-<span data-color-id="color-dark" class="YmY"></span>
-<span data-color-id="color-extra-dark" class="RmQ"></span>
-<span data-color-id="color-super-dark" class="bmb"></span>
-<span data-color-id="color-elegant-dark" class="gOh"></span>
-<span data-color-id="color-facebook" class="kjg"></span>
-<span data-color-id="color-material-blue" class="Vkd"></span>
-<span data-color-id="border-color-transparent" class="jOi"></span>
-<span data-color-id="border-color-inherit" class="fnl"></span>
-<span data-color-id="border-color-primary" class="Zml"></span>
-<span data-color-id="border-color-error" class="heg"></span>
-<span data-color-id="border-color-success" class="Vge"></span>
-<span data-color-id="border-color-info" class="ZPk"></span>
-<span data-color-id="border-color-gray-scale-super-light" class="lUl"></span>
-<span data-color-id="border-color-gray-scale-extra-light" class="Ycm"></span>
-<span data-color-id="border-color-gray-scale-light" class="kbS"></span>
-<span data-color-id="border-color-gray-scale" class="PZV"></span>
-<span data-color-id="border-color-gray-scale-dark" class="QmZ"></span>
-<span data-color-id="border-color-gray-scale-extra-dark" class="ZgO"></span>
-<span data-color-id="border-color-gray-scale-super-dark" class="OiX"></span>
-<span data-color-id="border-color-white" class="mYc"></span>
-<span data-color-id="border-color-everwhite" class="bfO"></span>
-<span data-color-id="border-color-dark" class="Zhi"></span>
-<span data-color-id="border-color-extra-dark" class="mak"></span>
-<span data-color-id="border-color-super-dark" class="YRi"></span>
-<span data-color-id="border-color-elegant-dark" class="RbU"></span>
-<span data-color-id="border-color-material-blue" class="Yae"></span>
-<span data-color-id="svg-fill-none" class="bbb"></span>
-<span data-color-id="svg-fill-transparent" class="fSm"></span>
-<span data-color-id="svg-fill-inherit" class="hSY"></span>
-<span data-color-id="svg-fill-primary" class="iea"></span>
-<span data-color-id="svg-fill-error" class="gTm"></span>
-<span data-color-id="svg-fill-success" class="aVS"></span>
-<span data-color-id="svg-fill-info" class="QmT"></span>
-<span data-color-id="svg-fill-gray-scale-super-light" class="kOU"></span>
-<span data-color-id="svg-fill-gray-scale-extra-light" class="bZl"></span>
-<span data-color-id="svg-fill-gray-scale-light" class="gTV"></span>
-<span data-color-id="svg-fill-gray-scale" class="OUY"></span>
-<span data-color-id="svg-fill-gray-scale-dark" class="Pga"></span>
-<span data-color-id="svg-fill-gray-scale-extra-dark" class="gOn"></span>
-<span data-color-id="svg-fill-gray-scale-super-dark" class="Yag"></span>
-<span data-color-id="svg-fill-white" class="mWe"></span>
-<span data-color-id="svg-fill-everwhite" class="Slb"></span>
-<span data-color-id="svg-fill-dark" class="bbQ"></span>
-<span data-color-id="svg-fill-extra-dark" class="Oad"></span>
-<span data-color-id="svg-fill-super-dark" class="ica"></span>
-<span data-color-id="svg-fill-elegant-dark" class="Yei"></span>
-<span data-color-id="svg-fill-material-blue" class="RTZ"></span>
+<span data-color-id="background-color-transparent" class="ROU"></span>
+<span data-color-id="background-color-inherit" class="Ynj"></span>
+<span data-color-id="background-color-primary" class="VbS"></span>
+<span data-color-id="background-color-error" class="SZk"></span>
+<span data-color-id="background-color-gray-scale-super-light" class="Wde"></span>
+<span data-color-id="background-color-gray-scale-extra-light" class="WOW"></span>
+<span data-color-id="background-color-gray-scale-light" class="VjP"></span>
+<span data-color-id="background-color-gray-scale" class="lfi"></span>
+<span data-color-id="background-color-gray-scale-dark" class="Ojm"></span>
+<span data-color-id="background-color-gray-scale-extra-dark" class="Qdg"></span>
+<span data-color-id="background-color-gray-scale-super-dark" class="iVY"></span>
+<span data-color-id="background-color-white" class="dPQ"></span>
+<span data-color-id="background-color-everwhite" class="ank"></span>
+<span data-color-id="background-color-everdark-elegant" class="QTX"></span>
+<span data-color-id="background-color-dark" class="PYU"></span>
+<span data-color-id="background-color-extra-dark" class="Ogg"></span>
+<span data-color-id="background-color-super-dark" class="jam"></span>
+<span data-color-id="background-color-elegant-dark" class="dkc"></span>
+<span data-color-id="background-color-danger-heavy" class="PeY"></span>
+<span data-color-id="background-color-material-blue" class="XQR"></span>
+<span data-color-id="color-transparent" class="WRS"></span>
+<span data-color-id="color-inherit" class="kal"></span>
+<span data-color-id="color-primary" class="YYd"></span>
+<span data-color-id="color-error" class="aci"></span>
+<span data-color-id="color-success" class="ReX"></span>
+<span data-color-id="color-info" class="ZRf"></span>
+<span data-color-id="color-gray-scale-super-light" class="VZn"></span>
+<span data-color-id="color-gray-scale-extra-light" class="Wef"></span>
+<span data-color-id="color-gray-scale-light" class="ORe"></span>
+<span data-color-id="color-gray-scale" class="dSV"></span>
+<span data-color-id="color-gray-scale-dark" class="Zfn"></span>
+<span data-color-id="color-gray-scale-extra-dark" class="PXX"></span>
+<span data-color-id="color-gray-scale-super-dark" class="Zli1"></span>
+<span data-color-id="color-white" class="abY"></span>
+<span data-color-id="color-everwhite" class="gkg"></span>
+<span data-color-id="color-everdark-elegant" class="XhU"></span>
+<span data-color-id="color-dark" class="mee"></span>
+<span data-color-id="color-extra-dark" class="leZ"></span>
+<span data-color-id="color-super-dark" class="Pcl"></span>
+<span data-color-id="color-elegant-dark" class="jcV"></span>
+<span data-color-id="color-facebook" class="fil"></span>
+<span data-color-id="color-material-blue" class="RYP"></span>
+<span data-color-id="border-color-transparent" class="naX"></span>
+<span data-color-id="border-color-inherit" class="iYP"></span>
+<span data-color-id="border-color-primary" class="ifO"></span>
+<span data-color-id="border-color-error" class="jZi"></span>
+<span data-color-id="border-color-success" class="QVl"></span>
+<span data-color-id="border-color-info" class="hgZ"></span>
+<span data-color-id="border-color-gray-scale-super-light" class="mWU"></span>
+<span data-color-id="border-color-gray-scale-extra-light" class="Occ"></span>
+<span data-color-id="border-color-gray-scale-light" class="cjY"></span>
+<span data-color-id="border-color-gray-scale" class="ZUa"></span>
+<span data-color-id="border-color-gray-scale-dark" class="Xkn"></span>
+<span data-color-id="border-color-gray-scale-extra-dark" class="ZZj"></span>
+<span data-color-id="border-color-gray-scale-super-dark" class="PnU"></span>
+<span data-color-id="border-color-white" class="fTY"></span>
+<span data-color-id="border-color-everwhite" class="SXT"></span>
+<span data-color-id="border-color-dark" class="YUe"></span>
+<span data-color-id="border-color-extra-dark" class="RYe"></span>
+<span data-color-id="border-color-super-dark" class="hbZ"></span>
+<span data-color-id="border-color-elegant-dark" class="kTP"></span>
+<span data-color-id="border-color-material-blue" class="abj"></span>
+<span data-color-id="svg-fill-none" class="RWl"></span>
+<span data-color-id="svg-fill-transparent" class="Pgl"></span>
+<span data-color-id="svg-fill-inherit" class="fmW"></span>
+<span data-color-id="svg-fill-primary" class="hXS"></span>
+<span data-color-id="svg-fill-error" class="eYQ"></span>
+<span data-color-id="svg-fill-success" class="OjW"></span>
+<span data-color-id="svg-fill-info" class="SRT"></span>
+<span data-color-id="svg-fill-gray-scale-super-light" class="kea"></span>
+<span data-color-id="svg-fill-gray-scale-extra-light" class="nPk"></span>
+<span data-color-id="svg-fill-gray-scale-light" class="UPk"></span>
+<span data-color-id="svg-fill-gray-scale" class="Zmj"></span>
+<span data-color-id="svg-fill-gray-scale-dark" class="nha"></span>
+<span data-color-id="svg-fill-gray-scale-extra-dark" class="mge"></span>
+<span data-color-id="svg-fill-gray-scale-super-dark" class="iQd"></span>
+<span data-color-id="svg-fill-white" class="PTa"></span>
+<span data-color-id="svg-fill-everwhite" class="Pac"></span>
+<span data-color-id="svg-fill-dark" class="Vjj"></span>
+<span data-color-id="svg-fill-extra-dark" class="fli"></span>
+<span data-color-id="svg-fill-super-dark" class="OPb"></span>
+<span data-color-id="svg-fill-elegant-dark" class="Ran"></span>
+<span data-color-id="svg-fill-material-blue" class="Vaj"></span>
 </div>    </body>
 </html>

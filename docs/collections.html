@@ -15,31 +15,31 @@
         <script type="text/javascript">
             const blockAutoSubmit=e=>e.preventDefault();
         </script>
-        <script type="text/javascript" src="/variety-store/assets/collections.js?v=1727297636"></script>
-<link rel="stylesheet" href="/variety-store/assets/collections.css?v=1727297636">    </head>
-    <body class="nnS">
+        <script type="text/javascript" src="/variety-store/assets/collections.js?v=1727298584"></script>
+<link rel="stylesheet" href="/variety-store/assets/collections.css?v=1727298584">    </head>
+    <body class="aaX">
         <script type="text/javascript">
             const theme = localStorage.getItem('slate-theme') ?? 'light'
             document.querySelector('body').classList.add(theme)
             window.slate = { theme: { name: theme } }
         </script>
-        <app plunc-app="app" class="nnS"></app>
+        <app plunc-app="app" class="aaX"></app>
         <template plunc-name="app">
-            <main plunc-component="fs5" class="nnS"></main>
+            <main plunc-component="ag1" class="aaX"></main>
         </template>
-                <template plunc-name="fs5">
-    <div plunc-if="state=='loading'" class="nnS ZXg bSc ViP eOj">
+                <template plunc-name="ag1">
+    <div plunc-if="state=='loading'" class="aaX Tbl efT WPO Ydk">
         <!-- Apply loading screen here -->
         <div class="--slate-page-spinner"></div>
     </div>
     <div plunc-if="state=='active'">
-        <div class="ZXg nnS bfY">
-    <div class="naY bfY gTn PVd nOR">
-        <header plunc-component="wb2" class="nnS"></header>
-        <section plunc-component="yj7" class="nnS"></section>
+        <div class="Tbl aaX kjY">
+    <div class="ggn kjY XYg TTW dgm">
+        <header plunc-component="eq6" class="aaX"></header>
+        <section plunc-component="uk9" class="aaX"></section>
     </div>
-    <div class="miS ZjT bfY">
-        <section plunc-component="jb6" class="--cart-wrapper jii bfY ZjT bfY gOX"></section>
+    <div class="egl icb kjY">
+        <section plunc-component="qo5" class="--cart-wrapper kai kjY icb kjY nec"></section>
     </div>
 </div>
 
@@ -51,139 +51,139 @@
     main > div {height:100%;}
     .--cart-wrapper { z-index: 1; top: 0; right: 0; }
 </style>    </div>
-    <div plunc-if="state=='error'" class="nnS eOj ZXg bSc ViP">
+    <div plunc-if="state=='error'" class="aaX Ydk Tbl efT WPO">
         <!-- Apply error page here -->
-        <div class="bTX bnW aSY">
-            <div class="ZXg bSc">
-                <div class="cin QTT">
+        <div class="ZOi ROT RQO">
+            <div class="Tbl efT">
+                <div class="Xed SOU">
                     {{error.code}} /
                 </div>
-                <div class="cin giY mdX QTT">
+                <div class="Xed Tfd dPa SOU">
                     <span plunc-if="error.code==400">Bad Request</span>
                     <span plunc-if="error.code==401">Access Denied</span>
                     <span plunc-if="error.code==404">Not Found</span>
                     <span plunc-if="error.code==500">Internal Server Error</span>
                 </div>
             </div>
-            <div class="inP TfQ iah OfR">
+            <div class="YiU XYX cgm mWn">
                 {{error.message}} If you think this is incorrect, please contact me below.
             </div>
-            <div class="Omi ZXg bSc">
+            <div class="YfP Tbl efT">
                 
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="0.5" stroke="currentColor" class="Sak clV bcn">
-    <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" /></svg>                <div class="TfQ mcj mfY">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="0.5" stroke="currentColor" class="kmk mRS enT">
+    <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" /></svg>                <div class="XYX eiO miU">
                     rterrado@yotpo.com
                 </div>
             </div>
         </div>
     </div>
 </template>
-<template plunc-name="jb6">
+<template plunc-name="qo5">
     <div plunc-if="state == 'loading'"></div>
-    <form onsubmit="blockAutoSubmit(event)" plunc-if="state == 'active'" class="nnS bfY">
-        <div class="nnS ZXg ifk bfY hQP">
-            <div class="ZXg bSc TVe">
-                <div class="naY ZXg bSc">
+    <form onsubmit="blockAutoSubmit(event)" plunc-if="state == 'active'" class="aaX kjY">
+        <div class="aaX Tbl ckj kjY dkT">
+            <div class="Tbl efT lUk">
+                <div class="ggn Tbl efT">
                     
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="bcn clV kaj">
-    <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 10.5V6a3.75 3.75 0 1 0-7.5 0v4.5m11.356-1.993 1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 0 1-1.12-1.243l1.264-12A1.125 1.125 0 0 1 5.513 7.5h12.974c.576 0 1.059.435 1.119 1.007ZM8.625 10.5a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm7.5 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Z" /></svg>                    <div class="fck UVn elV">Cart ({{CartItem.items.length}})</div>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="enT mRS jYk">
+    <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 10.5V6a3.75 3.75 0 1 0-7.5 0v4.5m11.356-1.993 1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 0 1-1.12-1.243l1.264-12A1.125 1.125 0 0 1 5.513 7.5h12.974c.576 0 1.059.435 1.119 1.007ZM8.625 10.5a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm7.5 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Z" /></svg>                    <div class="hRd UfO TPl">Cart ({{CartItem.items.length}})</div>
                 </div>
-                <div class="Oee">
-                    <div plunc-click="clear()" class="akh akg OfR PSY dYV">CLEAR</div>
+                <div class="ZUQ">
+                    <div plunc-click="clear()" class="SVT ddW mWn kOT Una">CLEAR</div>
                 </div>
             </div>
-            <div role="separator" style="border-width:1px;" class="mgT hZj nhY nnS PVd"></div>            <div plunc-if="CartItem.items.length == 0" class="naY ZXg bSc ViP">You have no items in your cart.</div>
-            <div plunc-if="CartItem.items.length > 0" class="naY">
-                <ul plunc-repeat="CartItem.items as item" class="nnS">
-                    <li class="nnS ZXg">
-                        <div plunc-if="item.product.imgsrc == null" style="background-color: #f4f7ff;" class="ZXg ViP bSc QQQ XYa Xjl">
+            <div role="separator" style="border-width:1px;" class="SQn jOh bZb aaX TTW"></div>            <div plunc-if="CartItem.items.length == 0" class="ggn Tbl efT WPO">You have no items in your cart.</div>
+            <div plunc-if="CartItem.items.length > 0" class="ggn">
+                <ul plunc-repeat="CartItem.items as item" class="aaX">
+                    <li class="aaX Tbl">
+                        <div plunc-if="item.product.imgsrc == null" style="background-color: #f4f7ff;" class="Tbl WPO efT WXP URg YaV">
                             
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="0.5" stroke="currentColor" class="bcn PSY dbT">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="0.5" stroke="currentColor" class="enT kOT Phg">
     <path stroke-linecap="round" stroke-linejoin="round" d="m2.25 15.75 5.159-5.159a2.25 2.25 0 0 1 3.182 0l5.159 5.159m-1.5-1.5 1.409-1.409a2.25 2.25 0 0 1 3.182 0l2.909 2.909m-18 3.75h16.5a1.5 1.5 0 0 0 1.5-1.5V6a1.5 1.5 0 0 0-1.5-1.5H3.75A1.5 1.5 0 0 0 2.25 6v12a1.5 1.5 0 0 0 1.5 1.5Zm10.5-11.25h.008v.008h-.008V8.25Zm.375 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Z" /></svg>                        </div>
-                        <div plunc-if="item.product.imgsrc !== null" style="background:url({{item.product.imgsrc}});background-size:cover;background-repeat:no-repeat;" class="QQQ XYa Xjl">
+                        <div plunc-if="item.product.imgsrc !== null" style="background:url({{item.product.imgsrc}});background-size:cover;background-repeat:no-repeat;" class="WXP URg YaV">
                             
                         </div>
-                        <div class="jYa UaU">
-                            <div class="XeV elV">{{item.product.name}}</div>
-                            <div class="TfQ Qgf"><span class="lid eQe">{{item.product.currency.symbol}}{{ $parent.LineItemManager.calculateTotal(item.quantity,item.product.price) }}</span> / <span class="kOQ">{{item.product.currency.symbol}}{{item.product.price}} per item</span></div>
-                            <div class="TcP ZXg bSc">
-                                <div plunc-click="QuantityManager.remove({{$index}})" class="akg">
+                        <div class="ahh lfe">
+                            <div class="URd TPl">{{item.product.name}}</div>
+                            <div class="XYX jSW"><span class="mhQ cnU">{{item.product.currency.symbol}}{{ $parent.LineItemManager.calculateTotal(item.quantity,item.product.price) }}</span> / <span class="VSf">{{item.product.currency.symbol}}{{item.product.price}} per item</span></div>
+                            <div class="Rak Tbl efT">
+                                <div plunc-click="QuantityManager.remove({{$index}})" class="ddW">
                                     
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="bcn QTT Sak">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="enT SOU kmk">
     <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14" /></svg>                                </div>
-                                <div class="lid Ymf">{{item.quantity}}</div>
-                                <div plunc-click="QuantityManager.add({{$index}})" class="akg">
+                                <div class="mhQ WQP">{{item.quantity}}</div>
+                                <div plunc-click="QuantityManager.add({{$index}})" class="ddW">
                                     
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="bcn QTT Sak">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="enT SOU kmk">
     <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" /></svg>                                </div>
                             </div>
                         </div>
                     </li>
                 </ul>
             </div>
-            <section class="miS" plunc-block="/BlockManager/SendButtonBlock/">
-                <button type="submit" plunc-click="checkout()"  class="Qig ZPb ViP nnS jie akg bba VYW nOR Yif ZPR nlf UXk ZRP kOc ekT ZXg bSc">Checkout</button>            </section>
+            <section class="egl" plunc-block="/BlockManager/SendButtonBlock/">
+                <button type="submit" plunc-click="checkout()"  class="VXg SWV WPO aaX jTW ddW Wgl Xdc dgm VjY cYj Wnk WbY VXb djT UZm Tbl efT">Checkout</button>            </section>
         </div>
     </form>
     <div plunc-if="state == 'error'"></div>
 </template>
-<template plunc-name="yj7">
-    <div plunc-if="state=='loading'" class="nnS bfY ZXg bSc ViP leQ mgT nOR PVd">
+<template plunc-name="uk9">
+    <div plunc-if="state=='loading'" class="aaX kjY Tbl efT WPO hkW SQn dgm TTW">
         <div class="--slate-page-spinner"></div>
     </div>
-    <div plunc-if="state=='active'" class="nnS">
-        <div plunc-if="products.length > 0" class="nnS">
-            <ul plunc-repeat="products as product" class="nnS ZXg QYQ">
-                <li style="border-width:1px;" class="eXi ceg jgQ mOV PVd ">
-                    <div class="ZXg TVe bSc nnS">
-                        <div plunc-if="product.image_url == null" style="background-color: #f4f7ff;" class="ZXg ViP bSc QQQ XYa Xjl">
+    <div plunc-if="state=='active'" class="aaX">
+        <div plunc-if="products.length > 0" class="aaX">
+            <ul plunc-repeat="products as product" class="aaX Tbl SmV">
+                <li style="border-width:1px;" class="SPR SmZ mXV lWc TTW ">
+                    <div class="Tbl lUk efT aaX">
+                        <div plunc-if="product.image_url == null" style="background-color: #f4f7ff;" class="Tbl WPO efT WXP URg YaV">
                             
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="0.5" stroke="currentColor" class="bcn PSY dbT">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="0.5" stroke="currentColor" class="enT kOT Phg">
     <path stroke-linecap="round" stroke-linejoin="round" d="m2.25 15.75 5.159-5.159a2.25 2.25 0 0 1 3.182 0l5.159 5.159m-1.5-1.5 1.409-1.409a2.25 2.25 0 0 1 3.182 0l2.909 2.909m-18 3.75h16.5a1.5 1.5 0 0 0 1.5-1.5V6a1.5 1.5 0 0 0-1.5-1.5H3.75A1.5 1.5 0 0 0 2.25 6v12a1.5 1.5 0 0 0 1.5 1.5Zm10.5-11.25h.008v.008h-.008V8.25Zm.375 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Z" /></svg>                        </div>
-                        <div plunc-if="product.image_url !== null" style="background:url({{product.image_url}});background-size:cover;background-repeat:no-repeat;" class="QQQ XYa Xjl">
+                        <div plunc-if="product.image_url !== null" style="background:url({{product.image_url}});background-size:cover;background-repeat:no-repeat;" class="WXP URg YaV">
                             
                         </div>
-                        <div class="ZXg bSc">
-                            <div class="TfQ Vcc PSY QkZ">
+                        <div class="Tbl efT">
+                            <div class="XYX nUQ kOT gnT">
                                 # {{ product.yotpo_id }}
                             </div>
-                            <div plunc-if="product.price !== null" plunc-click="AddToCart('{{$index}}')" class="QkZ akg">
+                            <div plunc-if="product.price !== null" plunc-click="AddToCart('{{$index}}')" class="gnT ddW">
                                 
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="bcn PbW PSY Sak">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="enT Qdi kOT kmk">
     <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 10.5V6a3.75 3.75 0 1 0-7.5 0v4.5m11.356-1.993 1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 0 1-1.12-1.243l1.264-12A1.125 1.125 0 0 1 5.513 7.5h12.974c.576 0 1.059.435 1.119 1.007ZM8.625 10.5a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm7.5 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Z" /></svg>                            </div>
-                            <div plunc-click="ViewSingleProduct('{{$index}}')" class="akg">
+                            <div plunc-click="ViewSingleProduct('{{$index}}')" class="ddW">
                                 
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="bcn PbW PSY Sak">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="enT Qdi kOT kmk">
     <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
 </svg>                            </div>
                         </div>
                     </div>
-                    <div class="ZXg bSc Omi">
-                        <div class="ZXg bSc WUX VWl UaQ WWm ZPn">
+                    <div class="Tbl efT YfP">
+                        <div class="Tbl efT ZgQ jOc OmT Rii WOX">
                             
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="1.0" stroke="currentColor" class="bcn QTT PUl">
-    <path stroke-linecap="round" stroke-linejoin="round" d="M7.864 4.243A7.5 7.5 0 0 1 19.5 10.5c0 2.92-.556 5.709-1.568 8.268M5.742 6.364A7.465 7.465 0 0 0 4.5 10.5a7.464 7.464 0 0 1-1.15 3.993m1.989 3.559A11.209 11.209 0 0 0 8.25 10.5a3.75 3.75 0 1 1 7.5 0c0 .527-.021 1.049-.064 1.565M12 10.5a14.94 14.94 0 0 1-3.6 9.75m6.633-4.596a18.666 18.666 0 0 1-2.485 5.33" /></svg>                            <div class="bSO mPW QTT">{{ product.external_id }}</div>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="1.0" stroke="currentColor" class="enT SOU alc">
+    <path stroke-linecap="round" stroke-linejoin="round" d="M7.864 4.243A7.5 7.5 0 0 1 19.5 10.5c0 2.92-.556 5.709-1.568 8.268M5.742 6.364A7.465 7.465 0 0 0 4.5 10.5a7.464 7.464 0 0 1-1.15 3.993m1.989 3.559A11.209 11.209 0 0 0 8.25 10.5a3.75 3.75 0 1 1 7.5 0c0 .527-.021 1.049-.064 1.565M12 10.5a14.94 14.94 0 0 1-3.6 9.75m6.633-4.596a18.666 18.666 0 0 1-2.485 5.33" /></svg>                            <div class="YUf XQb SOU">{{ product.external_id }}</div>
                         </div>
-                        <div plunc-if="product.group_name !== null" class="bSO ZXg bSc">
+                        <div plunc-if="product.group_name !== null" class="YUf Tbl efT">
                             
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="1.0" stroke="currentColor" class="QYj TeX PUl">
-    <path d="m21.484 7.125-9.022-5a1.003 1.003 0 0 0-.968 0l-8.978 4.96a1 1 0 0 0-.003 1.748l9.022 5.04a.995.995 0 0 0 .973.001l8.978-5a1 1 0 0 0-.002-1.749z"></path><path d="m12 15.856-8.515-4.73-.971 1.748 9 5a1 1 0 0 0 .971 0l9-5-.971-1.748L12 15.856z"></path><path d="m12 19.856-8.515-4.73-.971 1.748 9 5a1 1 0 0 0 .971 0l9-5-.971-1.748L12 19.856z"></path></svg>                            <div class="bSO mPW QTT">{{ product.group_name }}</div>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="1.0" stroke="currentColor" class="QcW ehQ alc">
+    <path d="m21.484 7.125-9.022-5a1.003 1.003 0 0 0-.968 0l-8.978 4.96a1 1 0 0 0-.003 1.748l9.022 5.04a.995.995 0 0 0 .973.001l8.978-5a1 1 0 0 0-.002-1.749z"></path><path d="m12 15.856-8.515-4.73-.971 1.748 9 5a1 1 0 0 0 .971 0l9-5-.971-1.748L12 15.856z"></path><path d="m12 19.856-8.515-4.73-.971 1.748 9 5a1 1 0 0 0 .971 0l9-5-.971-1.748L12 19.856z"></path></svg>                            <div class="YUf XQb SOU">{{ product.group_name }}</div>
                         </div>
-                        <div plunc-if="$parent.conditionals.hasTag(product)" class="bSO ZXg bSc">
+                        <div plunc-if="$parent.conditionals.hasTag(product)" class="YUf Tbl efT">
                             
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="1.0" stroke="currentColor" class="QYj TeX PUl">
-    <path d="M11.707 2.293A.997.997 0 0 0 11 2H6a.997.997 0 0 0-.707.293l-3 3A.996.996 0 0 0 2 6v5c0 .266.105.52.293.707l10 10a.997.997 0 0 0 1.414 0l8-8a.999.999 0 0 0 0-1.414l-10-10zM13 19.586l-9-9V6.414L6.414 4h4.172l9 9L13 19.586z"></path><circle cx="8.353" cy="8.353" r="1.647"></circle></svg>                            <div class="bSO mPW QTT">{{ product.custom_properties.review_form_tag }}</div>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="1.0" stroke="currentColor" class="QcW ehQ alc">
+    <path d="M11.707 2.293A.997.997 0 0 0 11 2H6a.997.997 0 0 0-.707.293l-3 3A.996.996 0 0 0 2 6v5c0 .266.105.52.293.707l10 10a.997.997 0 0 0 1.414 0l8-8a.999.999 0 0 0 0-1.414l-10-10zM13 19.586l-9-9V6.414L6.414 4h4.172l9 9L13 19.586z"></path><circle cx="8.353" cy="8.353" r="1.647"></circle></svg>                            <div class="YUf XQb SOU">{{ product.custom_properties.review_form_tag }}</div>
                         </div>
-                        <!-- <div class="bSO ZXg bSc Omi VWl UaQ WWm ZPn">
-                            <img style="filter: grayscale(100%);" class="PUl" src="https://upload.wikimedia.org/wikipedia/commons/f/f8/Yotpo_Logo.svg" alt="">
-                            <div class="bSO mPW QTT">{{ product.yotpo_id }}</div>
+                        <!-- <div class="YUf Tbl efT YfP jOc OmT Rii WOX">
+                            <img style="filter: grayscale(100%);" class="alc" src="https://upload.wikimedia.org/wikipedia/commons/f/f8/Yotpo_Logo.svg" alt="">
+                            <div class="YUf XQb SOU">{{ product.yotpo_id }}</div>
                         </div> -->
                     </div>
-                    <div class="fnR aen elV">{{product.name}}</div>
-                    <div id="product_list_star_rating_{{product.external_id}}" class="TcP">
+                    <div class="QiQ QdS TPl">{{product.name}}</div>
+                    <div id="product_list_star_rating_{{product.external_id}}" class="Rak">
                         <div class="--ellipsis-loader --ellipsis-dots"><div></div></div>
                     </div>
-                    <div plunc-if="product.price !== null" class="hkU fck lid">
+                    <div plunc-if="product.price !== null" class="Zmi hRd mhQ">
                         {{$parent.printer.price(product)}}
                     </div>
                 </li>
@@ -191,193 +191,193 @@
         </div>
     </div>
     <div plunc-if="state=='error'"></div>
-    <div class="nnS" plunc-component="qu5"></div>
+    <div class="aaX" plunc-component="mb5"></div>
 </template>
-<template plunc-name="wb2">
+<template plunc-name="eq6">
     <div plunc-if="state=='loading'"></div>
-    <div plunc-if="state=='active'" class="nnS ZXg bSc bfY">
-        <div class="XRi bfY ZXg bSc">
-            <div class="--store-logo-wrapper--light bfY UaQ gTn nOR PVd">
-                <img class="bfY" src="https://cdn.shopify.com/s/files/1/0560/7466/6159/files/variety-store-logo-light-theme.png?v=1724434321" alt="">
+    <div plunc-if="state=='active'" class="aaX Tbl efT kjY">
+        <div class="VSe kjY Tbl efT">
+            <div class="--store-logo-wrapper--light kjY OmT XYg dgm TTW">
+                <img class="kjY" src="https://cdn.shopify.com/s/files/1/0560/7466/6159/files/variety-store-logo-light-theme.png?v=1724434321" alt="">
             </div>
-            <div class="--store-logo-wrapper--dark bfY UaQ gTn nOR PVd">
-                <img class="bfY" src="https://cdn.shopify.com/s/files/1/0560/7466/6159/files/variety-store-logo-dark-theme.png?v=1724434322" alt="">
+            <div class="--store-logo-wrapper--dark kjY OmT XYg dgm TTW">
+                <img class="kjY" src="https://cdn.shopify.com/s/files/1/0560/7466/6159/files/variety-store-logo-dark-theme.png?v=1724434322" alt="">
             </div>
-            <div plunc-if="views.StoreNameView == true" class="ceg">
-                <div class="Vcc akh">Store Name</div>
-                <div id="header_store_name" class="fnR aen elV"><div class="--ellipsis-loader --ellipsis-dots"><div></div></div></div>
+            <div plunc-if="views.StoreNameView == true" class="SmZ">
+                <div class="nUQ SVT">Store Name</div>
+                <div id="header_store_name" class="QiQ QdS TPl"><div class="--ellipsis-loader --ellipsis-dots"><div></div></div></div>
             </div>
             <div plunc-if="views.CollectionLink == true" class="">
-                <div plunc-click="goToCollections()" class="akg OYQ PbW ZXg bSc ikZ Rkd nOR PVd">
+                <div plunc-click="goToCollections()" class="ddW TkS Qdi Tbl efT Zhh ZSZ dgm TTW">
                     <div>
                         
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="bcn kWU Rle">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="enT SWV1 RgR">
     <path stroke-linecap="round" stroke-linejoin="round" d="M15.59 14.37a6 6 0 0 1-5.84 7.38v-4.8m5.84-2.58a14.98 14.98 0 0 0 6.16-12.12A14.98 14.98 0 0 0 9.631 8.41m5.96 5.96a14.926 14.926 0 0 1-5.841 2.58m-.119-8.54a6 6 0 0 0-7.381 5.84h4.8m2.581-5.84a14.927 14.927 0 0 0-2.58 5.84m2.699 2.7c-.103.021-.207.041-.311.06a15.09 15.09 0 0 1-2.448-2.448 14.9 14.9 0 0 1 .06-.312m-2.24 2.39a4.493 4.493 0 0 0-1.757 4.306 4.493 4.493 0 0 0 4.306-1.758M16.5 9a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0Z" /></svg>                    </div>
-                    <div class="mfY lji">
+                    <div class="miU Sli">
                         Products
                     </div>
                 </div>
             </div>
             <div plunc-if="views.LogOffButton == true" class="">
-                <div plunc-click="logout()" class="akg OYQ PbW ZXg bSc ikZ Rkd nOR PVd">
+                <div plunc-click="logout()" class="ddW TkS Qdi Tbl efT Zhh ZSZ dgm TTW">
                     <div>
                         
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="bcn kWU Rle">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="enT SWV1 RgR">
     <path stroke-linecap="round" stroke-linejoin="round" d="M5.636 5.636a9 9 0 1 0 12.728 0M12 3v9" /></svg>                    </div>
-                    <div class="mfY lji">
+                    <div class="miU Sli">
                         Logout
                     </div>
                 </div>
             </div>
         </div>
-        <div class="XRi ZXg bSc QlX">
-            <div class="SVO">
-                <div plunc-block="/Plugins/ThemeSelector/" class="jQf ZXg bSc">
+        <div class="VSe Tbl efT fPV">
+            <div class="TlT">
+                <div plunc-block="/Plugins/ThemeSelector/" class="lmX Tbl efT">
     <div plunc-if="ThemeSelector.isDarkTheme==false">
         
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="0.5" stroke="currentColor" class="Sak QkZ">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="0.5" stroke="currentColor" class="kmk gnT">
     <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v2.25m6.364.386l-1.591 1.591M21 12h-2.25m-.386 6.364l-1.591-1.591M12 18.75V21m-4.773-4.227l-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z" /></svg>    </div>
     <div plunc-if="ThemeSelector.isDarkTheme==true">
         
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="0.5" stroke="currentColor" class="Sak QkZ TnY">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="0.5" stroke="currentColor" class="kmk gnT jaW">
     <path stroke-linecap="round" stroke-linejoin="round" d="M21.752 15.002A9.718 9.718 0 0118 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 003 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 009.002-5.998z" /></svg>    </div>
     
-<label class="--switcher mfm fgV --switcher-id-66f4786412689 --switcher-size-medium">
-    <input plunc-model="ThemeSelector.isDarkTheme" plunc-change="ThemeSelector.switchTheme()" class="Pik WSi cjZ" type="checkbox" id="input--switcher-id-66f4786412689" />
-    <span class="hSR --is-shape-round slider round icV Tmg akg Pgn beg eTX aga WUX"></span>
+<label class="--switcher bWO jZP --switcher-id-66f47c186794a --switcher-size-medium">
+    <input plunc-model="ThemeSelector.isDarkTheme" plunc-change="ThemeSelector.switchTheme()" class="nRj ZiZ QjS" type="checkbox" id="input--switcher-id-66f47c186794a" />
+    <span class="nSj --is-shape-round slider round SRk ZPf ddW QOl ZVf nPR VeP ZgQ"></span>
 </label></div>            </div>
-            <div plunc-if="views.RightSideBar == true" class="mlm naY ZXg bSc QlX">
+            <div plunc-if="views.RightSideBar == true" class="PSl ggn Tbl efT fPV">
                 <div>Terms of Service</div>
             </div>
-            <div plunc-if="views.PaginationControl == true" class="miS bfY">
-                <section class="nnS bfY" plunc-component="ms5"></section>
+            <div plunc-if="views.PaginationControl == true" class="egl kjY">
+                <section class="aaX kjY" plunc-component="ty8"></section>
             </div>
-            <div plunc-if="views.SearchBar == true" class="naY bfY VQj">
-                <section class="nnS bfY" plunc-component="vm5"></section>
+            <div plunc-if="views.SearchBar == true" class="ggn kjY ZVe">
+                <section class="aaX kjY" plunc-component="gx9"></section>
             </div>
         </div>
     </div>
     <div plunc-if="state=='error'"></div>
 </template>
-<template plunc-name="qu5">
+<template plunc-name="mb5">
     <dialog plunc-block="/ModalManager/Dialog/" class="--slate-modal-backdrop">
-        <div plunc-block="/BlockManager/Content/" class="nnS bfY ZXg ViP bSc">
+        <div plunc-block="/BlockManager/Content/" class="aaX kjY Tbl WPO efT">
             
-            <div class="bnW gcW">
-                <div plunc-if="BlockManager.Content.state=='loading'" class="ZXg bSc ViP">
+            <div class="ROT llb">
+                <div plunc-if="BlockManager.Content.state=='loading'" class="Tbl efT WPO">
                     <div class="--slate-theme-spinner-simple"></div>
                 </div>
-                <div plunc-if="BlockManager.Content.state=='active'" class="nnS">
-                    <div plunc-click="ModalManager.Dialog.close()" class="nnS ZXg QlX">
+                <div plunc-if="BlockManager.Content.state=='active'" class="aaX">
+                    <div plunc-click="ModalManager.Dialog.close()" class="aaX Tbl fPV">
                         
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="0.5" stroke="currentColor" class="Rle bcn akg">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="0.5" stroke="currentColor" class="RgR enT ddW">
     <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" /></svg>                    </div>
-                    <div style="max-height:500px;overflow-y:scroll;" class="--slate-scrollbar bnW gcW eUd RTh jie">
+                    <div style="max-height:500px;overflow-y:scroll;" class="--slate-scrollbar ROT llb UOf YgP jTW">
                         
-                        <div plunc-if="product.image_url == null" class="WUX nnS XlP"></div>
-                        <div plunc-if="product.image_url == null" class="ikZ nnS ZXg bSc TVe" style="margin-top:-50px;">
-                            <div style="background-color: #f4f7ff;" class="ZXg ViP bSc ZPl XlP Xjl">
+                        <div plunc-if="product.image_url == null" class="ZgQ aaX dPb"></div>
+                        <div plunc-if="product.image_url == null" class="Zhh aaX Tbl efT lUk" style="margin-top:-50px;">
+                            <div style="background-color: #f4f7ff;" class="Tbl WPO efT SRf dPb YaV">
                                 
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="0.5" stroke="currentColor" class="bcn PSY dbT">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="0.5" stroke="currentColor" class="enT kOT Phg">
     <path stroke-linecap="round" stroke-linejoin="round" d="m2.25 15.75 5.159-5.159a2.25 2.25 0 0 1 3.182 0l5.159 5.159m-1.5-1.5 1.409-1.409a2.25 2.25 0 0 1 3.182 0l2.909 2.909m-18 3.75h16.5a1.5 1.5 0 0 0 1.5-1.5V6a1.5 1.5 0 0 0-1.5-1.5H3.75A1.5 1.5 0 0 0 2.25 6v12a1.5 1.5 0 0 0 1.5 1.5Zm10.5-11.25h.008v.008h-.008V8.25Zm.375 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Z" /></svg>                            </div>
-                            <div class="ZXg bSc">
+                            <div class="Tbl efT">
                                 <div id="view_product_star_rating">
                                     <div class="--ellipsis-loader --ellipsis-dots"><div></div></div>
                                 </div>
                                 <div plunc-if="product.price !== null">
-                                    <button type="button" plunc-click="addToCart()"  class="Qig ZPb ViP jYa akg bba VYW nOR Yif ZPR nlf UXk ZRP kOc ekT ZXg bSc">Add To Cart
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="bcn kOc mRn mdX Sak">
+                                    <button type="button" plunc-click="addToCart()"  class="VXg SWV WPO ahh ddW Wgl Xdc dgm VjY cYj Wnk WbY VXb djT UZm Tbl efT">Add To Cart
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="enT djT YhS dPa kmk">
     <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 10.5V6a3.75 3.75 0 1 0-7.5 0v4.5m11.356-1.993 1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 0 1-1.12-1.243l1.264-12A1.125 1.125 0 0 1 5.513 7.5h12.974c.576 0 1.059.435 1.119 1.007ZM8.625 10.5a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm7.5 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Z" /></svg></button>                                </div>
                             </div>
                         </div>
                         
-                        <div plunc-if="product.image_url !== null" style="background:url({{product.image_url}});background-size:cover;background-position:center;filter:blur(10px);z-index:0;height:200px;" class="mfm">
+                        <div plunc-if="product.image_url !== null" style="background:url({{product.image_url}});background-size:cover;background-position:center;filter:blur(10px);z-index:0;height:200px;" class="bWO">
                         </div>
-                        <div plunc-if="product.image_url !== null" class="ikZ nnS ZXg bSc TVe" style="margin-top:-50px;z-index:10;position:relative;">
-                            <div plunc-if="product.image_url !== null" style="background:url({{product.image_url}});background-size:cover;background-repeat:no-repeat;" class="ZPl XlP Xjl">
+                        <div plunc-if="product.image_url !== null" class="Zhh aaX Tbl efT lUk" style="margin-top:-50px;z-index:10;position:relative;">
+                            <div plunc-if="product.image_url !== null" style="background:url({{product.image_url}});background-size:cover;background-repeat:no-repeat;" class="SRf dPb YaV">
                                 
                             </div>
-                            <div class="ZXg bSc">
+                            <div class="Tbl efT">
                                 <div id="view_product_star_rating">
                                     <div class="--ellipsis-loader --ellipsis-dots"><div></div></div>
                                 </div>
                                 <div plunc-if="product.price !== null">
-                                    <button type="button" plunc-click="addToCart()"  class="Qig ZPb ViP jYa akg bba VYW nOR Yif ZPR nlf UXk ZRP kOc ekT ZXg bSc">Add To Cart
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="bcn kOc mRn mdX Sak">
+                                    <button type="button" plunc-click="addToCart()"  class="VXg SWV WPO ahh ddW Wgl Xdc dgm VjY cYj Wnk WbY VXb djT UZm Tbl efT">Add To Cart
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="enT djT YhS dPa kmk">
     <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 10.5V6a3.75 3.75 0 1 0-7.5 0v4.5m11.356-1.993 1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 0 1-1.12-1.243l1.264-12A1.125 1.125 0 0 1 5.513 7.5h12.974c.576 0 1.059.435 1.119 1.007ZM8.625 10.5a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm7.5 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Z" /></svg></button>                                </div>
                             </div>
                         </div>
 
-                        <div class="ikZ jie">
-                            <div class="Ydc elV">{{product.name}}</div>
-                            <div plunc-if="product.price !== null" class="TcP cbd lid">
-                                {{printer.price()}} <span class="ZRO Vcc">({{product.currency}})</span> • <span class="ZRO Vcc" id="view_product_review_count"><div class="--ellipsis-loader --ellipsis-dots"><div></div></div></span>
+                        <div class="Zhh jTW">
+                            <div class="dOj TPl">{{product.name}}</div>
+                            <div plunc-if="product.price !== null" class="Rak XbO mhQ">
+                                {{printer.price()}} <span class="Obl nUQ">({{product.currency}})</span> • <span class="Obl nUQ" id="view_product_review_count"><div class="--ellipsis-loader --ellipsis-dots"><div></div></div></span>
                             </div>
 
-                            <div class="bRO Vcc akh">Internal Product ID</div>
-                            <div class="fnR TfQ">
+                            <div class="jdV nUQ SVT">Internal Product ID</div>
+                            <div class="QiQ XYX">
                                 {{product.yotpo_id}}
                             </div>
 
-                            <div class="bRO Vcc akh">Product ID</div>
-                            <div class="fnR ZXg bSc WUX VWl UaQ WWm ZPn">
+                            <div class="jdV nUQ SVT">Product ID</div>
+                            <div class="QiQ Tbl efT ZgQ jOc OmT Rii WOX">
                                 
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="1.0" stroke="currentColor" class="bcn QTT PUl">
-    <path stroke-linecap="round" stroke-linejoin="round" d="M7.864 4.243A7.5 7.5 0 0 1 19.5 10.5c0 2.92-.556 5.709-1.568 8.268M5.742 6.364A7.465 7.465 0 0 0 4.5 10.5a7.464 7.464 0 0 1-1.15 3.993m1.989 3.559A11.209 11.209 0 0 0 8.25 10.5a3.75 3.75 0 1 1 7.5 0c0 .527-.021 1.049-.064 1.565M12 10.5a14.94 14.94 0 0 1-3.6 9.75m6.633-4.596a18.666 18.666 0 0 1-2.485 5.33" /></svg>                                <div class="bSO mPW QTT">{{ product.external_id }}</div>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="1.0" stroke="currentColor" class="enT SOU alc">
+    <path stroke-linecap="round" stroke-linejoin="round" d="M7.864 4.243A7.5 7.5 0 0 1 19.5 10.5c0 2.92-.556 5.709-1.568 8.268M5.742 6.364A7.465 7.465 0 0 0 4.5 10.5a7.464 7.464 0 0 1-1.15 3.993m1.989 3.559A11.209 11.209 0 0 0 8.25 10.5a3.75 3.75 0 1 1 7.5 0c0 .527-.021 1.049-.064 1.565M12 10.5a14.94 14.94 0 0 1-3.6 9.75m6.633-4.596a18.666 18.666 0 0 1-2.485 5.33" /></svg>                                <div class="YUf XQb SOU">{{ product.external_id }}</div>
                             </div>
 
-                            <div class="bRO Vcc akh">Product Description</div>
-                            <div plunc-if="product.description == null" class="fnR TfQ ZRO">
+                            <div class="jdV nUQ SVT">Product Description</div>
+                            <div plunc-if="product.description == null" class="QiQ XYX Obl">
                                 This product has no description.
                             </div>
-                            <div plunc-if="product.description !== null" class="fnR TfQ">
+                            <div plunc-if="product.description !== null" class="QiQ XYX">
                                 {{product.description}}
                             </div>
 
-                            <div class="bRO Vcc akh">SKU</div>
-                            <div plunc-if="product.sku == null" class="fnR TfQ ZRO">
+                            <div class="jdV nUQ SVT">SKU</div>
+                            <div plunc-if="product.sku == null" class="QiQ XYX Obl">
                                 This product has no SKU value.
                             </div>
-                            <div plunc-if="product.sku !== null" class="fnR TfQ">
+                            <div plunc-if="product.sku !== null" class="QiQ XYX">
                                 {{product.sku}}
                             </div>
 
 
-                            <div class="bRO Vcc akh">Manufacturer Part Number</div>
-                            <div plunc-if="product.mpn == null" class="fnR TfQ ZRO">
+                            <div class="jdV nUQ SVT">Manufacturer Part Number</div>
+                            <div plunc-if="product.mpn == null" class="QiQ XYX Obl">
                                 This product has no MPN value.
                             </div>
-                            <div plunc-if="product.mpn !== null" class="fnR TfQ">
+                            <div plunc-if="product.mpn !== null" class="QiQ XYX">
                                 {{product.mpn}}
                             </div>
 
-                            <div class="bRO Vcc akh">Group Name</div>
-                            <div plunc-if="product.group_name == null" class="fnR TfQ ZRO">
+                            <div class="jdV nUQ SVT">Group Name</div>
+                            <div plunc-if="product.group_name == null" class="QiQ XYX Obl">
                                 This product is not grouped.
                             </div>
-                            <div plunc-if="product.group_name !== null" class="fnR ZXg bSc">
+                            <div plunc-if="product.group_name !== null" class="QiQ Tbl efT">
                                 
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="1.0" stroke="currentColor" class="QYj TeX PUl">
-    <path d="m21.484 7.125-9.022-5a1.003 1.003 0 0 0-.968 0l-8.978 4.96a1 1 0 0 0-.003 1.748l9.022 5.04a.995.995 0 0 0 .973.001l8.978-5a1 1 0 0 0-.002-1.749z"></path><path d="m12 15.856-8.515-4.73-.971 1.748 9 5a1 1 0 0 0 .971 0l9-5-.971-1.748L12 15.856z"></path><path d="m12 19.856-8.515-4.73-.971 1.748 9 5a1 1 0 0 0 .971 0l9-5-.971-1.748L12 19.856z"></path></svg>                                <div class="bSO mPW QTT">{{ product.group_name }}</div>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="1.0" stroke="currentColor" class="QcW ehQ alc">
+    <path d="m21.484 7.125-9.022-5a1.003 1.003 0 0 0-.968 0l-8.978 4.96a1 1 0 0 0-.003 1.748l9.022 5.04a.995.995 0 0 0 .973.001l8.978-5a1 1 0 0 0-.002-1.749z"></path><path d="m12 15.856-8.515-4.73-.971 1.748 9 5a1 1 0 0 0 .971 0l9-5-.971-1.748L12 15.856z"></path><path d="m12 19.856-8.515-4.73-.971 1.748 9 5a1 1 0 0 0 .971 0l9-5-.971-1.748L12 19.856z"></path></svg>                                <div class="YUf XQb SOU">{{ product.group_name }}</div>
                             </div>
 
-                            <div class="bRO Vcc akh">Product Tag</div>
-                            <div plunc-if="conditionals.withoutTag()" class="fnR TfQ ZRO">
+                            <div class="jdV nUQ SVT">Product Tag</div>
+                            <div plunc-if="conditionals.withoutTag()" class="QiQ XYX Obl">
                                 This product is not tagged.
                             </div>
-                            <div plunc-if="conditionals.hasTag()" class="fnR ZXg bSc">
+                            <div plunc-if="conditionals.hasTag()" class="QiQ Tbl efT">
                                 
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="1.0" stroke="currentColor" class="QYj TeX PUl">
-    <path d="M11.707 2.293A.997.997 0 0 0 11 2H6a.997.997 0 0 0-.707.293l-3 3A.996.996 0 0 0 2 6v5c0 .266.105.52.293.707l10 10a.997.997 0 0 0 1.414 0l8-8a.999.999 0 0 0 0-1.414l-10-10zM13 19.586l-9-9V6.414L6.414 4h4.172l9 9L13 19.586z"></path><circle cx="8.353" cy="8.353" r="1.647"></circle></svg>                                <div class="bSO mPW QTT">{{ product.custom_properties.review_form_tag }}</div>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="1.0" stroke="currentColor" class="QcW ehQ alc">
+    <path d="M11.707 2.293A.997.997 0 0 0 11 2H6a.997.997 0 0 0-.707.293l-3 3A.996.996 0 0 0 2 6v5c0 .266.105.52.293.707l10 10a.997.997 0 0 0 1.414 0l8-8a.999.999 0 0 0 0-1.414l-10-10zM13 19.586l-9-9V6.414L6.414 4h4.172l9 9L13 19.586z"></path><circle cx="8.353" cy="8.353" r="1.647"></circle></svg>                                <div class="YUf XQb SOU">{{ product.custom_properties.review_form_tag }}</div>
                             </div>
 
-                            <div class="bRO Vcc akh">Updated At</div>
-                            <div style="font-family:monospace;" class="fnR TfQ">
+                            <div class="jdV nUQ SVT">Updated At</div>
+                            <div style="font-family:monospace;" class="QiQ XYX">
                                 {{product.updated_at}}
                             </div>
 
-                            <div class="bRO Vcc akh">Created At</div>
-                            <div style="font-family:monospace;" class="fnR TfQ">
+                            <div class="jdV nUQ SVT">Created At</div>
+                            <div style="font-family:monospace;" class="QiQ XYX">
                                 {{product.created_at}}
                             </div>
                         </div>
@@ -387,119 +387,119 @@
         </div>
     </dialog>
 </template>
-<template plunc-name="ms5">
+<template plunc-name="ty8">
     <div plunc-if="state=='loading'"></div>
-    <div plunc-if="state=='active'" class="nnS ZXg bSc bfY">
-        <div plunc-click="previous()" class="ZXg bSc ViP akg bfY mSU dbT jgj XgW mOV nOR PVd">
+    <div plunc-if="state=='active'" class="aaX Tbl efT kjY">
+        <div plunc-click="previous()" class="Tbl efT WPO ddW kjY bZX Phg ikb mfe lWc dgm TTW">
             
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="bcn PbW PSY ehl">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="enT Qdi kOT jlZ">
     <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18" /></svg>        </div>
-        <div plunc-click="next()" class="ZXg bSc ViP akg bfY mSU dbT jgj XgW mOV nOR PVd">
+        <div plunc-click="next()" class="Tbl efT WPO ddW kjY bZX Phg ikb mfe lWc dgm TTW">
             
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="bcn PbW PSY ehl">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="enT Qdi kOT jlZ">
     <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
 </svg>        </div>
     </div>
     <div plunc-if="state=='error'"></div>
 </template>
-<template plunc-name="vm5">
+<template plunc-name="gx9">
     <div plunc-if="state=='loading'"></div>
-    <form plunc-block="ProductSearchForm" onsubmit="blockAutoSubmit(event)" plunc-if="state=='active'" class="nnS bfY">
-        <fieldset class="Xkb nnS ZXg bSc bfY" style="border-style:none;box-shadow: none;" xblock="/Forms/Input/66578cf819b5185">
-            <input class="Xkb nnS ekT bba bfY RPZ" type="text" plunc-change="search()" plunc-model="keyword" placeholder="search product by external id" style="text-align:right;"/>   
-            <svg plunc-if="button=='search'" style="width:45px;" class="bcn clV iZZ RPZ mdX" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+    <form plunc-block="ProductSearchForm" onsubmit="blockAutoSubmit(event)" plunc-if="state=='active'" class="aaX kjY">
+        <fieldset class="ZdV aaX Tbl efT kjY" style="border-style:none;box-shadow: none;" xblock="/Forms/Input/66578cf819b5185">
+            <input class="ZdV aaX UZm Wgl kjY WPZ" type="text" plunc-change="search()" plunc-model="keyword" placeholder="search product by external id" style="text-align:right;"/>   
+            <svg plunc-if="button=='search'" style="width:45px;" class="enT mRS ijU WPZ dPa" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
             </svg>
-            <svg plunc-if="button=='empty'" style="width:45px;" plunc-click="clear()" class="akg bcn clV iZZ RPZ mdX" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+            <svg plunc-if="button=='empty'" style="width:45px;" plunc-click="clear()" class="ddW enT mRS ijU WPZ dPa" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
             </svg>
         </fieldset>
-        <button type="submit" class="UgX"></button>
+        <button type="submit" class="ncY"></button>
     </form>
     <div plunc-if="state=='error'"></div>
 </template>        <div id="slate_color_palette" style="display:none">
-<span data-color-id="background-color-transparent" class="Xkb"></span>
-<span data-color-id="background-color-inherit" class="jmi"></span>
-<span data-color-id="background-color-primary" class="Qig"></span>
-<span data-color-id="background-color-error" class="QUk"></span>
-<span data-color-id="background-color-gray-scale-super-light" class="Qal"></span>
-<span data-color-id="background-color-gray-scale-extra-light" class="WUX"></span>
-<span data-color-id="background-color-gray-scale-light" class="XOT"></span>
-<span data-color-id="background-color-gray-scale" class="gjb"></span>
-<span data-color-id="background-color-gray-scale-dark" class="hWR"></span>
-<span data-color-id="background-color-gray-scale-extra-dark" class="VSe"></span>
-<span data-color-id="background-color-gray-scale-super-dark" class="OjT"></span>
-<span data-color-id="background-color-white" class="eUd"></span>
-<span data-color-id="background-color-everwhite" class="ZQd"></span>
-<span data-color-id="background-color-everdark-elegant" class="fcW"></span>
-<span data-color-id="background-color-dark" class="ZRm"></span>
-<span data-color-id="background-color-extra-dark" class="ShQ"></span>
-<span data-color-id="background-color-super-dark" class="njb"></span>
-<span data-color-id="background-color-elegant-dark" class="Znb"></span>
-<span data-color-id="background-color-danger-heavy" class="lZV"></span>
-<span data-color-id="background-color-material-blue" class="elS"></span>
-<span data-color-id="color-transparent" class="TeX"></span>
-<span data-color-id="color-inherit" class="kWU"></span>
-<span data-color-id="color-primary" class="clV"></span>
-<span data-color-id="color-error" class="gmf"></span>
-<span data-color-id="color-success" class="VbY"></span>
-<span data-color-id="color-info" class="kOS"></span>
-<span data-color-id="color-gray-scale-super-light" class="ScR"></span>
-<span data-color-id="color-gray-scale-extra-light" class="jdX"></span>
-<span data-color-id="color-gray-scale-light" class="PSY"></span>
-<span data-color-id="color-gray-scale" class="kOQ"></span>
-<span data-color-id="color-gray-scale-dark" class="ZRO"></span>
-<span data-color-id="color-gray-scale-extra-dark" class="OYQ"></span>
-<span data-color-id="color-gray-scale-super-dark" class="QTT"></span>
-<span data-color-id="color-white" class="gmY"></span>
-<span data-color-id="color-everwhite" class="kOc"></span>
-<span data-color-id="color-everdark-elegant" class="TnY"></span>
-<span data-color-id="color-dark" class="mQU"></span>
-<span data-color-id="color-extra-dark" class="Sjm"></span>
-<span data-color-id="color-super-dark" class="Vch"></span>
-<span data-color-id="color-elegant-dark" class="lid"></span>
-<span data-color-id="color-facebook" class="hlV"></span>
-<span data-color-id="color-material-blue" class="XiR"></span>
-<span data-color-id="border-color-transparent" class="VYW"></span>
-<span data-color-id="border-color-inherit" class="Uad"></span>
-<span data-color-id="border-color-primary" class="cgR"></span>
-<span data-color-id="border-color-error" class="PaV"></span>
-<span data-color-id="border-color-success" class="aRY"></span>
-<span data-color-id="border-color-info" class="Vcm"></span>
-<span data-color-id="border-color-gray-scale-super-light" class="PXa"></span>
-<span data-color-id="border-color-gray-scale-extra-light" class="PVd"></span>
-<span data-color-id="border-color-gray-scale-light" class="ahm"></span>
-<span data-color-id="border-color-gray-scale" class="lPm"></span>
-<span data-color-id="border-color-gray-scale-dark" class="aPd"></span>
-<span data-color-id="border-color-gray-scale-extra-dark" class="ZQm"></span>
-<span data-color-id="border-color-gray-scale-super-dark" class="kbO"></span>
-<span data-color-id="border-color-white" class="ZXg1"></span>
-<span data-color-id="border-color-everwhite" class="SSX"></span>
-<span data-color-id="border-color-dark" class="hef"></span>
-<span data-color-id="border-color-extra-dark" class="iUa"></span>
-<span data-color-id="border-color-super-dark" class="OdQ"></span>
-<span data-color-id="border-color-elegant-dark" class="bcg"></span>
-<span data-color-id="border-color-material-blue" class="WXT"></span>
-<span data-color-id="svg-fill-none" class="bcn"></span>
-<span data-color-id="svg-fill-transparent" class="XQO"></span>
-<span data-color-id="svg-fill-inherit" class="lae"></span>
-<span data-color-id="svg-fill-primary" class="kdO"></span>
-<span data-color-id="svg-fill-error" class="Plc"></span>
-<span data-color-id="svg-fill-success" class="ckQ"></span>
-<span data-color-id="svg-fill-info" class="XnW"></span>
-<span data-color-id="svg-fill-gray-scale-super-light" class="mki"></span>
-<span data-color-id="svg-fill-gray-scale-extra-light" class="Web"></span>
-<span data-color-id="svg-fill-gray-scale-light" class="dcj"></span>
-<span data-color-id="svg-fill-gray-scale" class="bRi"></span>
-<span data-color-id="svg-fill-gray-scale-dark" class="kiP"></span>
-<span data-color-id="svg-fill-gray-scale-extra-dark" class="WUU"></span>
-<span data-color-id="svg-fill-gray-scale-super-dark" class="QYj"></span>
-<span data-color-id="svg-fill-white" class="gnS"></span>
-<span data-color-id="svg-fill-everwhite" class="TUO"></span>
-<span data-color-id="svg-fill-dark" class="PeT"></span>
-<span data-color-id="svg-fill-extra-dark" class="PfU"></span>
-<span data-color-id="svg-fill-super-dark" class="YhZ"></span>
-<span data-color-id="svg-fill-elegant-dark" class="mYZ"></span>
-<span data-color-id="svg-fill-material-blue" class="fah"></span>
+<span data-color-id="background-color-transparent" class="ZdV"></span>
+<span data-color-id="background-color-inherit" class="jQi"></span>
+<span data-color-id="background-color-primary" class="VXg"></span>
+<span data-color-id="background-color-error" class="jQP"></span>
+<span data-color-id="background-color-gray-scale-super-light" class="ieX"></span>
+<span data-color-id="background-color-gray-scale-extra-light" class="ZgQ"></span>
+<span data-color-id="background-color-gray-scale-light" class="Xck"></span>
+<span data-color-id="background-color-gray-scale" class="dab"></span>
+<span data-color-id="background-color-gray-scale-dark" class="jOd"></span>
+<span data-color-id="background-color-gray-scale-extra-dark" class="XVf"></span>
+<span data-color-id="background-color-gray-scale-super-dark" class="ScS"></span>
+<span data-color-id="background-color-white" class="UOf"></span>
+<span data-color-id="background-color-everwhite" class="lXl"></span>
+<span data-color-id="background-color-everdark-elegant" class="RZR"></span>
+<span data-color-id="background-color-dark" class="ijg"></span>
+<span data-color-id="background-color-extra-dark" class="SlX"></span>
+<span data-color-id="background-color-super-dark" class="WVg"></span>
+<span data-color-id="background-color-elegant-dark" class="QZP"></span>
+<span data-color-id="background-color-danger-heavy" class="XYQ"></span>
+<span data-color-id="background-color-material-blue" class="XXd"></span>
+<span data-color-id="color-transparent" class="ehQ"></span>
+<span data-color-id="color-inherit" class="SWV1"></span>
+<span data-color-id="color-primary" class="mRS"></span>
+<span data-color-id="color-error" class="VTY"></span>
+<span data-color-id="color-success" class="lnc"></span>
+<span data-color-id="color-info" class="SPm"></span>
+<span data-color-id="color-gray-scale-super-light" class="jOl"></span>
+<span data-color-id="color-gray-scale-extra-light" class="Rmg"></span>
+<span data-color-id="color-gray-scale-light" class="kOT"></span>
+<span data-color-id="color-gray-scale" class="VSf"></span>
+<span data-color-id="color-gray-scale-dark" class="Obl"></span>
+<span data-color-id="color-gray-scale-extra-dark" class="TkS"></span>
+<span data-color-id="color-gray-scale-super-dark" class="SOU"></span>
+<span data-color-id="color-white" class="ZTb"></span>
+<span data-color-id="color-everwhite" class="djT"></span>
+<span data-color-id="color-everdark-elegant" class="jaW"></span>
+<span data-color-id="color-dark" class="jjU"></span>
+<span data-color-id="color-extra-dark" class="Zfm"></span>
+<span data-color-id="color-super-dark" class="mQe"></span>
+<span data-color-id="color-elegant-dark" class="mhQ"></span>
+<span data-color-id="color-facebook" class="chY"></span>
+<span data-color-id="color-material-blue" class="dOb"></span>
+<span data-color-id="border-color-transparent" class="Xdc"></span>
+<span data-color-id="border-color-inherit" class="gjU"></span>
+<span data-color-id="border-color-primary" class="gkf"></span>
+<span data-color-id="border-color-error" class="bba"></span>
+<span data-color-id="border-color-success" class="Xhf"></span>
+<span data-color-id="border-color-info" class="WUd"></span>
+<span data-color-id="border-color-gray-scale-super-light" class="SRQ"></span>
+<span data-color-id="border-color-gray-scale-extra-light" class="TTW"></span>
+<span data-color-id="border-color-gray-scale-light" class="ceW"></span>
+<span data-color-id="border-color-gray-scale" class="hSk"></span>
+<span data-color-id="border-color-gray-scale-dark" class="afi"></span>
+<span data-color-id="border-color-gray-scale-extra-dark" class="QmY"></span>
+<span data-color-id="border-color-gray-scale-super-dark" class="kWQ"></span>
+<span data-color-id="border-color-white" class="fcX"></span>
+<span data-color-id="border-color-everwhite" class="PiP"></span>
+<span data-color-id="border-color-dark" class="ZbW"></span>
+<span data-color-id="border-color-extra-dark" class="RYS"></span>
+<span data-color-id="border-color-super-dark" class="bUU"></span>
+<span data-color-id="border-color-elegant-dark" class="egf"></span>
+<span data-color-id="border-color-material-blue" class="hfY"></span>
+<span data-color-id="svg-fill-none" class="enT"></span>
+<span data-color-id="svg-fill-transparent" class="dei"></span>
+<span data-color-id="svg-fill-inherit" class="faZ"></span>
+<span data-color-id="svg-fill-primary" class="Onh"></span>
+<span data-color-id="svg-fill-error" class="aSg"></span>
+<span data-color-id="svg-fill-success" class="hnc"></span>
+<span data-color-id="svg-fill-info" class="XTk"></span>
+<span data-color-id="svg-fill-gray-scale-super-light" class="lcg"></span>
+<span data-color-id="svg-fill-gray-scale-extra-light" class="WdY"></span>
+<span data-color-id="svg-fill-gray-scale-light" class="Paa"></span>
+<span data-color-id="svg-fill-gray-scale" class="mkb"></span>
+<span data-color-id="svg-fill-gray-scale-dark" class="QjW"></span>
+<span data-color-id="svg-fill-gray-scale-extra-dark" class="jkj"></span>
+<span data-color-id="svg-fill-gray-scale-super-dark" class="QcW"></span>
+<span data-color-id="svg-fill-white" class="QcZ"></span>
+<span data-color-id="svg-fill-everwhite" class="QcW1"></span>
+<span data-color-id="svg-fill-dark" class="lgV"></span>
+<span data-color-id="svg-fill-extra-dark" class="gRe"></span>
+<span data-color-id="svg-fill-super-dark" class="Wbg"></span>
+<span data-color-id="svg-fill-elegant-dark" class="Yhg"></span>
+<span data-color-id="svg-fill-material-blue" class="fmc"></span>
 </div>    </body>
 </html>
