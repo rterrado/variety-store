@@ -2,9 +2,9 @@
 <html lang="en">
     <head>
         <meta content='width=device-width, initial-scale=1' name='viewport'/>
-        <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
-        <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png">
+        <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png">
         <title>Variety Store - Login</title>
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -15,190 +15,190 @@
         <script type="text/javascript">
             const blockAutoSubmit=e=>e.preventDefault();
         </script>
-        <script type="text/javascript" src="/variety-store/assets/login.js?v=1727296989"></script>
-<link rel="stylesheet" href="/variety-store/assets/login.css?v=1727296989">    </head>
-    <body class="hZb">
+        <script type="text/javascript" src="/variety-store/assets/login.js?v=1727297654"></script>
+<link rel="stylesheet" href="/variety-store/assets/login.css?v=1727297654">    </head>
+    <body class="eUT">
         <script type="text/javascript">
             const theme = localStorage.getItem('slate-theme') ?? 'light'
             document.querySelector('body').classList.add(theme)
             window.slate = { theme: { name: theme } }
         </script>
-        <app plunc-app="app" class="hZb"></app>
+        <app plunc-app="app" class="eUT"></app>
         <template plunc-name="app">
-            <main plunc-component="eq9" class="hZb"></main>
+            <main plunc-component="fs5" class="eUT"></main>
         </template>
-                <template plunc-name="eq9">
-    <div plunc-if="state=='loading'" class="hZb VfT Rii mRg mih">
+                <template plunc-name="fs5">
+    <div plunc-if="state=='loading'" class="eUT fbU kai fgS ZdT">
         <!-- Apply loading screen here -->
         <div class="--slate-page-spinner"></div>
     </div>
     <div plunc-if="state=='active'">
         
-<div class="hZb mih VfT Rii">
-    <div class="WVP gah" style="background:url(/assets/login-background.jpg);background-size:cover;background-position:center;"></div>
-    <div class="WVP VfT Rii mRg">
-        <div class="WUl XQh XQg">
-            <div class="--store-logo-wrapper--light khc Whe" style="margin-left:-27px;">
-                <img class="hZb" src="https://cdn.shopify.com/s/files/1/0560/7466/6159/files/variety-store-logo-light-theme.png?v=1724434321" alt="">
+<div class="eUT ZdT fbU kai">
+    <div class="OeS TgS" style="background:url(assets/login-background.jpg);background-size:cover;background-position:center;"></div>
+    <div class="OeS fbU kai fgS">
+        <div class="bTa abl QYf">
+            <div class="--store-logo-wrapper--light VYk XmW" style="margin-left:-27px;">
+                <img class="eUT" src="https://cdn.shopify.com/s/files/1/0560/7466/6159/files/variety-store-logo-light-theme.png?v=1724434321" alt="">
             </div>
-            <div class="--store-logo-wrapper--dark khc Whe" style="margin-left:-27px;">
-                <img class="hZb" src="https://cdn.shopify.com/s/files/1/0560/7466/6159/files/variety-store-logo-dark-theme.png?v=1724434322" alt="">
+            <div class="--store-logo-wrapper--dark VYk XmW" style="margin-left:-27px;">
+                <img class="eUT" src="https://cdn.shopify.com/s/files/1/0560/7466/6159/files/variety-store-logo-dark-theme.png?v=1724434322" alt="">
             </div>
-            <div style="text-shadow: 1px 0 0 currentColor;" class="knP XjV">
+            <div style="text-shadow: 1px 0 0 currentColor;" class="jZY ceS">
                 Hello, there!
             </div>
-            <div class="dTT RXX Qcd">
+            <div class="hhk lXZ fkm">
                 Login to your store to start shopping!
             </div>
-            <div role="separator" style="border-width:1px;" class="bVZ heT Whe hZb VZR"></div>            <section plunc-component="wy9" class="hZb"></section>
-            <div role="separator" style="border-width:1px;" class="bVZ heT Whe hZb VZR"></div>            <div class="TTf YYX">By logging in, you agree to our <a href="/terms-of-service.html">Terms of Service.</a></div>
+            <div role="separator" style="border-width:1px;" class="WYh UVn XmW eUT fPS"></div>            <section plunc-component="hi3" class="eUT"></section>
+            <div role="separator" style="border-width:1px;" class="WYh UVn XmW eUT fPS"></div>            <div class="bhb hPa">By logging in, you agree to our <a href="/terms-of-service.html">Terms of Service.</a></div>
         </div>
     </div>
 </div>    </div>
-    <div plunc-if="state=='error'" class="hZb mih VfT Rii mRg">
+    <div plunc-if="state=='error'" class="eUT ZdT fbU kai fgS">
         <!-- Apply error page here -->
-        <div class="WUl XQh XQg">
-            <div class="VfT Rii">
-                <div class="knP hjQ">
+        <div class="bTa abl QYf">
+            <div class="fbU kai">
+                <div class="jZY gTc">
                     {{error.code}} /
                 </div>
-                <div class="knP iWj XTb hjQ">
+                <div class="jZY jeb jSi gTc">
                     <span plunc-if="error.code==400">Bad Request</span>
                     <span plunc-if="error.code==401">Access Denied</span>
                     <span plunc-if="error.code==404">Not Found</span>
                     <span plunc-if="error.code==500">Internal Server Error</span>
                 </div>
             </div>
-            <div class="YhX dmk hik fPW">
+            <div class="iRg ldP edP aOa">
                 {{error.message}} If you think this is incorrect, please contact me below.
             </div>
-            <div class="YQd VfT Rii">
+            <div class="aiX fbU kai">
                 
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="0.5" stroke="currentColor" class="kUW hmX jhR">
-    <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" /></svg>                <div class="dmk WWT kbi">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="0.5" stroke="currentColor" class="VkO iPV jiW">
+    <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" /></svg>                <div class="ldP TZl XZQ">
                     rterrado@yotpo.com
                 </div>
             </div>
         </div>
     </div>
 </template>
-<template plunc-name="wy9">
+<template plunc-name="hi3">
     <div plunc-if="state == 'loading'"></div>
-    <form onsubmit="blockAutoSubmit(event)" plunc-if="state == 'active'" class="hZb">
-        <section plunc-component="lc7" class="hZb"></section>
-        <div class="dQh"></div>
-        <section plunc-component="cg4" class="hZb"></section>
-        <div class="heT"></div>
+    <form onsubmit="blockAutoSubmit(event)" plunc-if="state == 'active'" class="eUT">
+        <section plunc-component="kv3" class="eUT"></section>
+        <div class="RmT"></div>
+        <section plunc-component="hw5" class="eUT"></section>
+        <div class="UVn"></div>
         <section plunc-block="/BlockManager/SendButtonBlock/">
-            <button type="submit" plunc-click="login()" plunc-disable="BlockManager.SendButtonBlock.state !== 'ready'" class="Pen nfO mRg hZb dQh WiT ZYP mRa RhT cRb QlV eUk lOb ZPX hUW RXX VfT Rii">Login</button>        </section>
+            <button type="submit" plunc-click="login()" plunc-disable="BlockManager.SendButtonBlock.state !== 'ready'" class="RbW nPh fgS eUT RmT ibV dkP PPW fTm Ucd ccO XQj PSP nQm hjg1 lXZ fbU kai">Login</button>        </section>
         <section plunc-block="/BlockManager/LoginFormMessage/">
-            <div plunc-if="BlockManager.LoginFormMessage.state == 'error'" class="YQd TTf jOn">
+            <div plunc-if="BlockManager.LoginFormMessage.state == 'error'" class="aiX bhb nSY">
                 Sorry, your credentials may be invalid or the app key may have not been whitelisted.
                 To use your app key in this application, please contact me.
             </div>
         </section>
-        <div id="recaptcha_wrapper" class="heT" style="display:none;"></div>
+        <div id="recaptcha_wrapper" class="UVn" style="display:none;"></div>
     </form>
     <div plunc-if="state == 'error'"></div>
 </template>
-<template plunc-name="lc7">
+<template plunc-name="kv3">
     <div plunc-if="state == 'loading'"></div>
     <div plunc-if="state == 'active'">
-        <label for="app_key66f475dd3ef27269" class="hjQ Tka  YgU fim">App Key</label><fieldset class="QlV lOb gZa TUQ RhT din cRb" plunc-block="/Forms/Input/66f475dd3ef27269" ><div class="VfT Rii hZb">
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="jhR hmX kUW">
-    <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 21v-7.5a.75.75 0 0 1 .75-.75h3a.75.75 0 0 1 .75.75V21m-4.5 0H2.36m11.14 0H18m0 0h3.64m-1.39 0V9.349M3.75 21V9.349m0 0a3.001 3.001 0 0 0 3.75-.615A2.993 2.993 0 0 0 9.75 9.75c.896 0 1.7-.393 2.25-1.016a2.993 2.993 0 0 0 2.25 1.016c.896 0 1.7-.393 2.25-1.015a3.001 3.001 0 0 0 3.75.614m-16.5 0a3.004 3.004 0 0 1-.621-4.72l1.189-1.19A1.5 1.5 0 0 1 5.378 3h13.243a1.5 1.5 0 0 1 1.06.44l1.19 1.189a3 3 0 0 1-.621 4.72M6.75 18h3.75a.75.75 0 0 0 .75-.75V13.5a.75.75 0 0 0-.75-.75H6.75a.75.75 0 0 0-.75.75v3.75c0 .414.336.75.75.75Z" /></svg><input id="app_key66f475dd3ef27269" type="text" placeholder="Your store app key" class="Tka Zkn kQY ZYP inT XTb" plunc-model="value"  plunc-change="validate('/Forms/Input/66f475dd3ef27269')"   /></div></fieldset><div class="lih  ObY" plunc-block="/Forms/Input/66f475dd3ef27269/Message"></div>    </div>
+        <label for="app_key66f4787672115223" class="gTc UWT  UTl Qnh">App Key</label><fieldset class="ccO PSP TiQ ZhO fTm hjg Ucd" plunc-block="/Forms/Input/66f4787672115223" ><div class="fbU kai eUT">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="jiW iPV VkO">
+    <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 21v-7.5a.75.75 0 0 1 .75-.75h3a.75.75 0 0 1 .75.75V21m-4.5 0H2.36m11.14 0H18m0 0h3.64m-1.39 0V9.349M3.75 21V9.349m0 0a3.001 3.001 0 0 0 3.75-.615A2.993 2.993 0 0 0 9.75 9.75c.896 0 1.7-.393 2.25-1.016a2.993 2.993 0 0 0 2.25 1.016c.896 0 1.7-.393 2.25-1.015a3.001 3.001 0 0 0 3.75.614m-16.5 0a3.004 3.004 0 0 1-.621-4.72l1.189-1.19A1.5 1.5 0 0 1 5.378 3h13.243a1.5 1.5 0 0 1 1.06.44l1.19 1.189a3 3 0 0 1-.621 4.72M6.75 18h3.75a.75.75 0 0 0 .75-.75V13.5a.75.75 0 0 0-.75-.75H6.75a.75.75 0 0 0-.75.75v3.75c0 .414.336.75.75.75Z" /></svg><input id="app_key66f4787672115223" type="text" placeholder="Your store app key" class="UWT Xen eQk dkP Ohg jSi" plunc-model="value"  plunc-change="validate('/Forms/Input/66f4787672115223')"   /></div></fieldset><div class="eYV  kYl" plunc-block="/Forms/Input/66f4787672115223/Message"></div>    </div>
     <div plunc-if="state == 'error'"></div>
 </template>
-<template plunc-name="cg4">
+<template plunc-name="hw5">
     <div plunc-if="state == 'loading'"></div>
     <div plunc-if="state == 'active'">
-        <label for="secret_key66f475dd3f50c610" class="hjQ Tka  YgU fim">Secret Key</label><fieldset class="QlV lOb gZa TUQ RhT din cRb" plunc-block="/Forms/Input/66f475dd3f50c610" ><div class="VfT Rii hZb">
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="jhR hmX kUW">
-    <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 5.25a3 3 0 0 1 3 3m3 0a6 6 0 0 1-7.029 5.912c-.563-.097-1.159.026-1.563.43L10.5 17.25H8.25v2.25H6v2.25H2.25v-2.818c0-.597.237-1.17.659-1.591l6.499-6.499c.404-.404.527-1 .43-1.563A6 6 0 1 1 21.75 8.25Z" /></svg><input id="secret_key66f475dd3f50c610" type="password" placeholder="•••••••••••••••••" class="RXX Zkn kQY ZYP inT XTb" plunc-model="value"  plunc-change="validate('/Forms/Input/66f475dd3f50c610')"   /></div></fieldset><div class="lih  ObY" plunc-block="/Forms/Input/66f475dd3f50c610/Message"></div>    </div>
+        <label for="secret_key66f47876725e8287" class="gTc UWT  UTl Qnh">Secret Key</label><fieldset class="ccO PSP TiQ ZhO fTm hjg Ucd" plunc-block="/Forms/Input/66f47876725e8287" ><div class="fbU kai eUT">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="jiW iPV VkO">
+    <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 5.25a3 3 0 0 1 3 3m3 0a6 6 0 0 1-7.029 5.912c-.563-.097-1.159.026-1.563.43L10.5 17.25H8.25v2.25H6v2.25H2.25v-2.818c0-.597.237-1.17.659-1.591l6.499-6.499c.404-.404.527-1 .43-1.563A6 6 0 1 1 21.75 8.25Z" /></svg><input id="secret_key66f47876725e8287" type="password" placeholder="•••••••••••••••••" class="lXZ Xen eQk dkP Ohg jSi" plunc-model="value"  plunc-change="validate('/Forms/Input/66f47876725e8287')"   /></div></fieldset><div class="eYV  kYl" plunc-block="/Forms/Input/66f47876725e8287/Message"></div>    </div>
     <div plunc-if="state == 'error'"></div>
 </template>        <div id="slate_color_palette" style="display:none">
-<span data-color-id="background-color-transparent" class="kQY"></span>
-<span data-color-id="background-color-inherit" class="XfO"></span>
-<span data-color-id="background-color-primary" class="Pen"></span>
-<span data-color-id="background-color-error" class="cVn"></span>
-<span data-color-id="background-color-gray-scale-super-light" class="ghh"></span>
-<span data-color-id="background-color-gray-scale-extra-light" class="kmS"></span>
-<span data-color-id="background-color-gray-scale-light" class="RUj"></span>
-<span data-color-id="background-color-gray-scale" class="eQm"></span>
-<span data-color-id="background-color-gray-scale-dark" class="nWY"></span>
-<span data-color-id="background-color-gray-scale-extra-dark" class="eZf"></span>
-<span data-color-id="background-color-gray-scale-super-dark" class="YPm"></span>
-<span data-color-id="background-color-white" class="RRl"></span>
-<span data-color-id="background-color-everwhite" class="fSd"></span>
-<span data-color-id="background-color-everdark-elegant" class="eRc"></span>
-<span data-color-id="background-color-dark" class="jVl"></span>
-<span data-color-id="background-color-extra-dark" class="Uem"></span>
-<span data-color-id="background-color-super-dark" class="ZdR"></span>
-<span data-color-id="background-color-elegant-dark" class="QSV"></span>
-<span data-color-id="background-color-danger-heavy" class="aZl"></span>
-<span data-color-id="background-color-material-blue" class="dlO"></span>
-<span data-color-id="color-transparent" class="SOm"></span>
-<span data-color-id="color-inherit" class="hOR"></span>
-<span data-color-id="color-primary" class="hmX"></span>
-<span data-color-id="color-error" class="jOn"></span>
-<span data-color-id="color-success" class="lXW"></span>
-<span data-color-id="color-info" class="VQV"></span>
-<span data-color-id="color-gray-scale-super-light" class="OPl"></span>
-<span data-color-id="color-gray-scale-extra-light" class="iTa"></span>
-<span data-color-id="color-gray-scale-light" class="jTV"></span>
-<span data-color-id="color-gray-scale" class="QSh"></span>
-<span data-color-id="color-gray-scale-dark" class="YYX"></span>
-<span data-color-id="color-gray-scale-extra-dark" class="Qcd"></span>
-<span data-color-id="color-gray-scale-super-dark" class="hjQ"></span>
-<span data-color-id="color-white" class="VOV"></span>
-<span data-color-id="color-everwhite" class="hUW"></span>
-<span data-color-id="color-everdark-elegant" class="RWj"></span>
-<span data-color-id="color-dark" class="Rcb"></span>
-<span data-color-id="color-extra-dark" class="Vje"></span>
-<span data-color-id="color-super-dark" class="fdU"></span>
-<span data-color-id="color-elegant-dark" class="Zkn"></span>
-<span data-color-id="color-facebook" class="hTP"></span>
-<span data-color-id="color-material-blue" class="cQk"></span>
-<span data-color-id="border-color-transparent" class="mRa"></span>
-<span data-color-id="border-color-inherit" class="kSb"></span>
-<span data-color-id="border-color-primary" class="XXk"></span>
-<span data-color-id="border-color-error" class="lTh"></span>
-<span data-color-id="border-color-success" class="eem"></span>
-<span data-color-id="border-color-info" class="OgT"></span>
-<span data-color-id="border-color-gray-scale-super-light" class="Tem"></span>
-<span data-color-id="border-color-gray-scale-extra-light" class="VZR"></span>
-<span data-color-id="border-color-gray-scale-light" class="bXg"></span>
-<span data-color-id="border-color-gray-scale" class="PPX"></span>
-<span data-color-id="border-color-gray-scale-dark" class="SdV"></span>
-<span data-color-id="border-color-gray-scale-extra-dark" class="daf"></span>
-<span data-color-id="border-color-gray-scale-super-dark" class="eYQ"></span>
-<span data-color-id="border-color-white" class="hYk"></span>
-<span data-color-id="border-color-everwhite" class="UXa"></span>
-<span data-color-id="border-color-dark" class="jid"></span>
-<span data-color-id="border-color-extra-dark" class="jSh"></span>
-<span data-color-id="border-color-super-dark" class="OcX"></span>
-<span data-color-id="border-color-elegant-dark" class="POX"></span>
-<span data-color-id="border-color-material-blue" class="jmm"></span>
-<span data-color-id="svg-fill-none" class="jhR"></span>
-<span data-color-id="svg-fill-transparent" class="iUb"></span>
-<span data-color-id="svg-fill-inherit" class="YOa"></span>
-<span data-color-id="svg-fill-primary" class="Phm"></span>
-<span data-color-id="svg-fill-error" class="acf"></span>
-<span data-color-id="svg-fill-success" class="ajS"></span>
-<span data-color-id="svg-fill-info" class="lcn"></span>
-<span data-color-id="svg-fill-gray-scale-super-light" class="Sem"></span>
-<span data-color-id="svg-fill-gray-scale-extra-light" class="eak"></span>
-<span data-color-id="svg-fill-gray-scale-light" class="UUl"></span>
-<span data-color-id="svg-fill-gray-scale" class="jch"></span>
-<span data-color-id="svg-fill-gray-scale-dark" class="XgS"></span>
-<span data-color-id="svg-fill-gray-scale-extra-dark" class="Qel"></span>
-<span data-color-id="svg-fill-gray-scale-super-dark" class="YgS"></span>
-<span data-color-id="svg-fill-white" class="QVQ"></span>
-<span data-color-id="svg-fill-everwhite" class="eSW"></span>
-<span data-color-id="svg-fill-dark" class="nTU"></span>
-<span data-color-id="svg-fill-extra-dark" class="hTg"></span>
-<span data-color-id="svg-fill-super-dark" class="Ukd"></span>
-<span data-color-id="svg-fill-elegant-dark" class="STU"></span>
-<span data-color-id="svg-fill-material-blue" class="UST"></span>
+<span data-color-id="background-color-transparent" class="eQk"></span>
+<span data-color-id="background-color-inherit" class="lZk"></span>
+<span data-color-id="background-color-primary" class="RbW"></span>
+<span data-color-id="background-color-error" class="YRO"></span>
+<span data-color-id="background-color-gray-scale-super-light" class="iUP"></span>
+<span data-color-id="background-color-gray-scale-extra-light" class="Yia"></span>
+<span data-color-id="background-color-gray-scale-light" class="knR"></span>
+<span data-color-id="background-color-gray-scale" class="kTb"></span>
+<span data-color-id="background-color-gray-scale-dark" class="PcT"></span>
+<span data-color-id="background-color-gray-scale-extra-dark" class="YSm"></span>
+<span data-color-id="background-color-gray-scale-super-dark" class="gSU"></span>
+<span data-color-id="background-color-white" class="bWX"></span>
+<span data-color-id="background-color-everwhite" class="lXZ1"></span>
+<span data-color-id="background-color-everdark-elegant" class="RbW1"></span>
+<span data-color-id="background-color-dark" class="XYV"></span>
+<span data-color-id="background-color-extra-dark" class="Pca"></span>
+<span data-color-id="background-color-super-dark" class="kai1"></span>
+<span data-color-id="background-color-elegant-dark" class="Ujd"></span>
+<span data-color-id="background-color-danger-heavy" class="RVa"></span>
+<span data-color-id="background-color-material-blue" class="VPT"></span>
+<span data-color-id="color-transparent" class="nUm"></span>
+<span data-color-id="color-inherit" class="ZRk"></span>
+<span data-color-id="color-primary" class="iPV"></span>
+<span data-color-id="color-error" class="nSY"></span>
+<span data-color-id="color-success" class="ZSd"></span>
+<span data-color-id="color-info" class="XlR"></span>
+<span data-color-id="color-gray-scale-super-light" class="YlP"></span>
+<span data-color-id="color-gray-scale-extra-light" class="gkS"></span>
+<span data-color-id="color-gray-scale-light" class="hQO"></span>
+<span data-color-id="color-gray-scale" class="cRa"></span>
+<span data-color-id="color-gray-scale-dark" class="hPa"></span>
+<span data-color-id="color-gray-scale-extra-dark" class="fkm"></span>
+<span data-color-id="color-gray-scale-super-dark" class="gTc"></span>
+<span data-color-id="color-white" class="jnR"></span>
+<span data-color-id="color-everwhite" class="hjg1"></span>
+<span data-color-id="color-everdark-elegant" class="kUU"></span>
+<span data-color-id="color-dark" class="acP"></span>
+<span data-color-id="color-extra-dark" class="PVX"></span>
+<span data-color-id="color-super-dark" class="jeR"></span>
+<span data-color-id="color-elegant-dark" class="Xen"></span>
+<span data-color-id="color-facebook" class="QVi"></span>
+<span data-color-id="color-material-blue" class="Unn"></span>
+<span data-color-id="border-color-transparent" class="PPW"></span>
+<span data-color-id="border-color-inherit" class="OPf"></span>
+<span data-color-id="border-color-primary" class="cWe"></span>
+<span data-color-id="border-color-error" class="hYR"></span>
+<span data-color-id="border-color-success" class="PTW"></span>
+<span data-color-id="border-color-info" class="dZU"></span>
+<span data-color-id="border-color-gray-scale-super-light" class="WSb"></span>
+<span data-color-id="border-color-gray-scale-extra-light" class="fPS"></span>
+<span data-color-id="border-color-gray-scale-light" class="OaP"></span>
+<span data-color-id="border-color-gray-scale" class="fOU"></span>
+<span data-color-id="border-color-gray-scale-dark" class="UQR"></span>
+<span data-color-id="border-color-gray-scale-extra-dark" class="jnW"></span>
+<span data-color-id="border-color-gray-scale-super-dark" class="dPT"></span>
+<span data-color-id="border-color-white" class="kdc"></span>
+<span data-color-id="border-color-everwhite" class="mfa"></span>
+<span data-color-id="border-color-dark" class="Sfg"></span>
+<span data-color-id="border-color-extra-dark" class="abO"></span>
+<span data-color-id="border-color-super-dark" class="eWf"></span>
+<span data-color-id="border-color-elegant-dark" class="ORX"></span>
+<span data-color-id="border-color-material-blue" class="SRk"></span>
+<span data-color-id="svg-fill-none" class="jiW"></span>
+<span data-color-id="svg-fill-transparent" class="kRm"></span>
+<span data-color-id="svg-fill-inherit" class="Pid"></span>
+<span data-color-id="svg-fill-primary" class="nYW"></span>
+<span data-color-id="svg-fill-error" class="RTi"></span>
+<span data-color-id="svg-fill-success" class="ihO"></span>
+<span data-color-id="svg-fill-info" class="fUb"></span>
+<span data-color-id="svg-fill-gray-scale-super-light" class="ZVb"></span>
+<span data-color-id="svg-fill-gray-scale-extra-light" class="mPk"></span>
+<span data-color-id="svg-fill-gray-scale-light" class="cPb"></span>
+<span data-color-id="svg-fill-gray-scale" class="mVV"></span>
+<span data-color-id="svg-fill-gray-scale-dark" class="WWm"></span>
+<span data-color-id="svg-fill-gray-scale-extra-dark" class="cYV"></span>
+<span data-color-id="svg-fill-gray-scale-super-dark" class="OUh"></span>
+<span data-color-id="svg-fill-white" class="gRf"></span>
+<span data-color-id="svg-fill-everwhite" class="iPe"></span>
+<span data-color-id="svg-fill-dark" class="Wjh"></span>
+<span data-color-id="svg-fill-extra-dark" class="hjm"></span>
+<span data-color-id="svg-fill-super-dark" class="eWc"></span>
+<span data-color-id="svg-fill-elegant-dark" class="YPQ"></span>
+<span data-color-id="svg-fill-material-blue" class="gfa"></span>
 </div>    </body>
 </html>
