@@ -15,6 +15,7 @@ type ServiceHostResolvers = {
     __Mindanode:() => 'unset' | 'http://localhost:8233',
     __Feedle:() => 'unset' | 'http://localhost:8233',
     __Rehearsal:() => 'unset' | 'https://4iehar5trf.execute-api.ap-southeast-1.amazonaws.com'
+    // __Rehearsal:() => 'unset' | 'http://localhost:5389'
 }
 
 export type AppConfig = new (...args: any[]) => AppConfigInterface
