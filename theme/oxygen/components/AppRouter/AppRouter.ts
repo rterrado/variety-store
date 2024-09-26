@@ -6,6 +6,7 @@ import { HttpRequestHelper } from "../../services/HttpRequestHelper"
 import { ViewOptionService } from "../../services/ViewOptionService"
 import { PageActivationManager } from "../../services/events/PageActivationManager"
 import { ErrorDispatchReport, PageErrorManager } from "../../services/events/PageErrorManager"
+import { OrderServices } from "../../services/variety-store/OrderServices"
 import { HeaderViewOptions } from "../Header/Header"
 
 /** States of the component */
@@ -32,7 +33,8 @@ app.component<AppRouter>('AppRouter',(
     PageActivationManager: PageActivationManager,
     HttpRequestHelper: HttpRequestHelper,
     AppConfig: AppConfig,
-    ViewOptionService: ViewOptionService
+    ViewOptionService: ViewOptionService,
+    OrderServices: OrderServices
 )=>{
     const APP_CONFIG = new AppConfig
     $scope.state = 'loading'
@@ -61,8 +63,15 @@ app.component<AppRouter>('AppRouter',(
             }
         })
     }
+    const runRefreshTokenJob = (appkey: string) => {
+        const repeatevery = 1000 * 60 * 7
+        setInterval(()=>{
+            validateRequesterToken(appkey)
+        },repeatevery)
+    }
     const ErrorMessage = {
-        missingParams: 'There appears to be missing key and value parameters in your request.'
+        missingParams: 'There appears to be missing key and value parameters in your request.',
+        recordNotFound: 'We cannot find what you are looking for.'
     }
     
     /**
@@ -79,7 +88,10 @@ app.component<AppRouter>('AppRouter',(
                 ViewOptionService.set<HeaderViewOptions>({
                     StoreNameView: true,
                     PaginationControl: true,
-                    SearchBar: true
+                    SearchBar: true,
+                    RightSideBar: false,
+                    CollectionLink: false,
+                    LogOffButton: true
                 })
                 const appKey = getParamValue('app_key')
                 if (appKey === null) {
@@ -92,15 +104,19 @@ app.component<AppRouter>('AppRouter',(
                     return
                 }
                 if (!(await validateRequesterToken(appKey))) {
-                    location.href = '/login.html?app_key='+appKey
+                    location.href = 'login.html?app_key='+appKey
                     return
                 }
+                runRefreshTokenJob(appKey)
             }
             if (location.href.includes('checkout.html')) {
                 ViewOptionService.set<HeaderViewOptions>({
                     StoreNameView: true,
                     PaginationControl: false,
-                    SearchBar: false
+                    SearchBar: false,
+                    RightSideBar: true,
+                    CollectionLink: true,
+                    LogOffButton: true
                 })
                 const appKey = getParamValue('app_key')
                 if (appKey === null) {
@@ -113,9 +129,43 @@ app.component<AppRouter>('AppRouter',(
                     return
                 }
                 if (!(await validateRequesterToken(appKey))) {
-                    location.href = '/login.html?app_key='+appKey
+                    location.href = 'login.html?app_key='+appKey
                     return
                 }
+                runRefreshTokenJob(appKey)
+            }
+            if (location.href.includes('confirmation.html')) {
+                ViewOptionService.set<HeaderViewOptions>({
+                    StoreNameView: false,
+                    PaginationControl: false,
+                    SearchBar: false,
+                    RightSideBar: true,
+                    CollectionLink: false,
+                    LogOffButton: false
+                })
+                const referenceId = getParamValue('id')
+                if (referenceId === null) {
+                    $scope.error = {
+                        code: 400,
+                        message: ErrorMessage.missingParams,
+                        dispatcher: 'AppRouter'
+                    }
+                    await StateManager.__switch('error')
+                    return
+                }
+                OrderServices.__getOrderByReferenceId(referenceId, async (data)=>{
+                    if (data instanceof Error) {
+                        $scope.error = {
+                            code: 404,
+                            message: ErrorMessage.recordNotFound,
+                            dispatcher: 'AppRouter'
+                        }
+                        await StateManager.__switch('error')
+                        return
+                    }
+                    await ActivatePage()
+                })
+                return
             }
             await ActivatePage()
         },3000)
