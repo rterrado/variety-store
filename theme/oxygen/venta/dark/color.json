@@ -4,6 +4,7 @@
 		"type": "dictionary",
 		"values": {
             "transparent":"transparent",
+            "inherit":"inherit",
             "primary":"#2f3232",
             "gray-scale-super-light":"#686868",
 			"gray-scale-extra-light":"#707070",
@@ -30,6 +31,7 @@
 		"type": "dictionary",
 		"values": {
             "transparent":"transparent",
+            "inherit":"inherit",
             "primary":"#2f3232",
             "error": "#E91E63",
             "success":"#009688",
@@ -59,6 +61,7 @@
 		"type": "dictionary",
 		"values": {
             "transparent":"transparent",
+            "inherit":"inherit",
             "primary":"#00598f",
             "error": "#E91E63",
             "success":"#009688",
@@ -87,6 +90,7 @@
 		"values": {
             "none": "none",
             "transparent":"transparent",
+            "inherit":"inherit",
             "primary":"#2f3232",
             "error": "#E91E63",
             "success":"#009688",
