@@ -9,7 +9,8 @@ export interface CartManager {
     __removeProductFromCart:(product: Product) => void
     __addQuantity:(product: Product)=>void
     __removeQuantity:(product: Product)=>void
-    __whenCartUpdated:(callback:(CartItem: CartItem)=>void)=>void
+    __whenCartUpdated:(callback:(CartItem: CartItem)=>void)=>void,
+    __clearCart:()=>void
 }
 
 app.service<CartManager>('CartManager', (
@@ -98,6 +99,11 @@ app.service<CartManager>('CartManager', (
         },
         __whenCartUpdated:(listener)=>{
             CartUpdateListeners.add(listener)
+        },
+        __clearCart:()=>{
+            const cart = GetLocalCart()
+            cart.items = []
+            StoreLocalCart(cart)
         }
     }
 })
