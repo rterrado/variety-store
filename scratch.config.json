@@ -16,6 +16,7 @@
             "compress": true
         },
         "Kenjiefx\\VentaCSS\\VentaCSS":{},
-        "Kenjiefx\\SlateTheme\\SlateTheme":{}
+        "Kenjiefx\\SlateTheme\\SlateTheme":{},
+        "Rterrado\\VarietyStore\\ImageAssetManager":{}
     }
 }
