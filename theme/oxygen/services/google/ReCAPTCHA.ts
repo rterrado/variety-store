@@ -37,14 +37,16 @@ app.service<ReCAPTCHA>('ReCAPTCHA',()=>{
     return {
         __render:(wrapperId)=>{
             ChallengeCtrl.__display(wrapperId)
-            // @ts-ignore
-            grecaptcha.enterprise.render(wrapperId, {
-                'sitekey' : '6LegqQYqAAAAAA18VSfBvi5O3xCisZBw-iPRicCB',
-                'action': 'LOGIN',
-                'callback': (token:string)=>{
-                    onSuccessListener(token)
-                }
-            });
+            setTimeout(()=>{
+                // @ts-ignore
+                grecaptcha.enterprise.render(wrapperId, {
+                    'sitekey' : '6LegqQYqAAAAAA18VSfBvi5O3xCisZBw-iPRicCB',
+                    'action': 'LOGIN',
+                    'callback': (token:string)=>{
+                        onSuccessListener(token)
+                    }
+                });
+            }, 1000)
         },
         __reset:(wrapperId)=>{
             ChallengeCtrl.__hide(wrapperId)
