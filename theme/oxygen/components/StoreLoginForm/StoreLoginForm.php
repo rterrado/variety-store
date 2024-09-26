@@ -28,9 +28,11 @@ Kenjiefx\StrawberryScratch\Components::register('SecretKeyInputField');
         </section>
         <section plunc-block="/BlockManager/LoginFormMessage/">
             <div plunc-if="BlockManager.LoginFormMessage.state == 'error'" class="margin-top-13 text-1 color-error">
-                Sorry, your credentials appear to be invalid.
+                Sorry, your credentials may be invalid or the app key may have not been whitelisted.
+                To use your app key in this application, please contact me.
             </div>
         </section>
+        <div id="recaptcha_wrapper" class="margin-top-17" style="display:none;"></div>
     </form>
     <div plunc-if="state == 'error'"></div>
 </template>

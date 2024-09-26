@@ -8,6 +8,7 @@ import { HttpRequestHelper } from "../../services/HttpRequestHelper"
 import { URLHelper } from "../../services/URLHelper"
 import { PageActivationManager } from "../../services/events/PageActivationManager"
 import { PageErrorManager } from "../../services/events/PageErrorManager"
+import { ReCAPTCHA } from "../../services/google/ReCAPTCHA"
 import { AppKeyInputField } from "../AppKeyInputField/AppKeyInputField"
 import { SecretKeyInputField } from "../SecretKeyInputField/SecretKeyInputField"
 
@@ -23,6 +24,7 @@ type ComponentScope = {
     secretkey: string | null
     state: StoreLoginFormState
     login:(button: PluncElementInterface<HTMLButtonElement>)=>void
+    recaptchaToken: string | null
 }
 
 /**
@@ -50,7 +52,8 @@ app.component<StoreLoginForm>('StoreLoginForm',(
     URLHelper: URLHelper,
     HttpRequestHelper: HttpRequestHelper,
     ButtonElement: ButtonElement,
-    AppConfig: AppConfig
+    AppConfig: AppConfig,
+    ReCAPTCHA: ReCAPTCHA
 )=>{
     const APP_CONFIG = new AppConfig
     const SubmitButtonState = new BlockManager('/BlockManager/SendButtonBlock/')
@@ -62,6 +65,15 @@ app.component<StoreLoginForm>('StoreLoginForm',(
 
     const LoginFormMessage = new BlockManager('/BlockManager/LoginFormMessage/')
 
+    const hasCapturedRecaptchaToken = () => {
+        return $scope.recaptchaToken !== null
+    }
+
+    const resetRecaptcha = () => {
+        $scope.recaptchaToken = null 
+        ReCAPTCHA.__reset('recaptcha_wrapper')
+        ReCAPTCHA.__render('recaptcha_wrapper')
+    }
 
     /** 
      * You can self-activate this component by subscribing to the `PageActivationEvent`. 
@@ -71,6 +83,7 @@ app.component<StoreLoginForm>('StoreLoginForm',(
         await StateManager.__switch('active')
         $scope.appkey = URLHelper.getParamValue('app_key')
         $scope.secretkey = null
+        $scope.recaptchaToken = null
         await AppKeyInputField.__render($scope.appkey)
         await SecretKeyInputField.__render()
         AppKeyInputField.__whenInputProvided((value, valid)=>{
@@ -85,9 +98,17 @@ app.component<StoreLoginForm>('StoreLoginForm',(
                 validateButtonState()
             }
         })
+        ReCAPTCHA.__render('recaptcha_wrapper')
     })
 
+    ReCAPTCHA.__addOnSuccessListener(token=>{
+        $scope.recaptchaToken = token
+    })
+
+
+
     $scope.login = (button) => {
+        if (!hasCapturedRecaptchaToken()) return
         const loginButton = new ButtonElement(button)
         loginButton.__freeze()
         HttpRequestHelper.__post<Rehearsal.Endpoints.Yotpo.Login>({
@@ -96,15 +117,17 @@ app.component<StoreLoginForm>('StoreLoginForm',(
             __params: { tenantId: APP_CONFIG.__getTenantId() },
             __data: {
                 app_key: $scope.appkey,
-                secret_key: $scope.secretkey
+                secret_key: $scope.secretkey,
+                captcha_token: $scope.recaptchaToken
             },
             __doNotPassRequesterToken: true
         }).then(response => {
             localStorage.setItem(`${$scope.appkey}.token`,response.token)
-            location.href = '/collections.html?app_key='+$scope.appkey
+            location.href = 'collections.html?app_key='+$scope.appkey
         }).catch(error => {
             loginButton.__defrost()
             LoginFormMessage.__toError()
+            resetRecaptcha()
         })
     }
     return {

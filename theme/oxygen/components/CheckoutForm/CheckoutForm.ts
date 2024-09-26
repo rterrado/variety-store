@@ -154,13 +154,17 @@ app.component<CheckoutForm>('CheckoutForm',(
                 appKey: $scope.appKey,
                 storeName: $scope.storeName,
                 cart: CartManager.__getExistingCart(),
+                subtotalPrice: CheckoutService.__calculateCartTotal($scope.cart),
+                taxesAndFees: CheckoutService.__getTaxAmount($scope.cart),
+                totalPrice: CheckoutService.__calculateTotalPayable($scope.cart),
                 customer: $scope.customer,
                 billingAddress: $scope.billingAddress,
                 orderDate: orderDate,
                 fulfillmentDate: fulfillmentDate
             }
         }).then(async (response)=>{
-            console.log(response)
+            CartManager.__clearCart()
+            location.href = 'confirmation.html?id=' + response.reference_id
         }).catch(error=>{
             console.error(error)
         })

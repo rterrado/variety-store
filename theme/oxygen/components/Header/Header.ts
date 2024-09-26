@@ -1,4 +1,5 @@
 import { StateManager } from "../../helpers/StateManager"
+import { ThemeSelectorPlugin } from "../../helpers/plugins/ThemeSelectorPlugin"
 import { ApplicationAPI, PatchAPI, ScopeObject, app } from "../../interfaces/app"
 import { HttpRequestHelper } from "../../services/HttpRequestHelper"
 import { URLHelper } from "../../services/URLHelper"
@@ -19,6 +20,8 @@ type HeaderState = 'loading' | 'active' | 'error'
 type ComponentScope = {
     state: HeaderState
     views: HeaderViewOptions
+    goToCollections: ()=>void
+    logout: ()=>void
 }
 
 /**
@@ -36,6 +39,9 @@ export type HeaderViewOptions = {
     StoreNameView: boolean
     PaginationControl: boolean
     SearchBar: boolean
+    RightSideBar: boolean
+    CollectionLink: boolean
+    LogOffButton: boolean
 }
 
 
@@ -50,7 +56,8 @@ app.component<Header>('Header',(
     ProductSearchBar: ProductSearchBar,
     YotpoAPIClient: YotpoAPIClient,
     URLHelper: URLHelper,
-    ViewOptionService: ViewOptionService
+    ViewOptionService: ViewOptionService,
+    ThemeSelectorPlugin: ThemeSelectorPlugin
 )=>{
     /** 
      * You can self-activate this component by subscribing to the `PageActivationEvent`. 
@@ -73,6 +80,15 @@ app.component<Header>('Header',(
             .catch(error=>console.error(error))
         }
     })
+    $scope.goToCollections = () => {
+        const appkey = URLHelper.getParamValue('app_key')
+        location.href = 'collections.html?app_key='+appkey
+    }
+    $scope.logout = () => {
+        const appkey = URLHelper.getParamValue('app_key')
+        localStorage.removeItem(`${appkey}.token`)
+        location.href = 'login.html'
+    }
     return {
         __render:()=>{
             return new Promise(async (resolve,reject)=>{

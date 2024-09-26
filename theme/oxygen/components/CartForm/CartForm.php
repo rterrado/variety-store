@@ -17,7 +17,7 @@
                     <div class="text-8 margin-left-4 font-weight-bold">Cart ({{CartItem.items.length}})</div>
                 </div>
                 <div class="flex-shrink-1">
-                    <div class="text-1 cursor-pointer font-weight-400 color-gray-scale-light color-elegant-dark:hover">CLEAR</div>
+                    <div plunc-click="clear()" class="text-1 cursor-pointer font-weight-400 color-gray-scale-light color-elegant-dark:hover">CLEAR</div>
                 </div>
             </div>
             <?php snippet('Dividers/Border',['orientation'=>'horizontal','margin:size'=>'17']); ?>

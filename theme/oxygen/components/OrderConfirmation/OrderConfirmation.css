@@ -1,0 +1,11 @@
+.--conf-wrapper {
+    border-radius:20px;
+}
+
+.--conf-wrapper {
+    background-color:#dffffe;
+}
+
+.dark .--conf-wrapper {
+    background-color:#173035;
+}

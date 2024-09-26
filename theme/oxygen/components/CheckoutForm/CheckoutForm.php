@@ -51,7 +51,7 @@ Kenjiefx\StrawberryScratch\Components::register('BillingAddressForm');
             'plunc:click' => 'submit()',
         ]);?>
         <div class="margin-top-9 text-small-23 color-gray-scale-extra-dark width-24">
-            <div>By placing this order, you hereby agree to our Terms and Conditions.</div>
+            <div>By placing this order, you hereby agree to our <a href="terms-of-service.html">Terms of Service</a>.</div>
         </div>
 
         <section class="margin-top-23 concrete-height-extra-small-24"></section>

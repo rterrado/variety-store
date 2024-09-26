@@ -1,6 +1,7 @@
 import { BlockManager } from "../../helpers/BlockManager"
 import { StateManager } from "../../helpers/StateManager"
 import { ApplicationAPI, PatchAPI, ScopeObject, app } from "../../interfaces/app"
+import { URLHelper } from "../../services/URLHelper"
 import { PageActivationManager } from "../../services/events/PageActivationManager"
 import { PageErrorManager } from "../../services/events/PageErrorManager"
 import { CartItem, CartManager } from "../../services/variety-store/CartManager"
@@ -29,6 +30,8 @@ type ComponentScope = {
     LineItemManager: {
         calculateTotal:(quantity:number, price: number)=>number
     }
+    checkout:()=>void
+    clear:()=>void
 }
 
 /**
@@ -52,7 +55,8 @@ app.component<CartForm>('CartForm',(
     StateManager: StateManager,
     CartManager: CartManager,
     BlockManager: BlockManager,
-    CurrencySymbolsLibrary: CurrencySymbolsLibrary
+    CurrencySymbolsLibrary: CurrencySymbolsLibrary,
+    URLHelper: URLHelper
 )=>{
     $scope.CartItem = CartManager.__getExistingCart()
     const activate = async () => {
@@ -75,6 +79,10 @@ app.component<CartForm>('CartForm',(
         return parseFloat(total.toFixed(2))
     }
 
+    $scope.clear = () => {
+        CartManager.__clearCart()
+    }
+
     $scope.LineItemManager = {
         calculateTotal: (quantity, price)=>{
             return parseFloat((quantity * price).toFixed(2))
@@ -91,6 +99,11 @@ app.component<CartForm>('CartForm',(
             CartManager.__removeQuantity(product)
         }
     }
+
+    $scope.checkout = () => {
+        location.href = 'checkout.html?app_key=' + URLHelper.getParamValue('app_key')
+    }
+
     return {
         __render:()=>{
             return new Promise(async (resolve,reject)=>{
